@@ -1,0 +1,945 @@
+Archive member included because of file (symbol)
+
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+                              ../RP6Lib/RP6base/RP6RobotBaseLib.o (__umulhisi3)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+                              ../RP6Lib/RP6base/RP6RobotBaseLib.o (__udivmodhi4)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+                              ../RP6Lib/RP6base/RP6RobotBaseLib.o (__udivmodsi4)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                              /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o (exit)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                              ../RP6Lib/RP6base/RP6RobotBaseLib.o (__tablejump2__)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                              ../RP6Lib/RP6base/RP6RobotBaseLib.o (__do_copy_data)
+/usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+                              main.o (__do_clear_bss)
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+                              ../RP6Lib/RP6common/RP6uart.o (itoa)
+/usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+                              /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o) (strrev)
+
+Allocating common symbols
+Common symbol       size              file
+
+bumper_left         0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preStop_R           0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_des_speed    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+timer               0x2               main.o
+mleft_des_speed     0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_des_speed_tmp
+                    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+uart_status         0x1               ../RP6Lib/RP6common/RP6uart.o
+motion_status       0x1               main.o
+sysStatACS          0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ircomm_send         0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_error_clear
+                    0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+distanceToMove_R    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+acs_pulse           0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+left_i              0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+IRCOMM_RC5_data     0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+motor_control       0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+leds_on             0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_power         0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_speed         0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preDecelerate_R     0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_des_speed_tmp
+                    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adc1                0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcLSL              0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+acs_timer           0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preStop_L           0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_power        0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_counter      0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ircomm_data_tmp     0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+distanceToMove_L    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+stopwatches         0x11              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_timeout
+                    0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+obstacle_left       0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_errors  0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_timer   0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+statusLEDs          0x1               main.o
+mright_ptmp         0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ircomm_data         0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcLSR              0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+speed_adjust_timer  0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+obstacle_right      0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+speed_timer         0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+right_i             0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+bumper_timer        0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_dist         0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preDecelerate_L     0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_counter       0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adc0                0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+delay_timer         0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcMotorCurrentRight
+                    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ms_timer            0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_speed        0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_dist          0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+bumper_right        0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+acs_event_counter   0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+motion_status_tmp   0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcBat              0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+uart_receive_buffer
+                    0x21              ../RP6Lib/RP6common/RP6uart.o
+IRCOMM_RC5_data_ok  0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_ptmp          0x1               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcMotorCurrentLeft
+                    0x2               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x0000000000000000 0x0000000000020000 xr
+data             0x0000000000800060 0x000000000000ffa0 rw !x
+eeprom           0x0000000000810000 0x0000000000010000 rw !x
+fuse             0x0000000000820000 0x0000000000000400 rw !x
+lock             0x0000000000830000 0x0000000000000400 rw !x
+signature        0x0000000000840000 0x0000000000000400 rw !x
+user_signatures  0x0000000000850000 0x0000000000000400 rw !x
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+LOAD main.o
+LOAD ../RP6Lib/RP6base/RP6RobotBaseLib.o
+LOAD ../RP6Lib/RP6common/RP6uart.o
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libm.a
+START GROUP
+LOAD /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libm.a
+LOAD /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a
+END GROUP
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x0000000000000000     0x19c6
+ *(.vectors)
+ .vectors       0x0000000000000000       0x54 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000000                __vectors
+                0x0000000000000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ .progmem.gcc_sw_table
+                0x0000000000000054        0xe ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ *(.progmem*)
+ .progmem.data  0x0000000000000062        0xe main.o
+ .progmem.data  0x0000000000000070      0x1be ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                0x000000000000022e                . = ALIGN (0x2)
+                0x000000000000022e                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000000000022e        0x0 linker stubs
+ *(.trampolines*)
+                0x000000000000022e                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000000000022e                __ctors_start = .
+ *(.ctors)
+                0x000000000000022e                __ctors_end = .
+                0x000000000000022e                __dtors_start = .
+ *(.dtors)
+                0x000000000000022e                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000000000022e        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x000000000000022e                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000000000022e        0xc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000000000023a       0x16 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                0x000000000000023a                __do_copy_data
+ .init4         0x0000000000000250       0x10 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+                0x0000000000000250                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000000000000260        0x8 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ *(.init9)
+ *(.text)
+ .text          0x0000000000000268        0x4 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+                0x0000000000000268                __vector_12
+                0x0000000000000268                __bad_interrupt
+                0x0000000000000268                __vector_6
+                0x0000000000000268                __vector_11
+                0x0000000000000268                __vector_17
+                0x0000000000000268                __vector_19
+                0x0000000000000268                __vector_7
+                0x0000000000000268                __vector_5
+                0x0000000000000268                __vector_9
+                0x0000000000000268                __vector_15
+                0x0000000000000268                __vector_8
+                0x0000000000000268                __vector_14
+                0x0000000000000268                __vector_16
+                0x0000000000000268                __vector_18
+                0x0000000000000268                __vector_20
+ .text          0x000000000000026c       0x8c main.o
+                0x000000000000026c                loop
+ .text          0x00000000000002f8     0x1360 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                0x00000000000002f8                BUMPERS_stateChanged_DUMMY
+                0x00000000000002fa                MOTIONCONTROL_stateChanged_DUMMY
+                0x00000000000002fc                IRCOMM_RC5dataReady_DUMMY
+                0x00000000000002fe                ACS_stateChanged_DUMMY
+                0x0000000000000300                enablePowerOnWarning
+                0x000000000000030e                disablePowerOnWarning
+                0x0000000000000316                updateStatusLEDs
+                0x0000000000000394                setLEDs
+                0x000000000000039c                getBumperLeft
+                0x00000000000003b4                getBumperRight
+                0x00000000000003cc                BUMPERS_setStateChangedHandler
+                0x00000000000003d6                task_Bumpers
+                0x0000000000000414                readADC
+                0x0000000000000432                startADC
+                0x000000000000043c                task_ADC
+                0x00000000000004c8                __vector_1
+                0x0000000000000508                __vector_2
+                0x0000000000000548                MOTIONCONTROL_setStateChangedHandler
+                0x0000000000000552                moveAtSpeed
+                0x0000000000000574                changeDirection
+                0x0000000000000598                moveAtSpeedDirection
+                0x00000000000005bc                isMovementComplete
+                0x00000000000005ca                stop
+                0x0000000000000604                setMotorPower
+                0x0000000000000626                setMotorDir
+                0x000000000000064c                IRCOMM_sendRC5
+                0x0000000000000684                __vector_4
+                0x0000000000000744                __vector_3
+                0x0000000000000792                IRCOMM_setRC5DataReadyHandler
+                0x000000000000079c                ACS_setStateChangedHandler
+                0x00000000000007a6                task_ACS
+                0x0000000000000a2e                disableACS
+                0x0000000000000a48                enableACS
+                0x0000000000000a64                setACSPwrOff
+                0x0000000000000a72                setACSPwrLow
+                0x0000000000000a7c                setACSPwrMed
+                0x0000000000000a86                setACSPwrHigh
+                0x0000000000000a90                powerON
+                0x0000000000000aa2                powerOFF
+                0x0000000000000ac6                __vector_10
+                0x0000000000000e54                sleep
+                0x0000000000000e62                mSleep
+                0x0000000000000e7c                delayCycles
+                0x0000000000000e86                emergencyShutdown
+                0x0000000000000f5e                task_motionControl
+                0x0000000000001394                extIntON
+                0x000000000000139a                extIntOFF
+                0x00000000000013a0                task_RP6System
+                0x00000000000013b0                move
+                0x00000000000014e4                rotate
+                0x00000000000015ce                initRobotBase
+ .text          0x0000000000001658      0x250 ../RP6Lib/RP6common/RP6uart.o
+                0x0000000000001658                writeChar
+                0x0000000000001660                writeString
+                0x0000000000001678                writeNStringP
+                0x0000000000001696                writeStringLength
+                0x00000000000016d0                writeInteger
+                0x000000000000170c                writeIntegerLength
+                0x000000000000178a                __vector_13
+                0x00000000000017f8                readChar
+                0x0000000000001834                readChars
+                0x000000000000187c                getBufferLength
+                0x0000000000001888                clearReceptionBuffer
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+ .text          0x00000000000018a8        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+                0x00000000000018a8                . = ALIGN (0x2)
+ *(.text.*)
+ .text.startup  0x00000000000018a8       0x22 main.o
+                0x00000000000018a8                main
+ .text.libgcc.mul
+                0x00000000000018ca       0x1e /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+                0x00000000000018ca                __umulhisi3
+ .text.libgcc.div
+                0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc   0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.prologue
+                0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.builtins
+                0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.fmul
+                0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.fixed
+                0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .text.libgcc.mul
+                0x00000000000018e8        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.div
+                0x00000000000018e8       0x28 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+                0x00000000000018e8                __udivmodhi4
+ .text.libgcc   0x0000000000001910        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.prologue
+                0x0000000000001910        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.builtins
+                0x0000000000001910        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fmul
+                0x0000000000001910        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.fixed
+                0x0000000000001910        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .text.libgcc.mul
+                0x0000000000001910        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.div
+                0x0000000000001910       0x44 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+                0x0000000000001910                __udivmodsi4
+ .text.libgcc   0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.prologue
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.builtins
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fmul
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.fixed
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .text.libgcc.mul
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.div
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc   0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.prologue
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.builtins
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fmul
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.fixed
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .text.libgcc.mul
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.div
+                0x0000000000001954        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc   0x0000000000001954        0xc /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                0x0000000000001954                __tablejump2__
+                0x0000000000001958                __tablejump__
+ .text.libgcc.prologue
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.builtins
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.fmul
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.fixed
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .text.libgcc.mul
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.div
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc   0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.prologue
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.builtins
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fmul
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.fixed
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .text.libgcc.mul
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.div
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.prologue
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.builtins
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.fmul
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.libgcc.fixed
+                0x0000000000001960        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .text.avr-libc
+                0x0000000000001960       0x42 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+                0x0000000000001960                itoa
+ .text.avr-libc
+                0x00000000000019a2       0x20 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+                0x00000000000019a2                strrev
+                0x00000000000019c2                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x00000000000019c2        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                0x00000000000019c2                exit
+                0x00000000000019c2                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x00000000000019c2        0x4 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ *(.fini0)
+                0x00000000000019c6                _etext = .
+
+.data           0x0000000000800060        0xa load address 0x00000000000019c6
+                0x0000000000800060                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x0000000000800060        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .data          0x0000000000800060        0x0 main.o
+ .data          0x0000000000800060        0x9 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                0x0000000000800064                acs_state
+ .data          0x0000000000800069        0x0 ../RP6Lib/RP6common/RP6uart.o
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+ .data          0x0000000000800069        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x000000000080006a                . = ALIGN (0x2)
+ *fill*         0x0000000000800069        0x1 
+                0x000000000080006a                _edata = .
+                0x000000000080006a                PROVIDE (__data_end, .)
+
+.bss            0x000000000080006a       0xa5
+                0x000000000080006a                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x000000000080006a        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .bss           0x000000000080006a        0x0 main.o
+ .bss           0x000000000080006a       0x12 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                0x000000000080006a                drive_dir
+                0x000000000080006b                mright_dir
+                0x000000000080006c                mleft_dir
+                0x000000000080006d                mright_des_dir
+                0x000000000080006e                mleft_des_dir
+ .bss           0x000000000080007c        0x6 ../RP6Lib/RP6common/RP6uart.o
+                0x000000000080007c                write_size
+                0x000000000080007d                read_size
+                0x000000000080007e                write_pos
+                0x000000000080007f                read_pos
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+ .bss           0x0000000000800082        0x0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0000000000800082        0x4 main.o
+                0x0000000000800082                timer
+                0x0000000000800084                motion_status
+                0x0000000000800085                statusLEDs
+ COMMON         0x0000000000800086       0x67 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                0x0000000000800086                bumper_left
+                0x0000000000800087                preStop_R
+                0x0000000000800089                mright_des_speed
+                0x000000000080008b                mleft_des_speed
+                0x000000000080008d                mleft_des_speed_tmp
+                0x000000000080008f                sysStatACS
+                0x0000000000800090                ircomm_send
+                0x0000000000800091                overcurrent_error_clear
+                0x0000000000800092                distanceToMove_R
+                0x0000000000800094                acs_pulse
+                0x0000000000800095                left_i
+                0x0000000000800097                IRCOMM_RC5_data
+                0x0000000000800099                motor_control
+                0x000000000080009a                leds_on
+                0x000000000080009b                mleft_power
+                0x000000000080009d                mleft_speed
+                0x000000000080009f                preDecelerate_R
+                0x00000000008000a1                mright_des_speed_tmp
+                0x00000000008000a3                adc1
+                0x00000000008000a5                adcLSL
+                0x00000000008000a7                acs_timer
+                0x00000000008000a9                preStop_L
+                0x00000000008000ab                mright_power
+                0x00000000008000ad                mright_counter
+                0x00000000008000af                ircomm_data_tmp
+                0x00000000008000b1                distanceToMove_L
+                0x00000000008000b3                stopwatches
+                0x00000000008000c4                overcurrent_timeout
+                0x00000000008000c5                obstacle_left
+                0x00000000008000c6                overcurrent_errors
+                0x00000000008000c7                overcurrent_timer
+                0x00000000008000c8                mright_ptmp
+                0x00000000008000c9                ircomm_data
+                0x00000000008000cb                adcLSR
+                0x00000000008000cd                speed_adjust_timer
+                0x00000000008000ce                obstacle_right
+                0x00000000008000cf                speed_timer
+                0x00000000008000d0                right_i
+                0x00000000008000d2                bumper_timer
+                0x00000000008000d3                mright_dist
+                0x00000000008000d5                preDecelerate_L
+                0x00000000008000d7                mleft_counter
+                0x00000000008000d9                adc0
+                0x00000000008000db                delay_timer
+                0x00000000008000dc                adcMotorCurrentRight
+                0x00000000008000de                ms_timer
+                0x00000000008000df                mright_speed
+                0x00000000008000e1                mleft_dist
+                0x00000000008000e3                bumper_right
+                0x00000000008000e4                acs_event_counter
+                0x00000000008000e5                motion_status_tmp
+                0x00000000008000e6                adcBat
+                0x00000000008000e8                IRCOMM_RC5_data_ok
+                0x00000000008000ea                mleft_ptmp
+                0x00000000008000eb                adcMotorCurrentLeft
+ COMMON         0x00000000008000ed       0x22 ../RP6Lib/RP6common/RP6uart.o
+                0x00000000008000ed                uart_status
+                0x00000000008000ee                uart_receive_buffer
+                0x000000000080010f                PROVIDE (__bss_end, .)
+                0x00000000000019c6                __data_load_start = LOADADDR (.data)
+                0x00000000000019d0                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x000000000080010f        0x0
+                0x000000000080010f                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x000000000080010f                PROVIDE (__noinit_end, .)
+                0x000000000080010f                _end = .
+                0x000000000080010f                PROVIDE (__heap_start, .)
+
+.eeprom         0x0000000000810000        0x0
+ *(.eeprom*)
+                0x0000000000810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.user_signatures
+ *(.user_signatures*)
+
+.stab           0x0000000000000000      0x954
+ *(.stab)
+ .stab          0x0000000000000000      0x6cc /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+ .stab          0x00000000000006cc      0x1b0 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+                                        0x1bc (size before relaxing)
+ .stab          0x000000000000087c       0xd8 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+                                         0xe4 (size before relaxing)
+
+.stabstr        0x0000000000000000       0xb4
+ *(.stabstr)
+ .stabstr       0x0000000000000000       0xb4 /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x11
+ *(.comment)
+ .comment       0x0000000000000000       0x11 main.o
+                                         0x12 (size before relaxing)
+ .comment       0x0000000000000000       0x12 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .comment       0x0000000000000000       0x12 ../RP6Lib/RP6common/RP6uart.o
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x68
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x28 main.o
+ .debug_aranges
+                0x0000000000000028       0x20 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .debug_aranges
+                0x0000000000000048       0x20 ../RP6Lib/RP6common/RP6uart.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000     0x1d7f
+ *(.debug_info)
+ .debug_info    0x0000000000000000      0x392 main.o
+ .debug_info    0x0000000000000392     0x1543 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .debug_info    0x00000000000018d5      0x4aa ../RP6Lib/RP6common/RP6uart.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x0000000000000000      0x797
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000      0x18d main.o
+ .debug_abbrev  0x000000000000018d      0x420 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .debug_abbrev  0x00000000000005ad      0x1ea ../RP6Lib/RP6common/RP6uart.o
+
+.debug_line     0x0000000000000000      0x6d7
+ *(.debug_line)
+ .debug_line    0x0000000000000000       0xc1 main.o
+ .debug_line    0x00000000000000c1      0x514 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .debug_line    0x00000000000005d5      0x102 ../RP6Lib/RP6common/RP6uart.o
+
+.debug_frame    0x0000000000000000      0x5dc
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000       0x34 main.o
+ .debug_frame   0x0000000000000034      0x440 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .debug_frame   0x0000000000000474      0x168 ../RP6Lib/RP6common/RP6uart.o
+
+.debug_str      0x0000000000000000      0xb94
+ *(.debug_str)
+ .debug_str     0x0000000000000000      0x1f1 main.o
+                                        0x238 (size before relaxing)
+ .debug_str     0x00000000000001f1      0x85b ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                        0xad1 (size before relaxing)
+ .debug_str     0x0000000000000a4c      0x148 ../RP6Lib/RP6common/RP6uart.o
+                                        0x297 (size before relaxing)
+
+.debug_loc      0x0000000000000000      0xe6e
+ *(.debug_loc)
+ .debug_loc     0x0000000000000000      0x98d ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ .debug_loc     0x000000000000098d      0x4e1 ../RP6Lib/RP6common/RP6uart.o
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges   0x0000000000000000       0x18
+ *(.debug_ranges)
+ .debug_ranges  0x0000000000000000       0x18 main.o
+
+.debug_macro
+ *(.debug_macro)
+OUTPUT(main.elf elf32-avr)
+LOAD linker stubs
+
+Cross Reference Table
+
+Symbol                                            File
+ACS_setStateChangedHandler                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ACS_stateChanged_DUMMY                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+BUMPERS_setStateChangedHandler                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+BUMPERS_stateChanged_DUMMY                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+IRCOMM_RC5_data                                   ../RP6Lib/RP6base/RP6RobotBaseLib.o
+IRCOMM_RC5_data_ok                                ../RP6Lib/RP6base/RP6RobotBaseLib.o
+IRCOMM_RC5dataReady_DUMMY                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+IRCOMM_sendRC5                                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+IRCOMM_setRC5DataReadyHandler                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+MOTIONCONTROL_setStateChangedHandler              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+MOTIONCONTROL_stateChanged_DUMMY                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+__bad_interrupt                                   /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__bss_end                                         /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+__bss_start                                       /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+__data_end                                        /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+__data_load_start                                 /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+__data_start                                      /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+__do_clear_bss                                    /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_clear_bss.o)
+                                                  ../RP6Lib/RP6common/RP6uart.o
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+__do_copy_data                                    /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_copy_data.o)
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+__heap_end                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__init                                            /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__stack                                           /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__tablejump2__                                    /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+__tablejump__                                     /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_tablejump.o)
+__udivmodhi4                                      /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodhi4.o)
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+__udivmodsi4                                      /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_udivmodsi4.o)
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+__umulhisi3                                       /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_umulhisi3.o)
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+__vector_1                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_10                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_11                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_12                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_13                                       ../RP6Lib/RP6common/RP6uart.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_14                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_15                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_16                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_17                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_18                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_19                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_2                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_20                                       /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_3                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_4                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_5                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_6                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_7                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_8                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_9                                        /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vector_default                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+__vectors                                         /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+_exit                                             /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+acs_event_counter                                 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+acs_pulse                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+acs_state                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+acs_timer                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adc0                                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adc1                                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcBat                                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcLSL                                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcLSR                                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcMotorCurrentLeft                               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+adcMotorCurrentRight                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+bumper_left                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+bumper_right                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+bumper_timer                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+changeDirection                                   ../RP6Lib/RP6base/RP6RobotBaseLib.o
+clearReceptionBuffer                              ../RP6Lib/RP6common/RP6uart.o
+delayCycles                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+delay_timer                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+disableACS                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+disablePowerOnWarning                             ../RP6Lib/RP6base/RP6RobotBaseLib.o
+distanceToMove_L                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+distanceToMove_R                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+drive_dir                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+emergencyShutdown                                 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+enableACS                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+enablePowerOnWarning                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+exit                                              /usr/lib/gcc/avr/4.8.2/avr5/libgcc.a(_exit.o)
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+extIntOFF                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+extIntON                                          ../RP6Lib/RP6base/RP6RobotBaseLib.o
+getBufferLength                                   ../RP6Lib/RP6common/RP6uart.o
+getBumperLeft                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+getBumperRight                                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+initRobotBase                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+ircomm_data                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ircomm_data_tmp                                   ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ircomm_send                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+isMovementComplete                                ../RP6Lib/RP6base/RP6RobotBaseLib.o
+itoa                                              /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+                                                  ../RP6Lib/RP6common/RP6uart.o
+leds_on                                           ../RP6Lib/RP6base/RP6RobotBaseLib.o
+left_i                                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+loop                                              main.o
+mSleep                                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+main                                              main.o
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/crtm32.o
+mleft_counter                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_des_dir                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_des_speed                                   ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_des_speed_tmp                               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_dir                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_dist                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_power                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_ptmp                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mleft_speed                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+motion_status                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+motion_status_tmp                                 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+motor_control                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+move                                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+moveAtSpeed                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+moveAtSpeedDirection                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_counter                                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_des_dir                                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_des_speed                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_des_speed_tmp                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_dir                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_dist                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_power                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_ptmp                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+mright_speed                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+ms_timer                                          ../RP6Lib/RP6base/RP6RobotBaseLib.o
+obstacle_left                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+obstacle_right                                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_error_clear                           ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_errors                                ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_timeout                               ../RP6Lib/RP6base/RP6RobotBaseLib.o
+overcurrent_timer                                 ../RP6Lib/RP6base/RP6RobotBaseLib.o
+powerOFF                                          ../RP6Lib/RP6base/RP6RobotBaseLib.o
+powerON                                           ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preDecelerate_L                                   ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preDecelerate_R                                   ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preStop_L                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+preStop_R                                         ../RP6Lib/RP6base/RP6RobotBaseLib.o
+readADC                                           ../RP6Lib/RP6base/RP6RobotBaseLib.o
+readChar                                          ../RP6Lib/RP6common/RP6uart.o
+readChars                                         ../RP6Lib/RP6common/RP6uart.o
+read_pos                                          ../RP6Lib/RP6common/RP6uart.o
+read_size                                         ../RP6Lib/RP6common/RP6uart.o
+right_i                                           ../RP6Lib/RP6base/RP6RobotBaseLib.o
+rotate                                            ../RP6Lib/RP6base/RP6RobotBaseLib.o
+setACSPwrHigh                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+setACSPwrLow                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+setACSPwrMed                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+setACSPwrOff                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+setLEDs                                           ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+setMotorDir                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+setMotorPower                                     ../RP6Lib/RP6base/RP6RobotBaseLib.o
+sleep                                             ../RP6Lib/RP6base/RP6RobotBaseLib.o
+speed_adjust_timer                                ../RP6Lib/RP6base/RP6RobotBaseLib.o
+speed_timer                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+startADC                                          ../RP6Lib/RP6base/RP6RobotBaseLib.o
+statusLEDs                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+stop                                              ../RP6Lib/RP6base/RP6RobotBaseLib.o
+stopwatches                                       ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+strrev                                            /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(strrev.o)
+                                                  /usr/lib/gcc/avr/4.8.2/../../../avr/lib/avr5/libc.a(itoa.o)
+sysStatACS                                        ../RP6Lib/RP6base/RP6RobotBaseLib.o
+task_ACS                                          ../RP6Lib/RP6base/RP6RobotBaseLib.o
+task_ADC                                          ../RP6Lib/RP6base/RP6RobotBaseLib.o
+task_Bumpers                                      ../RP6Lib/RP6base/RP6RobotBaseLib.o
+task_RP6System                                    ../RP6Lib/RP6base/RP6RobotBaseLib.o
+task_motionControl                                ../RP6Lib/RP6base/RP6RobotBaseLib.o
+timer                                             ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+uart_receive_buffer                               ../RP6Lib/RP6common/RP6uart.o
+uart_status                                       ../RP6Lib/RP6common/RP6uart.o
+updateStatusLEDs                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+writeChar                                         ../RP6Lib/RP6common/RP6uart.o
+writeInteger                                      ../RP6Lib/RP6common/RP6uart.o
+writeIntegerLength                                ../RP6Lib/RP6common/RP6uart.o
+writeNStringP                                     ../RP6Lib/RP6common/RP6uart.o
+                                                  ../RP6Lib/RP6base/RP6RobotBaseLib.o
+                                                  main.o
+writeString                                       ../RP6Lib/RP6common/RP6uart.o
+writeStringLength                                 ../RP6Lib/RP6common/RP6uart.o
+write_pos                                         ../RP6Lib/RP6common/RP6uart.o
+write_size                                        ../RP6Lib/RP6common/RP6uart.o

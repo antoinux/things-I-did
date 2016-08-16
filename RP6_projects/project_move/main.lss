@@ -1,0 +1,4256 @@
+
+main.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         00001b6e  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         0000000e  00800060  00001b6e  00001c02  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          000000a8  0080006e  0080006e  00001c10  2**0
+                  ALLOC
+  3 .stab         00000dec  00000000  00000000  00001c10  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      000009d3  00000000  00000000  000029fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .comment      00000011  00000000  00000000  000033cf  2**0
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000068  00000000  00000000  000033e0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   00001fb5  00000000  00000000  00003448  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 00000802  00000000  00000000  000053fd  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   000006f8  00000000  00000000  00005bff  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_frame  000005fc  00000000  00000000  000062f8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_str    00000c11  00000000  00000000  000068f4  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_loc    00000e8c  00000000  00000000  00007505  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 13 .debug_ranges 00000018  00000000  00000000  00008391  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	0c 94 10 01 	jmp	0x220	; 0x220 <__ctors_end>
+       4:	0c 94 9a 02 	jmp	0x534	; 0x534 <__vector_1>
+       8:	0c 94 ba 02 	jmp	0x574	; 0x574 <__vector_2>
+       c:	0c 94 d8 03 	jmp	0x7b0	; 0x7b0 <__vector_3>
+      10:	0c 94 78 03 	jmp	0x6f0	; 0x6f0 <__vector_4>
+      14:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      18:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      1c:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      20:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      24:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      28:	0c 94 99 05 	jmp	0xb32	; 0xb32 <__vector_10>
+      2c:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      30:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      34:	0c 94 fb 0b 	jmp	0x17f6	; 0x17f6 <__vector_13>
+      38:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      3c:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      40:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      44:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      48:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      4c:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      50:	0c 94 2d 01 	jmp	0x25a	; 0x25a <__bad_interrupt>
+      54:	63 02       	muls	r22, r19
+      56:	69 02       	muls	r22, r25
+      58:	6f 02       	muls	r22, r31
+      5a:	75 02       	muls	r23, r21
+      5c:	7b 02       	muls	r23, r27
+      5e:	81 02       	muls	r24, r17
+      60:	87 02       	muls	r24, r23
+
+00000062 <__c.2227>:
+      62:	54 68 65 20 52 6f 62 6f 74 20 6e 65 65 64 73 20     The Robot needs 
+      72:	74 6f 20 62 65 20 72 65 73 65 74 74 65 64 20 6e     to be resetted n
+      82:	6f 77 2e 0a 0a 00                                   ow....
+
+00000088 <__c.2225>:
+      88:	59 6f 75 20 6e 65 65 64 20 74 6f 20 63 68 65 63     You need to chec
+      98:	6b 20 4d 6f 74 6f 72 20 61 73 73 65 6d 62 6c 79     k Motor assembly
+      a8:	20 28 6f 72 20 79 6f 75 72 20 73 6f 66 74 77 61      (or your softwa
+      b8:	72 65 29 2e 0a 0a 00                                re)....
+
+000000bf <__c.2223>:
+      bf:	0a 0a 28 73 2e 20 74 61 73 6b 5f 6d 6f 74 6f 72     ..(s. task_motor
+      cf:	43 6f 6e 74 72 6f 6c 28 29 20 66 75 6e 63 74 69     Control() functi
+      df:	6f 6e 20 69 6e 20 52 50 36 4c 69 62 21 29 0a 00     on in RP6Lib!)..
+
+000000ef <__c.2221>:
+      ef:	0a 0a 23 23 23 20 4d 4f 54 4f 52 20 4f 56 45 52     ..### MOTOR OVER
+      ff:	43 55 52 52 45 4e 54 20 23 23 23 0a 00              CURRENT ###..
+
+0000010c <__c.2219>:
+     10c:	59 6f 75 20 6e 65 65 64 20 74 6f 20 63 68 65 63     You need to chec
+     11c:	6b 20 45 6e 63 6f 64 65 72 2f 4d 6f 74 6f 72 20     k Encoder/Motor 
+     12c:	61 73 73 65 6d 62 6c 79 20 28 6f 72 20 79 6f 75     assembly (or you
+     13c:	72 20 73 6f 66 74 77 61 72 65 29 2e 0a 0a 00        r software)....
+
+0000014b <__c.2217>:
+     14b:	21 0a 0a 28 73 2e 20 74 61 73 6b 5f 6d 6f 74 6f     !..(s. task_moto
+     15b:	72 43 6f 6e 74 72 6f 6c 28 29 20 66 75 6e 63 74     rControl() funct
+     16b:	69 6f 6e 20 69 6e 20 52 50 36 4c 69 62 21 29 0a     ion in RP6Lib!).
+	...
+
+0000017c <__c.2215>:
+     17c:	52 49 47 48 54 00                                   RIGHT.
+
+00000182 <__c.2213>:
+     182:	4c 45 46 54 00                                      LEFT.
+
+00000187 <__c.2211>:
+     187:	41 66 66 65 63 74 65 64 20 63 68 61 6e 6e 65 6c     Affected channel
+     197:	3a 00                                               :.
+
+00000199 <__c.2209>:
+     199:	0a 23 23 23 20 45 4e 43 4f 44 45 52 20 28 4f 52     .### ENCODER (OR
+     1a9:	20 4d 4f 54 4f 52 29 20 4d 41 4c 46 55 4e 43 54      MOTOR) MALFUNCT
+     1b9:	49 4f 4e 21 20 23 23 23 0a 00                       ION! ###..
+
+000001c3 <__c.2207>:
+     1c3:	23 23 23 23 23 20 41 4c 4c 20 4f 50 45 52 41 54     ##### ALL OPERAT
+     1d3:	49 4f 4e 53 20 53 54 4f 50 50 45 44 20 54 4f 20     IONS STOPPED TO 
+     1e3:	50 52 45 56 45 4e 54 20 41 4e 59 20 44 41 4d 41     PREVENT ANY DAMA
+     1f3:	47 45 21 20 23 23 23 23 23 0a 00                    GE! #####..
+
+000001fe <__c.2205>:
+     1fe:	0a 0a 23 23 23 23 23 20 45 4d 45 52 47 45 4e 43     ..##### EMERGENC
+     20e:	59 20 53 48 55 54 44 4f 57 4e 20 23 23 23 23 23     Y SHUTDOWN #####
+     21e:	0a 00                                               ..
+
+00000220 <__ctors_end>:
+     220:	11 24       	eor	r1, r1
+     222:	1f be       	out	0x3f, r1	; 63
+     224:	cf e5       	ldi	r28, 0x5F	; 95
+     226:	d8 e0       	ldi	r29, 0x08	; 8
+     228:	de bf       	out	0x3e, r29	; 62
+     22a:	cd bf       	out	0x3d, r28	; 61
+
+0000022c <__do_copy_data>:
+     22c:	10 e0       	ldi	r17, 0x00	; 0
+     22e:	a0 e6       	ldi	r26, 0x60	; 96
+     230:	b0 e0       	ldi	r27, 0x00	; 0
+     232:	ee e6       	ldi	r30, 0x6E	; 110
+     234:	fb e1       	ldi	r31, 0x1B	; 27
+     236:	02 c0       	rjmp	.+4      	; 0x23c <__do_copy_data+0x10>
+     238:	05 90       	lpm	r0, Z+
+     23a:	0d 92       	st	X+, r0
+     23c:	ae 36       	cpi	r26, 0x6E	; 110
+     23e:	b1 07       	cpc	r27, r17
+     240:	d9 f7       	brne	.-10     	; 0x238 <__do_copy_data+0xc>
+
+00000242 <__do_clear_bss>:
+     242:	11 e0       	ldi	r17, 0x01	; 1
+     244:	ae e6       	ldi	r26, 0x6E	; 110
+     246:	b0 e0       	ldi	r27, 0x00	; 0
+     248:	01 c0       	rjmp	.+2      	; 0x24c <.do_clear_bss_start>
+
+0000024a <.do_clear_bss_loop>:
+     24a:	1d 92       	st	X+, r1
+
+0000024c <.do_clear_bss_start>:
+     24c:	a6 31       	cpi	r26, 0x16	; 22
+     24e:	b1 07       	cpc	r27, r17
+     250:	e1 f7       	brne	.-8      	; 0x24a <.do_clear_bss_loop>
+     252:	0e 94 8a 0c 	call	0x1914	; 0x1914 <main>
+     256:	0c 94 b5 0d 	jmp	0x1b6a	; 0x1b6a <_exit>
+
+0000025a <__bad_interrupt>:
+     25a:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000025e <escapeState>:
+uint8_t escape_way = 0;
+uint8_t last_rotation = 0;
+
+void escapeState(void)
+{
+	move(CRUISE_SPEED_BWD,BWD,DIST_MM(100),1);
+     25e:	21 e0       	ldi	r18, 0x01	; 1
+     260:	40 ea       	ldi	r20, 0xA0	; 160
+     262:	51 e0       	ldi	r21, 0x01	; 1
+     264:	61 e0       	ldi	r22, 0x01	; 1
+     266:	8c e9       	ldi	r24, 0x9C	; 156
+     268:	0e 94 0e 0a 	call	0x141c	; 0x141c <move>
+	rotate(90,LEFT,180,1);
+     26c:	21 e0       	ldi	r18, 0x01	; 1
+     26e:	44 eb       	ldi	r20, 0xB4	; 180
+     270:	50 e0       	ldi	r21, 0x00	; 0
+     272:	62 e0       	ldi	r22, 0x02	; 2
+     274:	8a e5       	ldi	r24, 0x5A	; 90
+     276:	0c 94 a8 0a 	jmp	0x1550	; 0x1550 <rotate>
+
+0000027a <change_state>:
+}
+
+void change_state(void)
+{
+	if(bumper_left || bumper_right)
+     27a:	80 91 8d 00 	lds	r24, 0x008D
+     27e:	81 11       	cpse	r24, r1
+     280:	04 c0       	rjmp	.+8      	; 0x28a <change_state+0x10>
+     282:	90 91 ea 00 	lds	r25, 0x00EA
+     286:	99 23       	and	r25, r25
+     288:	59 f0       	breq	.+22     	; 0x2a0 <change_state+0x26>
+	{
+		state = ESCAPE;
+     28a:	91 e0       	ldi	r25, 0x01	; 1
+     28c:	90 93 70 00 	sts	0x0070, r25
+		escape_way = bumper_left ? RIGHT : LEFT;
+     290:	88 23       	and	r24, r24
+     292:	11 f0       	breq	.+4      	; 0x298 <change_state+0x1e>
+     294:	83 e0       	ldi	r24, 0x03	; 3
+     296:	01 c0       	rjmp	.+2      	; 0x29a <change_state+0x20>
+     298:	82 e0       	ldi	r24, 0x02	; 2
+     29a:	80 93 6f 00 	sts	0x006F, r24
+     29e:	08 95       	ret
+	}
+	else if(obstacle_left && obstacle_right)
+     2a0:	90 91 cc 00 	lds	r25, 0x00CC
+     2a4:	80 91 d5 00 	lds	r24, 0x00D5
+     2a8:	99 23       	and	r25, r25
+     2aa:	21 f0       	breq	.+8      	; 0x2b4 <change_state+0x3a>
+     2ac:	88 23       	and	r24, r24
+     2ae:	21 f0       	breq	.+8      	; 0x2b8 <change_state+0x3e>
+		state = TURNING_BACK;
+     2b0:	83 e0       	ldi	r24, 0x03	; 3
+     2b2:	03 c0       	rjmp	.+6      	; 0x2ba <change_state+0x40>
+	else if(obstacle_left || obstacle_right)
+     2b4:	88 23       	and	r24, r24
+     2b6:	21 f0       	breq	.+8      	; 0x2c0 <change_state+0x46>
+		state = DODGE;
+     2b8:	82 e0       	ldi	r24, 0x02	; 2
+     2ba:	80 93 70 00 	sts	0x0070, r24
+     2be:	08 95       	ret
+	else
+		state = NORMAL;
+     2c0:	10 92 70 00 	sts	0x0070, r1
+     2c4:	08 95       	ret
+
+000002c6 <state_machine>:
+}
+
+void state_machine(void)
+{
+	switch(state)
+     2c6:	80 91 70 00 	lds	r24, 0x0070
+     2ca:	81 30       	cpi	r24, 0x01	; 1
+     2cc:	59 f0       	breq	.+22     	; 0x2e4 <state_machine+0x1e>
+     2ce:	28 f0       	brcs	.+10     	; 0x2da <state_machine+0x14>
+     2d0:	82 30       	cpi	r24, 0x02	; 2
+     2d2:	51 f0       	breq	.+20     	; 0x2e8 <state_machine+0x22>
+     2d4:	83 30       	cpi	r24, 0x03	; 3
+     2d6:	c9 f0       	breq	.+50     	; 0x30a <state_machine+0x44>
+     2d8:	08 95       	ret
+	{
+		case NORMAL:
+			moveAtSpeedDirection(CRUISE_SPEED_FWD,CRUISE_SPEED_FWD);
+     2da:	60 ea       	ldi	r22, 0xA0	; 160
+     2dc:	70 e0       	ldi	r23, 0x00	; 0
+     2de:	80 ea       	ldi	r24, 0xA0	; 160
+     2e0:	90 e0       	ldi	r25, 0x00	; 0
+     2e2:	11 c0       	rjmp	.+34     	; 0x306 <state_machine+0x40>
+		break;
+		
+		case ESCAPE:
+			escapeState();
+     2e4:	0c 94 2f 01 	jmp	0x25e	; 0x25e <escapeState>
+		break;
+		
+		case DODGE:
+			moveAtSpeedDirection(CRUISE_SPEED_FWD - 40*obstacle_right,CRUISE_SPEED_FWD - 40*obstacle_left);
+     2e8:	60 91 cc 00 	lds	r22, 0x00CC
+     2ec:	28 ed       	ldi	r18, 0xD8	; 216
+     2ee:	26 03       	mulsu	r18, r22
+     2f0:	b0 01       	movw	r22, r0
+     2f2:	11 24       	eor	r1, r1
+     2f4:	60 56       	subi	r22, 0x60	; 96
+     2f6:	7f 4f       	sbci	r23, 0xFF	; 255
+     2f8:	30 91 d5 00 	lds	r19, 0x00D5
+     2fc:	23 03       	mulsu	r18, r19
+     2fe:	c0 01       	movw	r24, r0
+     300:	11 24       	eor	r1, r1
+     302:	80 56       	subi	r24, 0x60	; 96
+     304:	9f 4f       	sbci	r25, 0xFF	; 255
+     306:	0c 94 02 03 	jmp	0x604	; 0x604 <moveAtSpeedDirection>
+		break;
+		
+		case TURNING_BACK:
+			moveAtSpeedDirection(0,0);
+     30a:	60 e0       	ldi	r22, 0x00	; 0
+     30c:	70 e0       	ldi	r23, 0x00	; 0
+     30e:	80 e0       	ldi	r24, 0x00	; 0
+     310:	90 e0       	ldi	r25, 0x00	; 0
+     312:	0e 94 02 03 	call	0x604	; 0x604 <moveAtSpeedDirection>
+			uint8_t rotate_dir;
+			if(getStopwatch1() > 4000)
+     316:	80 91 bb 00 	lds	r24, 0x00BB
+     31a:	90 91 bc 00 	lds	r25, 0x00BC
+     31e:	81 3a       	cpi	r24, 0xA1	; 161
+     320:	9f 40       	sbci	r25, 0x0F	; 15
+     322:	30 f0       	brcs	.+12     	; 0x330 <state_machine+0x6a>
+				rotate_dir = rand()%2 ? LEFT : RIGHT;
+     324:	0e 94 42 0d 	call	0x1a84	; 0x1a84 <rand>
+     328:	80 ff       	sbrs	r24, 0
+     32a:	05 c0       	rjmp	.+10     	; 0x336 <state_machine+0x70>
+     32c:	62 e0       	ldi	r22, 0x02	; 2
+     32e:	04 c0       	rjmp	.+8      	; 0x338 <state_machine+0x72>
+			else
+				rotate_dir = last_rotation;
+     330:	60 91 6e 00 	lds	r22, 0x006E
+     334:	01 c0       	rjmp	.+2      	; 0x338 <state_machine+0x72>
+		
+		case TURNING_BACK:
+			moveAtSpeedDirection(0,0);
+			uint8_t rotate_dir;
+			if(getStopwatch1() > 4000)
+				rotate_dir = rand()%2 ? LEFT : RIGHT;
+     336:	63 e0       	ldi	r22, 0x03	; 3
+			else
+				rotate_dir = last_rotation;
+			last_rotation = rotate_dir;
+     338:	60 93 6e 00 	sts	0x006E, r22
+			stopStopwatch1();
+     33c:	80 91 ba 00 	lds	r24, 0x00BA
+     340:	8e 7f       	andi	r24, 0xFE	; 254
+     342:	80 93 ba 00 	sts	0x00BA, r24
+			setStopwatch1(0);
+     346:	10 92 bc 00 	sts	0x00BC, r1
+     34a:	10 92 bb 00 	sts	0x00BB, r1
+			startStopwatch1();
+     34e:	80 91 ba 00 	lds	r24, 0x00BA
+     352:	81 60       	ori	r24, 0x01	; 1
+     354:	80 93 ba 00 	sts	0x00BA, r24
+			rotate(90,rotate_dir,90,1);
+     358:	21 e0       	ldi	r18, 0x01	; 1
+     35a:	4a e5       	ldi	r20, 0x5A	; 90
+     35c:	50 e0       	ldi	r21, 0x00	; 0
+     35e:	8a e5       	ldi	r24, 0x5A	; 90
+     360:	0c 94 a8 0a 	jmp	0x1550	; 0x1550 <rotate>
+
+00000364 <BUMPERS_stateChanged_DUMMY>:
+}
+
+// -------------------------------
+// Bumpers State changed handler:
+
+void BUMPERS_stateChanged_DUMMY(void){}
+     364:	08 95       	ret
+
+00000366 <MOTIONCONTROL_stateChanged_DUMMY>:
+
+
+// -------------------------------
+// MotionControl state changed handler:
+
+void MOTIONCONTROL_stateChanged_DUMMY(void){}
+     366:	08 95       	ret
+
+00000368 <IRCOMM_RC5dataReady_DUMMY>:
+}
+
+// -------------------------------
+// RC5 Data reception Handler:
+
+void IRCOMM_RC5dataReady_DUMMY(RC5data_t rc5data){}
+     368:	08 95       	ret
+
+0000036a <ACS_stateChanged_DUMMY>:
+
+
+// -------------------------------
+// ACS State changed handler:
+
+void ACS_stateChanged_DUMMY(void){}
+     36a:	08 95       	ret
+
+0000036c <enablePowerOnWarning>:
+	 * to turn of the Robot if your program does not use
+	 * any LEDs for a long time! 
+	 */
+	void enablePowerOnWarning(void) 
+	{ 
+		if(leds_on > 3)
+     36c:	80 91 a1 00 	lds	r24, 0x00A1
+     370:	84 30       	cpi	r24, 0x04	; 4
+     372:	10 f0       	brcs	.+4      	; 0x378 <enablePowerOnWarning+0xc>
+			leds_on = 0; 
+     374:	10 92 a1 00 	sts	0x00A1, r1
+     378:	08 95       	ret
+
+0000037a <disablePowerOnWarning>:
+	 * This disables the power on warning. 
+	 * also see RP6Config.h for #define POWER_ON_WARNING
+	 */
+	void disablePowerOnWarning(void) 
+	{ 
+		leds_on = 4; 
+     37a:	84 e0       	ldi	r24, 0x04	; 4
+     37c:	80 93 a1 00 	sts	0x00A1, r24
+     380:	08 95       	ret
+
+00000382 <updateStatusLEDs>:
+ *			updateStatusLEDs();
+ *			// This sets LED2 and does not affect any other LED!
+ */
+void updateStatusLEDs(void)
+{
+	DDRB &= ~0x83;
+     382:	87 b3       	in	r24, 0x17	; 23
+     384:	8c 77       	andi	r24, 0x7C	; 124
+     386:	87 bb       	out	0x17, r24	; 23
+	PORTB &= ~0x83;
+     388:	88 b3       	in	r24, 0x18	; 24
+     38a:	8c 77       	andi	r24, 0x7C	; 124
+     38c:	88 bb       	out	0x18, r24	; 24
+	if(statusLEDs.LED4){ DDRB |= SL4; PORTB |= SL4; }
+     38e:	80 91 8c 00 	lds	r24, 0x008C
+     392:	83 ff       	sbrs	r24, 3
+     394:	02 c0       	rjmp	.+4      	; 0x39a <updateStatusLEDs+0x18>
+     396:	bf 9a       	sbi	0x17, 7	; 23
+     398:	c7 9a       	sbi	0x18, 7	; 24
+	if(statusLEDs.LED5){ DDRB |= SL5; PORTB |= SL5; }
+     39a:	80 91 8c 00 	lds	r24, 0x008C
+     39e:	84 ff       	sbrs	r24, 4
+     3a0:	02 c0       	rjmp	.+4      	; 0x3a6 <updateStatusLEDs+0x24>
+     3a2:	b9 9a       	sbi	0x17, 1	; 23
+     3a4:	c1 9a       	sbi	0x18, 1	; 24
+	if(statusLEDs.LED6){ DDRB |= SL6; PORTB |= SL6; }
+     3a6:	80 91 8c 00 	lds	r24, 0x008C
+     3aa:	85 ff       	sbrs	r24, 5
+     3ac:	02 c0       	rjmp	.+4      	; 0x3b2 <updateStatusLEDs+0x30>
+     3ae:	b8 9a       	sbi	0x17, 0	; 23
+     3b0:	c0 9a       	sbi	0x18, 0	; 24
+	DDRC &= ~0x70;
+     3b2:	84 b3       	in	r24, 0x14	; 20
+     3b4:	8f 78       	andi	r24, 0x8F	; 143
+     3b6:	84 bb       	out	0x14, r24	; 20
+	PORTC &= ~0x70;
+     3b8:	85 b3       	in	r24, 0x15	; 21
+     3ba:	8f 78       	andi	r24, 0x8F	; 143
+     3bc:	85 bb       	out	0x15, r24	; 21
+	DDRC |= ((statusLEDs.byte << 4) & 0x70);
+     3be:	24 b3       	in	r18, 0x14	; 20
+     3c0:	80 91 8c 00 	lds	r24, 0x008C
+     3c4:	30 e1       	ldi	r19, 0x10	; 16
+     3c6:	83 9f       	mul	r24, r19
+     3c8:	c0 01       	movw	r24, r0
+     3ca:	11 24       	eor	r1, r1
+     3cc:	80 77       	andi	r24, 0x70	; 112
+     3ce:	82 2b       	or	r24, r18
+     3d0:	84 bb       	out	0x14, r24	; 20
+	PORTC |= ((statusLEDs.byte << 4) & 0x70);
+     3d2:	25 b3       	in	r18, 0x15	; 21
+     3d4:	80 91 8c 00 	lds	r24, 0x008C
+     3d8:	30 e1       	ldi	r19, 0x10	; 16
+     3da:	83 9f       	mul	r24, r19
+     3dc:	c0 01       	movw	r24, r0
+     3de:	11 24       	eor	r1, r1
+     3e0:	80 77       	andi	r24, 0x70	; 112
+     3e2:	82 2b       	or	r24, r18
+     3e4:	85 bb       	out	0x15, r24	; 21
+	#ifdef POWER_ON_WARNING
+		leds_on = (leds_on ? leds_on : (statusLEDs.byte && 1));
+     3e6:	80 91 a1 00 	lds	r24, 0x00A1
+     3ea:	81 11       	cpse	r24, r1
+     3ec:	06 c0       	rjmp	.+12     	; 0x3fa <updateStatusLEDs+0x78>
+     3ee:	81 e0       	ldi	r24, 0x01	; 1
+     3f0:	90 91 8c 00 	lds	r25, 0x008C
+     3f4:	91 11       	cpse	r25, r1
+     3f6:	01 c0       	rjmp	.+2      	; 0x3fa <updateStatusLEDs+0x78>
+     3f8:	80 e0       	ldi	r24, 0x00	; 0
+     3fa:	80 93 a1 00 	sts	0x00A1, r24
+     3fe:	08 95       	ret
+
+00000400 <setLEDs>:
+ *			// this clears all LEDs and sets the LEDs STATUS1,
+ *			// STATUS6 and STATUS4!
+ */
+void setLEDs(uint8_t leds)
+{
+	statusLEDs.byte = leds;
+     400:	80 93 8c 00 	sts	0x008C, r24
+	updateStatusLEDs();
+     404:	0c 94 c1 01 	jmp	0x382	; 0x382 <updateStatusLEDs>
+
+00000408 <getBumperLeft>:
+ *		if(getBumperLeft())
+ *			// do something
+ */
+uint8_t getBumperLeft(void)
+{ 
+	PORTB &= ~SL6;
+     408:	c0 98       	cbi	0x18, 0	; 24
+	DDRB &= ~SL6; 
+     40a:	b8 98       	cbi	0x17, 0	; 23
+	nop();
+     40c:	00 00       	nop
+	uint8_t tmp = PINB & SL6;
+     40e:	86 b3       	in	r24, 0x16	; 22
+     410:	81 70       	andi	r24, 0x01	; 1
+	if(statusLEDs.LED6) { 
+     412:	90 91 8c 00 	lds	r25, 0x008C
+     416:	95 ff       	sbrs	r25, 5
+     418:	02 c0       	rjmp	.+4      	; 0x41e <getBumperLeft+0x16>
+		DDRB |= SL6; 
+     41a:	b8 9a       	sbi	0x17, 0	; 23
+		PORTB |= SL6; 
+     41c:	c0 9a       	sbi	0x18, 0	; 24
+	}
+	return tmp;
+}
+     41e:	08 95       	ret
+
+00000420 <getBumperRight>:
+ *		if(getBumperRight())
+ *			// do something
+ */
+uint8_t getBumperRight(void)
+{
+	PORTC &= ~SL3;
+     420:	ae 98       	cbi	0x15, 6	; 21
+	DDRC &= ~SL3; 
+     422:	a6 98       	cbi	0x14, 6	; 20
+	nop();
+     424:	00 00       	nop
+	uint8_t tmp = PINC & SL3;
+     426:	83 b3       	in	r24, 0x13	; 19
+     428:	80 74       	andi	r24, 0x40	; 64
+	if(statusLEDs.LED3) { 
+     42a:	90 91 8c 00 	lds	r25, 0x008C
+     42e:	92 ff       	sbrs	r25, 2
+     430:	02 c0       	rjmp	.+4      	; 0x436 <getBumperRight+0x16>
+		DDRC |= SL3; 
+     432:	a6 9a       	sbi	0x14, 6	; 20
+		PORTC |= SL3; 
+     434:	ae 9a       	sbi	0x15, 6	; 21
+	}
+	return tmp;
+}
+     436:	08 95       	ret
+
+00000438 <BUMPERS_setStateChangedHandler>:
+ * Use this function to set the Bumpers state change handler. 
+ * 
+ */
+void BUMPERS_setStateChangedHandler(void (*bumperHandler)(void)) 
+{
+	BUMPERS_stateChangedHandler = bumperHandler;
+     438:	90 93 68 00 	sts	0x0068, r25
+     43c:	80 93 67 00 	sts	0x0067, r24
+     440:	08 95       	ret
+
+00000442 <task_Bumpers>:
+ * variables are updated automatically every 50ms and can be used everywhere
+ * in your program. It can also call an event handler routine, that you
+ * need to register with BUMPERS_setStateChangedHandler before.
+ */
+void task_Bumpers(void)
+{
+     442:	cf 93       	push	r28
+	if(bumper_timer > 50) { // 50ms
+     444:	80 91 d9 00 	lds	r24, 0x00D9
+     448:	83 33       	cpi	r24, 0x33	; 51
+     44a:	c0 f0       	brcs	.+48     	; 0x47c <task_Bumpers+0x3a>
+		uint8_t left = getBumperLeft();
+     44c:	0e 94 04 02 	call	0x408	; 0x408 <getBumperLeft>
+     450:	c8 2f       	mov	r28, r24
+		uint8_t right = getBumperRight();
+     452:	0e 94 10 02 	call	0x420	; 0x420 <getBumperRight>
+		if(bumper_left != left || bumper_right != right) {
+     456:	90 91 8d 00 	lds	r25, 0x008D
+     45a:	9c 13       	cpse	r25, r28
+     45c:	04 c0       	rjmp	.+8      	; 0x466 <task_Bumpers+0x24>
+     45e:	90 91 ea 00 	lds	r25, 0x00EA
+     462:	98 17       	cp	r25, r24
+     464:	49 f0       	breq	.+18     	; 0x478 <task_Bumpers+0x36>
+			bumper_left = left;
+     466:	c0 93 8d 00 	sts	0x008D, r28
+			bumper_right = right;
+     46a:	80 93 ea 00 	sts	0x00EA, r24
+			BUMPERS_stateChangedHandler();
+     46e:	e0 91 67 00 	lds	r30, 0x0067
+     472:	f0 91 68 00 	lds	r31, 0x0068
+     476:	09 95       	icall
+		}
+		bumper_timer = 0;
+     478:	10 92 d9 00 	sts	0x00D9, r1
+	}
+}
+     47c:	cf 91       	pop	r28
+     47e:	08 95       	ret
+
+00000480 <readADC>:
+ *				writeString("WARNING: BAT IS LOW!\n");
+ *
+ */
+uint16_t readADC(uint8_t channel)
+{
+	if((ADCSRA & (1<<ADSC))) return 0; // check if ADC is buisy...
+     480:	36 99       	sbic	0x06, 6	; 6
+     482:	0a c0       	rjmp	.+20     	; 0x498 <readADC+0x18>
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     484:	80 64       	ori	r24, 0x40	; 64
+     486:	87 b9       	out	0x07, r24	; 7
+	ADCSRA = (0<<ADIE) | (1<<ADSC) | (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+     488:	86 ed       	ldi	r24, 0xD6	; 214
+     48a:	86 b9       	out	0x06, r24	; 6
+	while ((ADCSRA & (1<<ADSC))); 
+     48c:	36 99       	sbic	0x06, 6	; 6
+     48e:	fe cf       	rjmp	.-4      	; 0x48c <readADC+0xc>
+	ADCSRA |= (1<<ADIF);
+     490:	34 9a       	sbi	0x06, 4	; 6
+	return ADC;
+     492:	84 b1       	in	r24, 0x04	; 4
+     494:	95 b1       	in	r25, 0x05	; 5
+     496:	08 95       	ret
+ *				writeString("WARNING: BAT IS LOW!\n");
+ *
+ */
+uint16_t readADC(uint8_t channel)
+{
+	if((ADCSRA & (1<<ADSC))) return 0; // check if ADC is buisy...
+     498:	80 e0       	ldi	r24, 0x00	; 0
+     49a:	90 e0       	ldi	r25, 0x00	; 0
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+	ADCSRA = (0<<ADIE) | (1<<ADSC) | (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+	while ((ADCSRA & (1<<ADSC))); 
+	ADCSRA |= (1<<ADIF);
+	return ADC;
+}
+     49c:	08 95       	ret
+
+0000049e <startADC>:
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     49e:	80 64       	ori	r24, 0x40	; 64
+     4a0:	87 b9       	out	0x07, r24	; 7
+	ADCSRA = (0<<ADIE) | (1<<ADSC) | (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+     4a2:	86 ed       	ldi	r24, 0xD6	; 214
+     4a4:	86 b9       	out	0x06, r24	; 6
+     4a6:	08 95       	ret
+
+000004a8 <task_ADC>:
+ * get the ADC values!
+ */
+void task_ADC(void)
+{
+	static uint8_t current_adc_channel = 0;
+	if(!(ADCSRA & (1<<ADSC))) {
+     4a8:	36 99       	sbic	0x06, 6	; 6
+     4aa:	43 c0       	rjmp	.+134    	; 0x532 <task_ADC+0x8a>
+	//	ADCSRA |= (1<<ADIF);
+		switch(current_adc_channel) {
+     4ac:	80 91 82 00 	lds	r24, 0x0082
+     4b0:	90 e0       	ldi	r25, 0x00	; 0
+     4b2:	87 30       	cpi	r24, 0x07	; 7
+     4b4:	91 05       	cpc	r25, r1
+     4b6:	98 f5       	brcc	.+102    	; 0x51e <task_ADC+0x76>
+     4b8:	fc 01       	movw	r30, r24
+     4ba:	e6 5d       	subi	r30, 0xD6	; 214
+     4bc:	ff 4f       	sbci	r31, 0xFF	; 255
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+			case 2: adcMotorCurrentRight = ADC; startADC(ADC_LS_L); break;
+			case 3: adcLSL = ADC; startADC(ADC_LS_R); break;
+			case 4: adcLSR = ADC; startADC(ADC_ADC0); break;
+			case 5: adc0 = ADC; startADC(ADC_ADC1); break;
+			case 6: adc1 = ADC; startADC(ADC_BAT); break;
+     4be:	84 b1       	in	r24, 0x04	; 4
+     4c0:	95 b1       	in	r25, 0x05	; 5
+void task_ADC(void)
+{
+	static uint8_t current_adc_channel = 0;
+	if(!(ADCSRA & (1<<ADSC))) {
+	//	ADCSRA |= (1<<ADIF);
+		switch(current_adc_channel) {
+     4c2:	0c 94 ee 0c 	jmp	0x19dc	; 0x19dc <__tablejump2__>
+			case 0: adcBat = ADC; startADC(ADC_MCURRENT_L); break;
+     4c6:	90 93 ee 00 	sts	0x00EE, r25
+     4ca:	80 93 ed 00 	sts	0x00ED, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     4ce:	86 e4       	ldi	r24, 0x46	; 70
+     4d0:	23 c0       	rjmp	.+70     	; 0x518 <task_ADC+0x70>
+	static uint8_t current_adc_channel = 0;
+	if(!(ADCSRA & (1<<ADSC))) {
+	//	ADCSRA |= (1<<ADIF);
+		switch(current_adc_channel) {
+			case 0: adcBat = ADC; startADC(ADC_MCURRENT_L); break;
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+     4d2:	90 93 f3 00 	sts	0x00F3, r25
+     4d6:	80 93 f2 00 	sts	0x00F2, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     4da:	85 e4       	ldi	r24, 0x45	; 69
+     4dc:	1d c0       	rjmp	.+58     	; 0x518 <task_ADC+0x70>
+	if(!(ADCSRA & (1<<ADSC))) {
+	//	ADCSRA |= (1<<ADIF);
+		switch(current_adc_channel) {
+			case 0: adcBat = ADC; startADC(ADC_MCURRENT_L); break;
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+			case 2: adcMotorCurrentRight = ADC; startADC(ADC_LS_L); break;
+     4de:	90 93 e4 00 	sts	0x00E4, r25
+     4e2:	80 93 e3 00 	sts	0x00E3, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     4e6:	83 e4       	ldi	r24, 0x43	; 67
+     4e8:	17 c0       	rjmp	.+46     	; 0x518 <task_ADC+0x70>
+	//	ADCSRA |= (1<<ADIF);
+		switch(current_adc_channel) {
+			case 0: adcBat = ADC; startADC(ADC_MCURRENT_L); break;
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+			case 2: adcMotorCurrentRight = ADC; startADC(ADC_LS_L); break;
+			case 3: adcLSL = ADC; startADC(ADC_LS_R); break;
+     4ea:	90 93 ad 00 	sts	0x00AD, r25
+     4ee:	80 93 ac 00 	sts	0x00AC, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     4f2:	82 e4       	ldi	r24, 0x42	; 66
+     4f4:	11 c0       	rjmp	.+34     	; 0x518 <task_ADC+0x70>
+		switch(current_adc_channel) {
+			case 0: adcBat = ADC; startADC(ADC_MCURRENT_L); break;
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+			case 2: adcMotorCurrentRight = ADC; startADC(ADC_LS_L); break;
+			case 3: adcLSL = ADC; startADC(ADC_LS_R); break;
+			case 4: adcLSR = ADC; startADC(ADC_ADC0); break;
+     4f6:	90 93 d3 00 	sts	0x00D3, r25
+     4fa:	80 93 d2 00 	sts	0x00D2, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     4fe:	80 e4       	ldi	r24, 0x40	; 64
+     500:	0b c0       	rjmp	.+22     	; 0x518 <task_ADC+0x70>
+			case 0: adcBat = ADC; startADC(ADC_MCURRENT_L); break;
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+			case 2: adcMotorCurrentRight = ADC; startADC(ADC_LS_L); break;
+			case 3: adcLSL = ADC; startADC(ADC_LS_R); break;
+			case 4: adcLSR = ADC; startADC(ADC_ADC0); break;
+			case 5: adc0 = ADC; startADC(ADC_ADC1); break;
+     502:	90 93 e1 00 	sts	0x00E1, r25
+     506:	80 93 e0 00 	sts	0x00E0, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     50a:	81 e4       	ldi	r24, 0x41	; 65
+     50c:	05 c0       	rjmp	.+10     	; 0x518 <task_ADC+0x70>
+			case 1: adcMotorCurrentLeft = ADC; startADC(ADC_MCURRENT_R); break;
+			case 2: adcMotorCurrentRight = ADC; startADC(ADC_LS_L); break;
+			case 3: adcLSL = ADC; startADC(ADC_LS_R); break;
+			case 4: adcLSR = ADC; startADC(ADC_ADC0); break;
+			case 5: adc0 = ADC; startADC(ADC_ADC1); break;
+			case 6: adc1 = ADC; startADC(ADC_BAT); break;
+     50e:	90 93 ab 00 	sts	0x00AB, r25
+     512:	80 93 aa 00 	sts	0x00AA, r24
+ * else and then read it from the ADC result register.
+ * (s. task_ADC function below)
+ */
+void startADC(uint8_t channel)
+{
+	ADMUX = (1<<REFS0) | (0<<REFS1) | (channel<<MUX0);
+     516:	87 e4       	ldi	r24, 0x47	; 71
+     518:	87 b9       	out	0x07, r24	; 7
+	ADCSRA = (0<<ADIE) | (1<<ADSC) | (1<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+     51a:	86 ed       	ldi	r24, 0xD6	; 214
+     51c:	86 b9       	out	0x06, r24	; 6
+			case 3: adcLSL = ADC; startADC(ADC_LS_R); break;
+			case 4: adcLSR = ADC; startADC(ADC_ADC0); break;
+			case 5: adc0 = ADC; startADC(ADC_ADC1); break;
+			case 6: adc1 = ADC; startADC(ADC_BAT); break;
+		}
+		if(current_adc_channel == 6)
+     51e:	80 91 82 00 	lds	r24, 0x0082
+     522:	86 30       	cpi	r24, 0x06	; 6
+     524:	19 f4       	brne	.+6      	; 0x52c <task_ADC+0x84>
+			current_adc_channel = 0;
+     526:	10 92 82 00 	sts	0x0082, r1
+     52a:	08 95       	ret
+		else
+			current_adc_channel++;
+     52c:	8f 5f       	subi	r24, 0xFF	; 255
+     52e:	80 93 82 00 	sts	0x0082, r24
+     532:	08 95       	ret
+
+00000534 <__vector_1>:
+ * External Interrupt 0 ISR
+ * (ENCL)
+ *
+ */
+ISR (INT0_vect)
+{
+     534:	1f 92       	push	r1
+     536:	0f 92       	push	r0
+     538:	0f b6       	in	r0, 0x3f	; 63
+     53a:	0f 92       	push	r0
+     53c:	11 24       	eor	r1, r1
+     53e:	8f 93       	push	r24
+     540:	9f 93       	push	r25
+	mleft_dist++;
+     542:	80 91 e8 00 	lds	r24, 0x00E8
+     546:	90 91 e9 00 	lds	r25, 0x00E9
+     54a:	01 96       	adiw	r24, 0x01	; 1
+     54c:	90 93 e9 00 	sts	0x00E9, r25
+     550:	80 93 e8 00 	sts	0x00E8, r24
+	mleft_counter++;	
+     554:	80 91 de 00 	lds	r24, 0x00DE
+     558:	90 91 df 00 	lds	r25, 0x00DF
+     55c:	01 96       	adiw	r24, 0x01	; 1
+     55e:	90 93 df 00 	sts	0x00DF, r25
+     562:	80 93 de 00 	sts	0x00DE, r24
+		else {
+			cycle_h_l = cycle_h_l_tmp;
+			cycle_h_l_tmp = 0;
+		}
+	#endif
+}
+     566:	9f 91       	pop	r25
+     568:	8f 91       	pop	r24
+     56a:	0f 90       	pop	r0
+     56c:	0f be       	out	0x3f, r0	; 63
+     56e:	0f 90       	pop	r0
+     570:	1f 90       	pop	r1
+     572:	18 95       	reti
+
+00000574 <__vector_2>:
+ * External Interrupt 1 ISR
+ * (ENCR)
+ *
+ */
+ISR (INT1_vect)
+{
+     574:	1f 92       	push	r1
+     576:	0f 92       	push	r0
+     578:	0f b6       	in	r0, 0x3f	; 63
+     57a:	0f 92       	push	r0
+     57c:	11 24       	eor	r1, r1
+     57e:	8f 93       	push	r24
+     580:	9f 93       	push	r25
+	mright_dist++;
+     582:	80 91 da 00 	lds	r24, 0x00DA
+     586:	90 91 db 00 	lds	r25, 0x00DB
+     58a:	01 96       	adiw	r24, 0x01	; 1
+     58c:	90 93 db 00 	sts	0x00DB, r25
+     590:	80 93 da 00 	sts	0x00DA, r24
+	mright_counter++;
+     594:	80 91 b4 00 	lds	r24, 0x00B4
+     598:	90 91 b5 00 	lds	r25, 0x00B5
+     59c:	01 96       	adiw	r24, 0x01	; 1
+     59e:	90 93 b5 00 	sts	0x00B5, r25
+     5a2:	80 93 b4 00 	sts	0x00B4, r24
+			cycle_h_r += cycle_h_r_tmp;
+			cycle_h_r >>=1;
+			cycle_h_r_tmp = 0;
+		}
+	#endif
+}
+     5a6:	9f 91       	pop	r25
+     5a8:	8f 91       	pop	r24
+     5aa:	0f 90       	pop	r0
+     5ac:	0f be       	out	0x3f, r0	; 63
+     5ae:	0f 90       	pop	r0
+     5b0:	1f 90       	pop	r1
+     5b2:	18 95       	reti
+
+000005b4 <MOTIONCONTROL_setStateChangedHandler>:
+ * Use this function to set the Motion Control state change handler. 
+ * 
+ */
+void MOTIONCONTROL_setStateChangedHandler(void (*motionControlHandler)(void)) 
+{
+	MOTIONCONTROL_stateChangedHandler = motionControlHandler;
+     5b4:	90 93 66 00 	sts	0x0066, r25
+     5b8:	80 93 65 00 	sts	0x0065, r24
+     5bc:	08 95       	ret
+
+000005be <moveAtSpeed>:
+ * Also 200 leaves a bit room to the maximum possible PWM value when you 
+ * put additional load onto the Robot or drive up a ramp etc.  
+ *
+ */
+void moveAtSpeed(uint8_t desired_speed_left, uint8_t desired_speed_right)
+{
+     5be:	89 3c       	cpi	r24, 0xC9	; 201
+     5c0:	08 f0       	brcs	.+2      	; 0x5c4 <moveAtSpeed+0x6>
+     5c2:	88 ec       	ldi	r24, 0xC8	; 200
+	if(desired_speed_left > 200) desired_speed_left = 200; 
+	if(desired_speed_right > 200) desired_speed_right = 200;
+	mleft_des_speed = desired_speed_left;
+     5c4:	90 e0       	ldi	r25, 0x00	; 0
+     5c6:	90 93 93 00 	sts	0x0093, r25
+     5ca:	80 93 92 00 	sts	0x0092, r24
+     5ce:	69 3c       	cpi	r22, 0xC9	; 201
+     5d0:	08 f0       	brcs	.+2      	; 0x5d4 <moveAtSpeed+0x16>
+     5d2:	68 ec       	ldi	r22, 0xC8	; 200
+	mright_des_speed = desired_speed_right;
+     5d4:	70 e0       	ldi	r23, 0x00	; 0
+     5d6:	70 93 91 00 	sts	0x0091, r23
+     5da:	60 93 90 00 	sts	0x0090, r22
+     5de:	08 95       	ret
+
+000005e0 <changeDirection>:
+ * This is done to increase motors and gears lifetime and to avoid hard cut changes.
+ *
+ */
+void changeDirection(uint8_t dir)
+{
+	drive_dir = dir;
+     5e0:	80 93 71 00 	sts	0x0071, r24
+	mleft_des_dir = (dir == BWD || dir == LEFT);
+     5e4:	2f ef       	ldi	r18, 0xFF	; 255
+     5e6:	28 0f       	add	r18, r24
+     5e8:	91 e0       	ldi	r25, 0x01	; 1
+     5ea:	22 30       	cpi	r18, 0x02	; 2
+     5ec:	08 f0       	brcs	.+2      	; 0x5f0 <changeDirection+0x10>
+     5ee:	90 e0       	ldi	r25, 0x00	; 0
+     5f0:	90 93 75 00 	sts	0x0075, r25
+	mright_des_dir = (dir == BWD || dir == RIGHT);
+     5f4:	8d 7f       	andi	r24, 0xFD	; 253
+     5f6:	91 e0       	ldi	r25, 0x01	; 1
+     5f8:	81 30       	cpi	r24, 0x01	; 1
+     5fa:	09 f0       	breq	.+2      	; 0x5fe <changeDirection+0x1e>
+     5fc:	90 e0       	ldi	r25, 0x00	; 0
+     5fe:	90 93 74 00 	sts	0x0074, r25
+     602:	08 95       	ret
+
+00000604 <moveAtSpeedDirection>:
+/**
+ *
+ */
+void moveAtSpeedDirection(int16_t desired_speed_left, int16_t desired_speed_right)
+{
+	mleft_des_dir = desired_speed_left < 0;
+     604:	29 2f       	mov	r18, r25
+     606:	22 1f       	adc	r18, r18
+     608:	22 27       	eor	r18, r18
+     60a:	22 1f       	adc	r18, r18
+     60c:	20 93 75 00 	sts	0x0075, r18
+	mright_des_dir = desired_speed_right < 0;
+     610:	77 1f       	adc	r23, r23
+     612:	77 27       	eor	r23, r23
+     614:	77 1f       	adc	r23, r23
+     616:	70 93 74 00 	sts	0x0074, r23
+  
+  //drive_dir = ;  muss ich mir noch überlegen ist aber auch unwichtig TODO
+  
+  uint8_t speed_l_abs = desired_speed_left > 0 ? (uint8_t)desired_speed_left : (uint8_t)(-desired_speed_left);
+     61a:	18 16       	cp	r1, r24
+     61c:	19 06       	cpc	r1, r25
+     61e:	14 f0       	brlt	.+4      	; 0x624 <moveAtSpeedDirection+0x20>
+     620:	81 95       	neg	r24
+  uint8_t speed_r_abs = desired_speed_left > 0 ? (uint8_t)desired_speed_right : (uint8_t)(-desired_speed_right);
+     622:	61 95       	neg	r22
+  moveAtSpeed(speed_l_abs, speed_r_abs);
+     624:	0c 94 df 02 	jmp	0x5be	; 0x5be <moveAtSpeed>
+
+00000628 <isMovementComplete>:
+ * You can use this function to check if there is any movement going on or if
+ * every operation like moving a specific distance or rotating has been finished. 
+ */
+uint8_t isMovementComplete(void)
+{
+	return !(motion_status.move_L || motion_status.move_R);
+     628:	90 91 8b 00 	lds	r25, 0x008B
+     62c:	93 70       	andi	r25, 0x03	; 3
+     62e:	81 e0       	ldi	r24, 0x01	; 1
+     630:	09 f0       	breq	.+2      	; 0x634 <isMovementComplete+0xc>
+     632:	80 e0       	ldi	r24, 0x00	; 0
+}
+     634:	08 95       	ret
+
+00000636 <stop>:
+ * This can be used for example if the Bumpers detected and obstacle during
+ * movement...
+ */
+void stop(void)
+{
+	mleft_des_speed = 0;
+     636:	10 92 93 00 	sts	0x0093, r1
+     63a:	10 92 92 00 	sts	0x0092, r1
+	mright_des_speed = 0;
+     63e:	10 92 91 00 	sts	0x0091, r1
+     642:	10 92 90 00 	sts	0x0090, r1
+	left_i = 0;
+     646:	10 92 9d 00 	sts	0x009D, r1
+     64a:	10 92 9c 00 	sts	0x009C, r1
+	right_i = 0;
+     64e:	10 92 d8 00 	sts	0x00D8, r1
+     652:	10 92 d7 00 	sts	0x00D7, r1
+	motion_status.move_L = false;
+     656:	80 91 8b 00 	lds	r24, 0x008B
+	motion_status.move_R = false;
+     65a:	8e 7f       	andi	r24, 0xFE	; 254
+     65c:	8d 7f       	andi	r24, 0xFD	; 253
+     65e:	80 93 8b 00 	sts	0x008B, r24
+	motion_status_tmp = motion_status.byte;
+     662:	80 93 ec 00 	sts	0x00EC, r24
+	MOTIONCONTROL_stateChangedHandler();
+     666:	e0 91 65 00 	lds	r30, 0x0065
+     66a:	f0 91 66 00 	lds	r31, 0x0066
+     66e:	09 94       	ijmp
+
+00000670 <setMotorPower>:
+ * task_motionControl!  This will not work!
+ * -------------------------------------------------------------
+ *
+ */
+void setMotorPower(uint8_t left_power, uint8_t right_power)
+{
+     670:	63 3d       	cpi	r22, 0xD3	; 211
+     672:	08 f0       	brcs	.+2      	; 0x676 <setMotorPower+0x6>
+     674:	62 ed       	ldi	r22, 0xD2	; 210
+	if(left_power > 210) left_power = 210;
+	if(right_power > 210) right_power = 210;
+	mright_power = right_power;
+     676:	70 e0       	ldi	r23, 0x00	; 0
+     678:	70 93 b3 00 	sts	0x00B3, r23
+     67c:	60 93 b2 00 	sts	0x00B2, r22
+     680:	83 3d       	cpi	r24, 0xD3	; 211
+     682:	08 f0       	brcs	.+2      	; 0x686 <setMotorPower+0x16>
+     684:	82 ed       	ldi	r24, 0xD2	; 210
+	mleft_power = left_power;
+     686:	90 e0       	ldi	r25, 0x00	; 0
+     688:	90 93 a3 00 	sts	0x00A3, r25
+     68c:	80 93 a2 00 	sts	0x00A2, r24
+     690:	08 95       	ret
+
+00000692 <setMotorDir>:
+ *			setMotorDir(BWD,BWD); // Move backwards
+ *
+ */
+void setMotorDir(uint8_t left_dir, uint8_t right_dir)
+{
+	mleft_dir = left_dir;
+     692:	80 93 73 00 	sts	0x0073, r24
+	mright_dir = right_dir;
+     696:	60 93 72 00 	sts	0x0072, r22
+	mleft_des_dir = left_dir;
+     69a:	80 93 75 00 	sts	0x0075, r24
+	mright_des_dir = right_dir;
+     69e:	60 93 74 00 	sts	0x0074, r22
+	if(left_dir)
+     6a2:	88 23       	and	r24, r24
+     6a4:	11 f0       	breq	.+4      	; 0x6aa <setMotorDir+0x18>
+		PORTC |= DIR_L;
+     6a6:	aa 9a       	sbi	0x15, 2	; 21
+     6a8:	01 c0       	rjmp	.+2      	; 0x6ac <setMotorDir+0x1a>
+	else
+		PORTC &= ~DIR_L;
+     6aa:	aa 98       	cbi	0x15, 2	; 21
+	if(right_dir)
+     6ac:	66 23       	and	r22, r22
+     6ae:	11 f0       	breq	.+4      	; 0x6b4 <setMotorDir+0x22>
+		PORTC |= DIR_R;
+     6b0:	ab 9a       	sbi	0x15, 3	; 21
+     6b2:	08 95       	ret
+	else
+		PORTC &= ~DIR_R;
+     6b4:	ab 98       	cbi	0x15, 3	; 21
+     6b6:	08 95       	ret
+
+000006b8 <IRCOMM_sendRC5>:
+ *  // with togglebit NOT set.
+ *  
+ */
+void IRCOMM_sendRC5(uint8_t adr, uint8_t data)
+{
+	while(ircomm_send){TIMSK |= (1 << OCIE2);}
+     6b8:	90 91 97 00 	lds	r25, 0x0097
+     6bc:	99 23       	and	r25, r25
+     6be:	21 f0       	breq	.+8      	; 0x6c8 <IRCOMM_sendRC5+0x10>
+     6c0:	99 b7       	in	r25, 0x39	; 57
+     6c2:	90 68       	ori	r25, 0x80	; 128
+     6c4:	99 bf       	out	0x39, r25	; 57
+     6c6:	f8 cf       	rjmp	.-16     	; 0x6b8 <IRCOMM_sendRC5>
+	// Here we create the RC5 data packet:
+	ircomm_data_tmp = 0x3000 | (((uint16_t)(adr & 0x3F)) << 6) | (((uint16_t)(data & 0x3F)));
+     6c8:	6f 73       	andi	r22, 0x3F	; 63
+     6ca:	70 e0       	ldi	r23, 0x00	; 0
+     6cc:	70 63       	ori	r23, 0x30	; 48
+     6ce:	8f 73       	andi	r24, 0x3F	; 63
+     6d0:	20 e4       	ldi	r18, 0x40	; 64
+     6d2:	82 9f       	mul	r24, r18
+     6d4:	c0 01       	movw	r24, r0
+     6d6:	11 24       	eor	r1, r1
+     6d8:	68 2b       	or	r22, r24
+     6da:	79 2b       	or	r23, r25
+     6dc:	70 93 b7 00 	sts	0x00B7, r23
+     6e0:	60 93 b6 00 	sts	0x00B6, r22
+	sysStatACS.ircomm_transmit = true;
+     6e4:	80 91 96 00 	lds	r24, 0x0096
+     6e8:	80 64       	ori	r24, 0x40	; 64
+     6ea:	80 93 96 00 	sts	0x0096, r24
+     6ee:	08 95       	ret
+
+000006f0 <__vector_4>:
+ * NEVER try to control the IRCOMM by your own routines if you do not
+ * know what you are doing!
+ *
+ */
+ISR (TIMER2_COMP_vect)
+{
+     6f0:	1f 92       	push	r1
+     6f2:	0f 92       	push	r0
+     6f4:	0f b6       	in	r0, 0x3f	; 63
+     6f6:	0f 92       	push	r0
+     6f8:	11 24       	eor	r1, r1
+     6fa:	8f 93       	push	r24
+     6fc:	9f 93       	push	r25
+	static uint8_t ircomm_pulse;
+	if(acs_state < 2) { // If ACS is not active, perform IRCOMM transmissions
+     6fe:	80 91 64 00 	lds	r24, 0x0064
+     702:	82 30       	cpi	r24, 0x02	; 2
+     704:	b0 f5       	brcc	.+108    	; 0x772 <__vector_4+0x82>
+		if(ircomm_pulse) { // Do we have IR pulses to send?
+     706:	80 91 81 00 	lds	r24, 0x0081
+     70a:	88 23       	and	r24, r24
+     70c:	d1 f0       	breq	.+52     	; 0x742 <__vector_4+0x52>
+			if(ircomm_pulse < 60) { // Bi-Phase encoding...
+     70e:	8c 33       	cpi	r24, 0x3C	; 60
+     710:	38 f4       	brcc	.+14     	; 0x720 <__vector_4+0x30>
+				if(ircomm_data & 0x4000) // check current bit
+     712:	80 91 d0 00 	lds	r24, 0x00D0
+     716:	90 91 d1 00 	lds	r25, 0x00D1
+     71a:	96 ff       	sbrs	r25, 6
+     71c:	07 c0       	rjmp	.+14     	; 0x72c <__vector_4+0x3c>
+     71e:	08 c0       	rjmp	.+16     	; 0x730 <__vector_4+0x40>
+					PORTD ^= (1<<PIND7); // Toggle IRCOMM port
+				else
+					PORTD &= ~(1<<PIND7); // deactivate IRCOMM port
+			}
+			else if(ircomm_data & 0x4000) // The same as above, but the other way round:
+     720:	80 91 d0 00 	lds	r24, 0x00D0
+     724:	90 91 d1 00 	lds	r25, 0x00D1
+     728:	96 ff       	sbrs	r25, 6
+     72a:	02 c0       	rjmp	.+4      	; 0x730 <__vector_4+0x40>
+				PORTD &= ~(1<<PIND7); // deactivate IRCOMM port
+     72c:	97 98       	cbi	0x12, 7	; 18
+     72e:	03 c0       	rjmp	.+6      	; 0x736 <__vector_4+0x46>
+			else
+				PORTD ^= (1<<PIND7); // Toggle IRCOMM port
+     730:	82 b3       	in	r24, 0x12	; 18
+     732:	80 58       	subi	r24, 0x80	; 128
+     734:	82 bb       	out	0x12, r24	; 18
+			ircomm_pulse--;
+     736:	80 91 81 00 	lds	r24, 0x0081
+     73a:	81 50       	subi	r24, 0x01	; 1
+     73c:	80 93 81 00 	sts	0x0081, r24
+     740:	30 c0       	rjmp	.+96     	; 0x7a2 <__vector_4+0xb2>
+		}
+		else if(ircomm_send) { // Do we still have data?
+     742:	80 91 97 00 	lds	r24, 0x0097
+			PORTD &= ~(1<<PIND7);
+     746:	97 98       	cbi	0x12, 7	; 18
+				PORTD &= ~(1<<PIND7); // deactivate IRCOMM port
+			else
+				PORTD ^= (1<<PIND7); // Toggle IRCOMM port
+			ircomm_pulse--;
+		}
+		else if(ircomm_send) { // Do we still have data?
+     748:	88 23       	and	r24, r24
+     74a:	59 f1       	breq	.+86     	; 0x7a2 <__vector_4+0xb2>
+			PORTD &= ~(1<<PIND7);
+			ircomm_data <<= 1; // Next Bit!
+     74c:	80 91 d0 00 	lds	r24, 0x00D0
+     750:	90 91 d1 00 	lds	r25, 0x00D1
+     754:	88 0f       	add	r24, r24
+     756:	99 1f       	adc	r25, r25
+     758:	90 93 d1 00 	sts	0x00D1, r25
+     75c:	80 93 d0 00 	sts	0x00D0, r24
+			ircomm_pulse = 120;
+     760:	88 e7       	ldi	r24, 0x78	; 120
+     762:	80 93 81 00 	sts	0x0081, r24
+			ircomm_send--;
+     766:	80 91 97 00 	lds	r24, 0x0097
+     76a:	81 50       	subi	r24, 0x01	; 1
+     76c:	80 93 97 00 	sts	0x0097, r24
+     770:	18 c0       	rjmp	.+48     	; 0x7a2 <__vector_4+0xb2>
+		}
+		else 
+			PORTD &= ~(1<<PIND7); // no more pulses - IR LEDs off!
+	}
+	else if(acs_pulse) { // Send ACS IR pulses?
+     772:	80 91 9b 00 	lds	r24, 0x009B
+     776:	88 23       	and	r24, r24
+     778:	91 f0       	breq	.+36     	; 0x79e <__vector_4+0xae>
+		if(sysStatACS.channel == ACS_CHANNEL_LEFT) // which channel?
+     77a:	80 91 96 00 	lds	r24, 0x0096
+     77e:	80 fd       	sbrc	r24, 0
+     780:	05 c0       	rjmp	.+10     	; 0x78c <__vector_4+0x9c>
+			PORTB ^= ACS_L; 
+     782:	88 b3       	in	r24, 0x18	; 24
+     784:	90 e4       	ldi	r25, 0x40	; 64
+     786:	89 27       	eor	r24, r25
+     788:	88 bb       	out	0x18, r24	; 24
+     78a:	03 c0       	rjmp	.+6      	; 0x792 <__vector_4+0xa2>
+		else 			
+			PORTC ^= ACS_R; 
+     78c:	85 b3       	in	r24, 0x15	; 21
+     78e:	80 58       	subi	r24, 0x80	; 128
+     790:	85 bb       	out	0x15, r24	; 21
+		acs_pulse--;
+     792:	80 91 9b 00 	lds	r24, 0x009B
+     796:	81 50       	subi	r24, 0x01	; 1
+     798:	80 93 9b 00 	sts	0x009B, r24
+     79c:	02 c0       	rjmp	.+4      	; 0x7a2 <__vector_4+0xb2>
+	}
+	else { // no more pulses - IR LEDs off!
+		PORTB |= ACS_L;
+     79e:	c6 9a       	sbi	0x18, 6	; 24
+		PORTC |= ACS_R;
+     7a0:	af 9a       	sbi	0x15, 7	; 21
+	}
+}
+     7a2:	9f 91       	pop	r25
+     7a4:	8f 91       	pop	r24
+     7a6:	0f 90       	pop	r0
+     7a8:	0f be       	out	0x3f, r0	; 63
+     7aa:	0f 90       	pop	r0
+     7ac:	1f 90       	pop	r1
+     7ae:	18 95       	reti
+
+000007b0 <__vector_3>:
+/**
+ * External Interrupt 2 ISR (ACS)
+ * Detects ACS Events.
+ */
+ISR (INT2_vect)
+{
+     7b0:	1f 92       	push	r1
+     7b2:	0f 92       	push	r0
+     7b4:	0f b6       	in	r0, 0x3f	; 63
+     7b6:	0f 92       	push	r0
+     7b8:	11 24       	eor	r1, r1
+     7ba:	8f 93       	push	r24
+	if(acs_state == ACS_STATE_WAIT_LEFT || acs_state == ACS_STATE_WAIT_RIGHT)
+     7bc:	80 91 64 00 	lds	r24, 0x0064
+     7c0:	83 30       	cpi	r24, 0x03	; 3
+     7c2:	11 f0       	breq	.+4      	; 0x7c8 <__vector_3+0x18>
+     7c4:	86 30       	cpi	r24, 0x06	; 6
+     7c6:	79 f4       	brne	.+30     	; 0x7e6 <__vector_3+0x36>
+		if(!sysStatACS.detect_rc5 && sysStatACS.acs_go && !(PINB & ACS))
+     7c8:	80 91 96 00 	lds	r24, 0x0096
+     7cc:	84 fd       	sbrc	r24, 4
+     7ce:	0b c0       	rjmp	.+22     	; 0x7e6 <__vector_3+0x36>
+     7d0:	80 91 96 00 	lds	r24, 0x0096
+     7d4:	85 ff       	sbrs	r24, 5
+     7d6:	07 c0       	rjmp	.+14     	; 0x7e6 <__vector_3+0x36>
+     7d8:	b2 99       	sbic	0x16, 2	; 22
+     7da:	05 c0       	rjmp	.+10     	; 0x7e6 <__vector_3+0x36>
+			acs_event_counter++;
+     7dc:	80 91 eb 00 	lds	r24, 0x00EB
+     7e0:	8f 5f       	subi	r24, 0xFF	; 255
+     7e2:	80 93 eb 00 	sts	0x00EB, r24
+	sysStatACS.pin = (PINB & ACS);
+     7e6:	86 b3       	in	r24, 0x16	; 22
+     7e8:	80 91 96 00 	lds	r24, 0x0096
+     7ec:	8d 7f       	andi	r24, 0xFD	; 253
+     7ee:	80 93 96 00 	sts	0x0096, r24
+}
+     7f2:	8f 91       	pop	r24
+     7f4:	0f 90       	pop	r0
+     7f6:	0f be       	out	0x3f, r0	; 63
+     7f8:	0f 90       	pop	r0
+     7fa:	1f 90       	pop	r1
+     7fc:	18 95       	reti
+
+000007fe <IRCOMM_setRC5DataReadyHandler>:
+ * the IRCOMM receives a RC5 Data packet.
+ * 
+ */
+void IRCOMM_setRC5DataReadyHandler(void (*rc5Handler)(RC5data_t rc5data)) 
+{
+	IRCOMM_RC5dataReadyHandler = rc5Handler;
+     7fe:	90 93 63 00 	sts	0x0063, r25
+     802:	80 93 62 00 	sts	0x0062, r24
+     806:	08 95       	ret
+
+00000808 <ACS_setStateChangedHandler>:
+ * OR if the obstacle moves out of the line of sight and ACS
+ * reports "Way is free" again.
+ */
+void ACS_setStateChangedHandler(void (*acsHandler)(void)) 
+{
+	ACS_stateChangedHandler = acsHandler;
+     808:	90 93 61 00 	sts	0x0061, r25
+     80c:	80 93 60 00 	sts	0x0060, r24
+     810:	08 95       	ret
+
+00000812 <task_ACS>:
+
+void task_ACS(void)
+{
+ 	static uint8_t acs_counter;
+	static uint16_t acs_detect_timeout;
+	if(acs_timer >= ACS_UPDATE_INTERVAL) { 
+     812:	80 91 ae 00 	lds	r24, 0x00AE
+     816:	90 91 af 00 	lds	r25, 0x00AF
+     81a:	02 97       	sbiw	r24, 0x02	; 2
+     81c:	08 f4       	brcc	.+2      	; 0x820 <task_ACS+0xe>
+     81e:	3c c1       	rjmp	.+632    	; 0xa98 <__stack+0x239>
+		if(!sysStatACS.detect_rc5) {    // Any RC5 reception detected?
+     820:	80 91 96 00 	lds	r24, 0x0096
+     824:	84 fd       	sbrc	r24, 4
+     826:	19 c1       	rjmp	.+562    	; 0xa5a <__stack+0x1fb>
+			switch(acs_state) {       // No - perform IR Transmission and ACS tasks...
+     828:	80 91 64 00 	lds	r24, 0x0064
+     82c:	82 30       	cpi	r24, 0x02	; 2
+     82e:	09 f4       	brne	.+2      	; 0x832 <task_ACS+0x20>
+     830:	67 c0       	rjmp	.+206    	; 0x900 <__stack+0xa1>
+     832:	28 f4       	brcc	.+10     	; 0x83e <task_ACS+0x2c>
+     834:	88 23       	and	r24, r24
+     836:	69 f0       	breq	.+26     	; 0x852 <task_ACS+0x40>
+     838:	81 30       	cpi	r24, 0x01	; 1
+     83a:	91 f0       	breq	.+36     	; 0x860 <__stack+0x1>
+     83c:	14 c1       	rjmp	.+552    	; 0xa66 <__stack+0x207>
+     83e:	85 30       	cpi	r24, 0x05	; 5
+     840:	09 f4       	brne	.+2      	; 0x844 <task_ACS+0x32>
+     842:	af c0       	rjmp	.+350    	; 0x9a2 <__stack+0x143>
+     844:	86 30       	cpi	r24, 0x06	; 6
+     846:	09 f4       	brne	.+2      	; 0x84a <task_ACS+0x38>
+     848:	c5 c0       	rjmp	.+394    	; 0x9d4 <__stack+0x175>
+     84a:	83 30       	cpi	r24, 0x03	; 3
+     84c:	09 f0       	breq	.+2      	; 0x850 <task_ACS+0x3e>
+     84e:	0b c1       	rjmp	.+534    	; 0xa66 <__stack+0x207>
+     850:	6f c0       	rjmp	.+222    	; 0x930 <__stack+0xd1>
+				case ACS_STATE_IDLE: // Disable Timer2 interrupt to save processing time:
+					TIMSK &= ~(1 << OCIE2);
+     852:	89 b7       	in	r24, 0x39	; 57
+     854:	8f 77       	andi	r24, 0x7F	; 127
+     856:	89 bf       	out	0x39, r24	; 57
+					IRCOMM_OFF();
+     858:	97 98       	cbi	0x12, 7	; 18
+					PORTB |= ACS_L;
+     85a:	c6 9a       	sbi	0x18, 6	; 24
+					PORTC |= ACS_R;
+     85c:	af 9a       	sbi	0x15, 7	; 21
+				break;
+     85e:	03 c1       	rjmp	.+518    	; 0xa66 <__stack+0x207>
+				case ACS_STATE_IRCOMM_DELAY: // Check for IRCOMM transmit data:
+					if(!ircomm_send) {  // Transmission finished?
+     860:	80 91 97 00 	lds	r24, 0x0097
+     864:	81 11       	cpse	r24, r1
+     866:	2a c0       	rjmp	.+84     	; 0x8bc <__stack+0x5d>
+						if(sysStatACS.ircomm_transmit) { // New transmission?
+     868:	80 91 96 00 	lds	r24, 0x0096
+     86c:	86 ff       	sbrs	r24, 6
+     86e:	14 c0       	rjmp	.+40     	; 0x898 <__stack+0x39>
+							ircomm_data = ircomm_data_tmp;
+     870:	80 91 b6 00 	lds	r24, 0x00B6
+     874:	90 91 b7 00 	lds	r25, 0x00B7
+     878:	90 93 d1 00 	sts	0x00D1, r25
+     87c:	80 93 d0 00 	sts	0x00D0, r24
+							ircomm_send = 14;
+     880:	8e e0       	ldi	r24, 0x0E	; 14
+     882:	80 93 97 00 	sts	0x0097, r24
+							sysStatACS.ircomm_transmit = false;
+     886:	80 91 96 00 	lds	r24, 0x0096
+     88a:	8f 7b       	andi	r24, 0xBF	; 191
+     88c:	80 93 96 00 	sts	0x0096, r24
+							TIMSK |= (1 << OCIE2);
+     890:	89 b7       	in	r24, 0x39	; 57
+     892:	80 68       	ori	r24, 0x80	; 128
+     894:	89 bf       	out	0x39, r24	; 57
+     896:	06 c0       	rjmp	.+12     	; 0x8a4 <__stack+0x45>
+						}
+						else {
+							TIMSK &= ~(1 << OCIE2);
+     898:	89 b7       	in	r24, 0x39	; 57
+     89a:	8f 77       	andi	r24, 0x7F	; 127
+     89c:	89 bf       	out	0x39, r24	; 57
+							IRCOMM_OFF();
+     89e:	97 98       	cbi	0x12, 7	; 18
+							PORTB |= ACS_L;
+     8a0:	c6 9a       	sbi	0x18, 6	; 24
+							PORTC |= ACS_R;
+     8a2:	af 9a       	sbi	0x15, 7	; 21
+						}
+						if(acs_counter++ >= ACS_IRCOMM_WAIT_TIME) // Delay 
+     8a4:	80 91 80 00 	lds	r24, 0x0080
+     8a8:	91 e0       	ldi	r25, 0x01	; 1
+     8aa:	98 0f       	add	r25, r24
+     8ac:	90 93 80 00 	sts	0x0080, r25
+     8b0:	84 31       	cpi	r24, 0x14	; 20
+     8b2:	38 f0       	brcs	.+14     	; 0x8c2 <__stack+0x63>
+							acs_state=ACS_STATE_SEND_LEFT;
+     8b4:	82 e0       	ldi	r24, 0x02	; 2
+     8b6:	80 93 64 00 	sts	0x0064, r24
+     8ba:	03 c0       	rjmp	.+6      	; 0x8c2 <__stack+0x63>
+					}
+					else
+						TIMSK |= (1 << OCIE2);
+     8bc:	89 b7       	in	r24, 0x39	; 57
+     8be:	80 68       	ori	r24, 0x80	; 128
+     8c0:	89 bf       	out	0x39, r24	; 57
+					if(sysStatACS.rc5_data_received) { // RC5 data received? 
+     8c2:	80 91 96 00 	lds	r24, 0x0096
+     8c6:	83 ff       	sbrs	r24, 3
+     8c8:	ce c0       	rjmp	.+412    	; 0xa66 <__stack+0x207>
+						IRCOMM_RC5dataReadyHandler(IRCOMM_RC5_data_ok); // Call handler
+     8ca:	e0 91 62 00 	lds	r30, 0x0062
+     8ce:	f0 91 63 00 	lds	r31, 0x0063
+     8d2:	80 91 ef 00 	lds	r24, 0x00EF
+     8d6:	90 91 f0 00 	lds	r25, 0x00F0
+     8da:	09 95       	icall
+						IRCOMM_RC5_data	= IRCOMM_RC5_data_ok;
+     8dc:	80 91 ef 00 	lds	r24, 0x00EF
+     8e0:	90 91 f0 00 	lds	r25, 0x00F0
+     8e4:	90 93 9f 00 	sts	0x009F, r25
+     8e8:	80 93 9e 00 	sts	0x009E, r24
+						IRCOMM_RC5_data_ok.data = 0;
+     8ec:	10 92 f0 00 	sts	0x00F0, r1
+     8f0:	10 92 ef 00 	sts	0x00EF, r1
+						sysStatACS.rc5_data_received = false;
+     8f4:	80 91 96 00 	lds	r24, 0x0096
+     8f8:	87 7f       	andi	r24, 0xF7	; 247
+     8fa:	80 93 96 00 	sts	0x0096, r24
+     8fe:	b3 c0       	rjmp	.+358    	; 0xa66 <__stack+0x207>
+					}
+				break;
+				case ACS_STATE_SEND_LEFT:  // Prepare left channel:
+					TIMSK &= ~(1 << OCIE2);
+     900:	89 b7       	in	r24, 0x39	; 57
+     902:	8f 77       	andi	r24, 0x7F	; 127
+     904:	89 bf       	out	0x39, r24	; 57
+					IRCOMM_OFF();
+     906:	97 98       	cbi	0x12, 7	; 18
+					PORTB |= ACS_L;
+     908:	c6 9a       	sbi	0x18, 6	; 24
+					PORTC |= ACS_R;
+     90a:	af 9a       	sbi	0x15, 7	; 21
+					acs_pulse = 0;
+     90c:	10 92 9b 00 	sts	0x009B, r1
+					acs_event_counter = 0;
+     910:	10 92 eb 00 	sts	0x00EB, r1
+					acs_detect_timeout = 0;
+     914:	10 92 7f 00 	sts	0x007F, r1
+     918:	10 92 7e 00 	sts	0x007E, r1
+					sysStatACS.channel = ACS_CHANNEL_LEFT;
+     91c:	80 91 96 00 	lds	r24, 0x0096
+					sysStatACS.acs_go = true;
+     920:	8e 7f       	andi	r24, 0xFE	; 254
+     922:	80 62       	ori	r24, 0x20	; 32
+     924:	80 93 96 00 	sts	0x0096, r24
+					acs_counter = 3; 
+     928:	83 e0       	ldi	r24, 0x03	; 3
+     92a:	80 93 80 00 	sts	0x0080, r24
+     92e:	77 c0       	rjmp	.+238    	; 0xa1e <__stack+0x1bf>
+					acs_state = ACS_STATE_WAIT_LEFT;
+				break;
+				case ACS_STATE_WAIT_LEFT: // Wait for reception of IR pulses from Left channel
+					if(!acs_pulse && acs_counter++ > 2) { 
+     930:	80 91 9b 00 	lds	r24, 0x009B
+     934:	81 11       	cpse	r24, r1
+     936:	10 c0       	rjmp	.+32     	; 0x958 <__stack+0xf9>
+     938:	80 91 80 00 	lds	r24, 0x0080
+     93c:	91 e0       	ldi	r25, 0x01	; 1
+     93e:	98 0f       	add	r25, r24
+     940:	90 93 80 00 	sts	0x0080, r25
+     944:	83 30       	cpi	r24, 0x03	; 3
+     946:	40 f0       	brcs	.+16     	; 0x958 <__stack+0xf9>
+						TIMSK |= (1 << OCIE2); 
+     948:	89 b7       	in	r24, 0x39	; 57
+     94a:	80 68       	ori	r24, 0x80	; 128
+     94c:	89 bf       	out	0x39, r24	; 57
+						acs_pulse = ACS_SEND_PULSES_LEFT;  // Send pulses! 
+     94e:	88 e2       	ldi	r24, 0x28	; 40
+     950:	80 93 9b 00 	sts	0x009B, r24
+						acs_counter = 0;
+     954:	10 92 80 00 	sts	0x0080, r1
+					}
+					if(obstacle_left && acs_event_counter >= ACS_REC_PULSES_LEFT_THRESHOLD) {
+     958:	80 91 cc 00 	lds	r24, 0x00CC
+     95c:	88 23       	and	r24, r24
+     95e:	21 f0       	breq	.+8      	; 0x968 <__stack+0x109>
+     960:	80 91 eb 00 	lds	r24, 0x00EB
+     964:	82 30       	cpi	r24, 0x02	; 2
+     966:	20 f4       	brcc	.+8      	; 0x970 <__stack+0x111>
+						acs_event_counter = 0;
+						obstacle_left = true;
+						acs_state = ACS_STATE_SEND_RIGHT;
+					}
+					else if(acs_event_counter >= ACS_REC_PULSES_LEFT) { // receive min. ACS_REC_PULSES_LEFT pulses  
+     968:	80 91 eb 00 	lds	r24, 0x00EB
+     96c:	86 30       	cpi	r24, 0x06	; 6
+     96e:	38 f0       	brcs	.+14     	; 0x97e <__stack+0x11f>
+						acs_event_counter = 0;
+     970:	10 92 eb 00 	sts	0x00EB, r1
+						obstacle_left = true;
+     974:	81 e0       	ldi	r24, 0x01	; 1
+     976:	80 93 cc 00 	sts	0x00CC, r24
+						acs_state = ACS_STATE_SEND_RIGHT;
+     97a:	85 e0       	ldi	r24, 0x05	; 5
+     97c:	50 c0       	rjmp	.+160    	; 0xa1e <__stack+0x1bf>
+					}
+					else if(acs_detect_timeout++ >= ACS_TIMEOUT_LEFT) { // Timeout?
+     97e:	80 91 7e 00 	lds	r24, 0x007E
+     982:	90 91 7f 00 	lds	r25, 0x007F
+     986:	9c 01       	movw	r18, r24
+     988:	2f 5f       	subi	r18, 0xFF	; 255
+     98a:	3f 4f       	sbci	r19, 0xFF	; 255
+     98c:	30 93 7f 00 	sts	0x007F, r19
+     990:	20 93 7e 00 	sts	0x007E, r18
+     994:	0e 97       	sbiw	r24, 0x0e	; 14
+     996:	08 f4       	brcc	.+2      	; 0x99a <__stack+0x13b>
+     998:	66 c0       	rjmp	.+204    	; 0xa66 <__stack+0x207>
+						obstacle_left = false;
+     99a:	10 92 cc 00 	sts	0x00CC, r1
+						acs_state = ACS_STATE_SEND_RIGHT;
+     99e:	85 e0       	ldi	r24, 0x05	; 5
+     9a0:	51 c0       	rjmp	.+162    	; 0xa44 <__stack+0x1e5>
+						PORTC |= ACS_R;
+						acs_pulse = 0;
+					}
+				break;
+				case ACS_STATE_SEND_RIGHT:   // Prepare right channel:
+					TIMSK &= ~(1 << OCIE2);
+     9a2:	89 b7       	in	r24, 0x39	; 57
+     9a4:	8f 77       	andi	r24, 0x7F	; 127
+     9a6:	89 bf       	out	0x39, r24	; 57
+					IRCOMM_OFF();
+     9a8:	97 98       	cbi	0x12, 7	; 18
+					PORTB |= ACS_L;
+     9aa:	c6 9a       	sbi	0x18, 6	; 24
+					PORTC |= ACS_R;
+     9ac:	af 9a       	sbi	0x15, 7	; 21
+					acs_pulse = 0;
+     9ae:	10 92 9b 00 	sts	0x009B, r1
+					acs_event_counter = 0;
+     9b2:	10 92 eb 00 	sts	0x00EB, r1
+					acs_detect_timeout = 0;
+     9b6:	10 92 7f 00 	sts	0x007F, r1
+     9ba:	10 92 7e 00 	sts	0x007E, r1
+					sysStatACS.channel = ACS_CHANNEL_RIGHT;
+     9be:	80 91 96 00 	lds	r24, 0x0096
+					sysStatACS.acs_go = true;
+     9c2:	81 60       	ori	r24, 0x01	; 1
+     9c4:	80 62       	ori	r24, 0x20	; 32
+     9c6:	80 93 96 00 	sts	0x0096, r24
+					acs_counter = 3;
+     9ca:	83 e0       	ldi	r24, 0x03	; 3
+     9cc:	80 93 80 00 	sts	0x0080, r24
+					acs_state = ACS_STATE_WAIT_RIGHT;
+     9d0:	86 e0       	ldi	r24, 0x06	; 6
+     9d2:	25 c0       	rjmp	.+74     	; 0xa1e <__stack+0x1bf>
+				break;
+				case ACS_STATE_WAIT_RIGHT:  // Wait for reception of IR pulses
+					if(!acs_pulse && acs_counter++ > 2) { 
+     9d4:	80 91 9b 00 	lds	r24, 0x009B
+     9d8:	81 11       	cpse	r24, r1
+     9da:	10 c0       	rjmp	.+32     	; 0x9fc <__stack+0x19d>
+     9dc:	80 91 80 00 	lds	r24, 0x0080
+     9e0:	91 e0       	ldi	r25, 0x01	; 1
+     9e2:	98 0f       	add	r25, r24
+     9e4:	90 93 80 00 	sts	0x0080, r25
+     9e8:	83 30       	cpi	r24, 0x03	; 3
+     9ea:	40 f0       	brcs	.+16     	; 0x9fc <__stack+0x19d>
+						TIMSK |= (1 << OCIE2);
+     9ec:	89 b7       	in	r24, 0x39	; 57
+     9ee:	80 68       	ori	r24, 0x80	; 128
+     9f0:	89 bf       	out	0x39, r24	; 57
+						acs_pulse = ACS_SEND_PULSES_RIGHT; 	// Send pulses!
+     9f2:	88 e2       	ldi	r24, 0x28	; 40
+     9f4:	80 93 9b 00 	sts	0x009B, r24
+						acs_counter = 0;
+     9f8:	10 92 80 00 	sts	0x0080, r1
+					}
+					if(obstacle_right && acs_event_counter >= ACS_REC_PULSES_RIGHT_THRESHOLD) {
+     9fc:	80 91 d5 00 	lds	r24, 0x00D5
+     a00:	88 23       	and	r24, r24
+     a02:	21 f0       	breq	.+8      	; 0xa0c <__stack+0x1ad>
+     a04:	80 91 eb 00 	lds	r24, 0x00EB
+     a08:	82 30       	cpi	r24, 0x02	; 2
+     a0a:	20 f4       	brcc	.+8      	; 0xa14 <__stack+0x1b5>
+						acs_event_counter = 0;
+						obstacle_right = true;
+						acs_state = ACS_STATE_IRCOMM_DELAY;
+					}
+					else if(acs_event_counter >= ACS_REC_PULSES_RIGHT) { // receive min. ACS_REC_PULSES_RIGHT pulses
+     a0c:	80 91 eb 00 	lds	r24, 0x00EB
+     a10:	86 30       	cpi	r24, 0x06	; 6
+     a12:	40 f0       	brcs	.+16     	; 0xa24 <__stack+0x1c5>
+						acs_event_counter = 0;
+     a14:	10 92 eb 00 	sts	0x00EB, r1
+						obstacle_right = true;
+     a18:	81 e0       	ldi	r24, 0x01	; 1
+     a1a:	80 93 d5 00 	sts	0x00D5, r24
+						acs_state = ACS_STATE_IRCOMM_DELAY;
+     a1e:	80 93 64 00 	sts	0x0064, r24
+     a22:	21 c0       	rjmp	.+66     	; 0xa66 <__stack+0x207>
+					}
+					else if(acs_detect_timeout++ >= ACS_TIMEOUT_RIGHT) { // Timeout?
+     a24:	80 91 7e 00 	lds	r24, 0x007E
+     a28:	90 91 7f 00 	lds	r25, 0x007F
+     a2c:	9c 01       	movw	r18, r24
+     a2e:	2f 5f       	subi	r18, 0xFF	; 255
+     a30:	3f 4f       	sbci	r19, 0xFF	; 255
+     a32:	30 93 7f 00 	sts	0x007F, r19
+     a36:	20 93 7e 00 	sts	0x007E, r18
+     a3a:	0e 97       	sbiw	r24, 0x0e	; 14
+     a3c:	a0 f0       	brcs	.+40     	; 0xa66 <__stack+0x207>
+						obstacle_right = false;
+     a3e:	10 92 d5 00 	sts	0x00D5, r1
+						acs_state = ACS_STATE_IRCOMM_DELAY;
+     a42:	81 e0       	ldi	r24, 0x01	; 1
+     a44:	80 93 64 00 	sts	0x0064, r24
+						TIMSK &= ~(1 << OCIE2);
+     a48:	89 b7       	in	r24, 0x39	; 57
+     a4a:	8f 77       	andi	r24, 0x7F	; 127
+     a4c:	89 bf       	out	0x39, r24	; 57
+						IRCOMM_OFF();
+     a4e:	97 98       	cbi	0x12, 7	; 18
+						PORTB |= ACS_L;
+     a50:	c6 9a       	sbi	0x18, 6	; 24
+						PORTC |= ACS_R;
+     a52:	af 9a       	sbi	0x15, 7	; 21
+						acs_pulse = 0;
+     a54:	10 92 9b 00 	sts	0x009B, r1
+     a58:	06 c0       	rjmp	.+12     	; 0xa66 <__stack+0x207>
+					}
+				break;
+			}
+		}
+		else { // RC5 reception detected...
+			acs_detect_timeout = 0;
+     a5a:	10 92 7f 00 	sts	0x007F, r1
+     a5e:	10 92 7e 00 	sts	0x007E, r1
+			acs_counter = 0;
+     a62:	10 92 80 00 	sts	0x0080, r1
+		}
+		
+		// Check for changes and call event handler if necessary:
+		static uint8_t acs_l_tmp;
+		static uint8_t acs_r_tmp;
+		if(acs_l_tmp != obstacle_left || acs_r_tmp != obstacle_right) { // Did the ACS Status change?
+     a66:	90 91 cc 00 	lds	r25, 0x00CC
+     a6a:	20 91 7d 00 	lds	r18, 0x007D
+     a6e:	80 91 d5 00 	lds	r24, 0x00D5
+     a72:	29 13       	cpse	r18, r25
+     a74:	04 c0       	rjmp	.+8      	; 0xa7e <__stack+0x21f>
+     a76:	20 91 7c 00 	lds	r18, 0x007C
+     a7a:	28 17       	cp	r18, r24
+     a7c:	49 f0       	breq	.+18     	; 0xa90 <__stack+0x231>
+			acs_l_tmp = obstacle_left;   // Yes, update and call event handler...
+     a7e:	90 93 7d 00 	sts	0x007D, r25
+			acs_r_tmp = obstacle_right;
+     a82:	80 93 7c 00 	sts	0x007C, r24
+			ACS_stateChangedHandler();
+     a86:	e0 91 60 00 	lds	r30, 0x0060
+     a8a:	f0 91 61 00 	lds	r31, 0x0061
+     a8e:	09 95       	icall
+		}
+		acs_timer = 0;
+     a90:	10 92 af 00 	sts	0x00AF, r1
+     a94:	10 92 ae 00 	sts	0x00AE, r1
+     a98:	08 95       	ret
+
+00000a9a <disableACS>:
+ * Disables the ACS task.
+ * ACS and IRCOMM Transmissions/Receptions will not work anymore.
+ */
+void disableACS(void)
+{
+	acs_state = ACS_STATE_IDLE;
+     a9a:	10 92 64 00 	sts	0x0064, r1
+	TIMSK &= ~(1 << OCIE2);
+     a9e:	89 b7       	in	r24, 0x39	; 57
+     aa0:	8f 77       	andi	r24, 0x7F	; 127
+     aa2:	89 bf       	out	0x39, r24	; 57
+	IRCOMM_OFF();
+     aa4:	97 98       	cbi	0x12, 7	; 18
+	PORTB |= ACS_L;
+     aa6:	c6 9a       	sbi	0x18, 6	; 24
+	PORTC |= ACS_R;
+     aa8:	af 9a       	sbi	0x15, 7	; 21
+	obstacle_right = false;
+     aaa:	10 92 d5 00 	sts	0x00D5, r1
+	obstacle_left = false;
+     aae:	10 92 cc 00 	sts	0x00CC, r1
+     ab2:	08 95       	ret
+
+00000ab4 <enableACS>:
+/**
+ * Enables the ACS task.
+ */
+void enableACS(void)
+{
+	TIMSK &= ~(1 << OCIE2);
+     ab4:	89 b7       	in	r24, 0x39	; 57
+     ab6:	8f 77       	andi	r24, 0x7F	; 127
+     ab8:	89 bf       	out	0x39, r24	; 57
+	IRCOMM_OFF();
+     aba:	97 98       	cbi	0x12, 7	; 18
+	PORTB |= ACS_L;
+     abc:	c6 9a       	sbi	0x18, 6	; 24
+	PORTC |= ACS_R;
+     abe:	af 9a       	sbi	0x15, 7	; 21
+	obstacle_right = false;
+     ac0:	10 92 d5 00 	sts	0x00D5, r1
+	obstacle_left = false;
+     ac4:	10 92 cc 00 	sts	0x00CC, r1
+	acs_state = ACS_STATE_IRCOMM_DELAY;
+     ac8:	81 e0       	ldi	r24, 0x01	; 1
+     aca:	80 93 64 00 	sts	0x0064, r24
+     ace:	08 95       	ret
+
+00000ad0 <setACSPwrOff>:
+ *			setACSPwrOff();
+ *
+ */
+void setACSPwrOff(void)
+{
+	DDRD &= ~ACS_PWR;
+     ad0:	8e 98       	cbi	0x11, 6	; 17
+	PORTD &= ~ACS_PWR;
+     ad2:	96 98       	cbi	0x12, 6	; 18
+	DDRB &= ~ACS_PWRH;
+     ad4:	bb 98       	cbi	0x17, 3	; 23
+	PORTB &= ~ACS_PWRH;
+     ad6:	c3 98       	cbi	0x18, 3	; 24
+	PORTB &= ~ACS_L;
+     ad8:	c6 98       	cbi	0x18, 6	; 24
+	PORTC &= ~ACS_R;
+     ada:	af 98       	cbi	0x15, 7	; 21
+     adc:	08 95       	ret
+
+00000ade <setACSPwrLow>:
+ *			setACSPwrLow();
+ *
+ */
+void setACSPwrLow(void)
+{
+	DDRD |= ACS_PWR;
+     ade:	8e 9a       	sbi	0x11, 6	; 17
+	PORTD |= ACS_PWR;
+     ae0:	96 9a       	sbi	0x12, 6	; 18
+	DDRB &= ~ACS_PWRH;
+     ae2:	bb 98       	cbi	0x17, 3	; 23
+	PORTB &= ~ACS_PWRH;
+     ae4:	c3 98       	cbi	0x18, 3	; 24
+     ae6:	08 95       	ret
+
+00000ae8 <setACSPwrMed>:
+ *			setACSPwrMed();
+ *
+ */
+void setACSPwrMed(void)
+{
+	DDRD &= ~ACS_PWR;
+     ae8:	8e 98       	cbi	0x11, 6	; 17
+	PORTD &= ~ACS_PWR;
+     aea:	96 98       	cbi	0x12, 6	; 18
+	DDRB |= ACS_PWRH;
+     aec:	bb 9a       	sbi	0x17, 3	; 23
+	PORTB |= ACS_PWRH;
+     aee:	c3 9a       	sbi	0x18, 3	; 24
+     af0:	08 95       	ret
+
+00000af2 <setACSPwrHigh>:
+ *			setACSPwrHigh();
+ *
+ */
+void setACSPwrHigh(void)
+{
+	DDRD |= ACS_PWR;
+     af2:	8e 9a       	sbi	0x11, 6	; 17
+	PORTD |= ACS_PWR;
+     af4:	96 9a       	sbi	0x12, 6	; 18
+	DDRB |= ACS_PWRH;
+     af6:	bb 9a       	sbi	0x17, 3	; 23
+	PORTB |= ACS_PWRH;
+     af8:	c3 9a       	sbi	0x18, 3	; 24
+     afa:	08 95       	ret
+
+00000afc <powerON>:
+/*****************************************************************************/
+// 
+
+void powerON(void) 
+{ 
+	PORTB |= PWRON;
+     afc:	c4 9a       	sbi	0x18, 4	; 24
+	#ifdef POWER_ON_WARNING
+		if(leds_on < 4)
+     afe:	80 91 a1 00 	lds	r24, 0x00A1
+     b02:	84 30       	cpi	r24, 0x04	; 4
+     b04:	18 f4       	brcc	.+6      	; 0xb0c <powerON+0x10>
+			leds_on = 3;
+     b06:	83 e0       	ldi	r24, 0x03	; 3
+     b08:	80 93 a1 00 	sts	0x00A1, r24
+     b0c:	08 95       	ret
+
+00000b0e <powerOFF>:
+	#endif
+}
+
+void powerOFF(void)
+{
+	PORTB &= ~PWRON;
+     b0e:	c4 98       	cbi	0x18, 4	; 24
+	#ifdef POWER_ON_WARNING
+		if(leds_on < 4)
+     b10:	80 91 a1 00 	lds	r24, 0x00A1
+     b14:	84 30       	cpi	r24, 0x04	; 4
+     b16:	60 f4       	brcc	.+24     	; 0xb30 <powerOFF+0x22>
+			leds_on = (leds_on ? 1 : (statusLEDs.byte && 1));
+     b18:	81 11       	cpse	r24, r1
+     b1a:	07 c0       	rjmp	.+14     	; 0xb2a <powerOFF+0x1c>
+     b1c:	81 e0       	ldi	r24, 0x01	; 1
+     b1e:	90 91 8c 00 	lds	r25, 0x008C
+     b22:	91 11       	cpse	r25, r1
+     b24:	03 c0       	rjmp	.+6      	; 0xb2c <powerOFF+0x1e>
+     b26:	80 e0       	ldi	r24, 0x00	; 0
+     b28:	01 c0       	rjmp	.+2      	; 0xb2c <powerOFF+0x1e>
+     b2a:	81 e0       	ldi	r24, 0x01	; 1
+     b2c:	80 93 a1 00 	sts	0x00A1, r24
+     b30:	08 95       	ret
+
+00000b32 <__vector_10>:
+ *
+ * By default, it runs at 10kHz which means this ISR is called
+ * every ~100µs! This is nice for all kinds of timing stuff!
+ */
+ISR (TIMER0_COMP_vect)
+{
+     b32:	1f 92       	push	r1
+     b34:	0f 92       	push	r0
+     b36:	0f b6       	in	r0, 0x3f	; 63
+     b38:	0f 92       	push	r0
+     b3a:	11 24       	eor	r1, r1
+     b3c:	2f 93       	push	r18
+     b3e:	3f 93       	push	r19
+     b40:	4f 93       	push	r20
+     b42:	5f 93       	push	r21
+     b44:	6f 93       	push	r22
+     b46:	7f 93       	push	r23
+     b48:	8f 93       	push	r24
+     b4a:	9f 93       	push	r25
+     b4c:	af 93       	push	r26
+     b4e:	bf 93       	push	r27
+	#ifdef POWER_ON_WARNING
+		static uint16_t leds_on_timer = 0;
+	#endif
+	
+	// 16bit timer (100µs resolution)
+	timer++;
+     b50:	80 91 89 00 	lds	r24, 0x0089
+     b54:	90 91 8a 00 	lds	r25, 0x008A
+     b58:	01 96       	adiw	r24, 0x01	; 1
+     b5a:	90 93 8a 00 	sts	0x008A, r25
+     b5e:	80 93 89 00 	sts	0x0089, r24
+	
+	// Blocking delay (100µs):
+	delay_timer++;
+     b62:	80 91 e2 00 	lds	r24, 0x00E2
+     b66:	8f 5f       	subi	r24, 0xFF	; 255
+     b68:	80 93 e2 00 	sts	0x00E2, r24
+	
+	// All 1ms based timing stuff
+	if(ms_timer++ >= 9) { // 10 * 100µs = 1ms, >= 9 because 0..9 = 10 counts
+     b6c:	80 91 e5 00 	lds	r24, 0x00E5
+     b70:	91 e0       	ldi	r25, 0x01	; 1
+     b72:	98 0f       	add	r25, r24
+     b74:	90 93 e5 00 	sts	0x00E5, r25
+     b78:	89 30       	cpi	r24, 0x09	; 9
+     b7a:	08 f4       	brcc	.+2      	; 0xb7e <__vector_10+0x4c>
+     b7c:	47 c1       	rjmp	.+654    	; 0xe0c <__vector_10+0x2da>
+		// 16bit Stopwatches:
+		if(stopwatches.watches & STOPWATCH1)
+     b7e:	80 91 ba 00 	lds	r24, 0x00BA
+     b82:	80 ff       	sbrs	r24, 0
+     b84:	09 c0       	rjmp	.+18     	; 0xb98 <__vector_10+0x66>
+			stopwatches.watch1++;
+     b86:	80 91 bb 00 	lds	r24, 0x00BB
+     b8a:	90 91 bc 00 	lds	r25, 0x00BC
+     b8e:	01 96       	adiw	r24, 0x01	; 1
+     b90:	90 93 bc 00 	sts	0x00BC, r25
+     b94:	80 93 bb 00 	sts	0x00BB, r24
+		if(stopwatches.watches & STOPWATCH2)
+     b98:	80 91 ba 00 	lds	r24, 0x00BA
+     b9c:	81 ff       	sbrs	r24, 1
+     b9e:	09 c0       	rjmp	.+18     	; 0xbb2 <__vector_10+0x80>
+			stopwatches.watch2++;
+     ba0:	80 91 bd 00 	lds	r24, 0x00BD
+     ba4:	90 91 be 00 	lds	r25, 0x00BE
+     ba8:	01 96       	adiw	r24, 0x01	; 1
+     baa:	90 93 be 00 	sts	0x00BE, r25
+     bae:	80 93 bd 00 	sts	0x00BD, r24
+		if(stopwatches.watches & STOPWATCH3)
+     bb2:	80 91 ba 00 	lds	r24, 0x00BA
+     bb6:	82 ff       	sbrs	r24, 2
+     bb8:	09 c0       	rjmp	.+18     	; 0xbcc <__vector_10+0x9a>
+			stopwatches.watch3++;
+     bba:	80 91 bf 00 	lds	r24, 0x00BF
+     bbe:	90 91 c0 00 	lds	r25, 0x00C0
+     bc2:	01 96       	adiw	r24, 0x01	; 1
+     bc4:	90 93 c0 00 	sts	0x00C0, r25
+     bc8:	80 93 bf 00 	sts	0x00BF, r24
+		if(stopwatches.watches & STOPWATCH4)
+     bcc:	80 91 ba 00 	lds	r24, 0x00BA
+     bd0:	83 ff       	sbrs	r24, 3
+     bd2:	09 c0       	rjmp	.+18     	; 0xbe6 <__vector_10+0xb4>
+			stopwatches.watch4++;
+     bd4:	80 91 c1 00 	lds	r24, 0x00C1
+     bd8:	90 91 c2 00 	lds	r25, 0x00C2
+     bdc:	01 96       	adiw	r24, 0x01	; 1
+     bde:	90 93 c2 00 	sts	0x00C2, r25
+     be2:	80 93 c1 00 	sts	0x00C1, r24
+		if(stopwatches.watches & STOPWATCH5)
+     be6:	80 91 ba 00 	lds	r24, 0x00BA
+     bea:	84 ff       	sbrs	r24, 4
+     bec:	09 c0       	rjmp	.+18     	; 0xc00 <__vector_10+0xce>
+			stopwatches.watch5++;
+     bee:	80 91 c3 00 	lds	r24, 0x00C3
+     bf2:	90 91 c4 00 	lds	r25, 0x00C4
+     bf6:	01 96       	adiw	r24, 0x01	; 1
+     bf8:	90 93 c4 00 	sts	0x00C4, r25
+     bfc:	80 93 c3 00 	sts	0x00C3, r24
+		if(stopwatches.watches & STOPWATCH6)
+     c00:	80 91 ba 00 	lds	r24, 0x00BA
+     c04:	85 ff       	sbrs	r24, 5
+     c06:	09 c0       	rjmp	.+18     	; 0xc1a <__vector_10+0xe8>
+			stopwatches.watch6++;
+     c08:	80 91 c5 00 	lds	r24, 0x00C5
+     c0c:	90 91 c6 00 	lds	r25, 0x00C6
+     c10:	01 96       	adiw	r24, 0x01	; 1
+     c12:	90 93 c6 00 	sts	0x00C6, r25
+     c16:	80 93 c5 00 	sts	0x00C5, r24
+		if(stopwatches.watches & STOPWATCH7)
+     c1a:	80 91 ba 00 	lds	r24, 0x00BA
+     c1e:	86 ff       	sbrs	r24, 6
+     c20:	09 c0       	rjmp	.+18     	; 0xc34 <__vector_10+0x102>
+			stopwatches.watch7++;
+     c22:	80 91 c7 00 	lds	r24, 0x00C7
+     c26:	90 91 c8 00 	lds	r25, 0x00C8
+     c2a:	01 96       	adiw	r24, 0x01	; 1
+     c2c:	90 93 c8 00 	sts	0x00C8, r25
+     c30:	80 93 c7 00 	sts	0x00C7, r24
+		if(stopwatches.watches & STOPWATCH8)
+     c34:	80 91 ba 00 	lds	r24, 0x00BA
+     c38:	87 ff       	sbrs	r24, 7
+     c3a:	09 c0       	rjmp	.+18     	; 0xc4e <__vector_10+0x11c>
+			stopwatches.watch8++;
+     c3c:	80 91 c9 00 	lds	r24, 0x00C9
+     c40:	90 91 ca 00 	lds	r25, 0x00CA
+     c44:	01 96       	adiw	r24, 0x01	; 1
+     c46:	90 93 ca 00 	sts	0x00CA, r25
+     c4a:	80 93 c9 00 	sts	0x00C9, r24
+
+		// Speed measurement timer
+		if(speed_timer++ > SPEED_TIMER_BASE) {
+     c4e:	80 91 d6 00 	lds	r24, 0x00D6
+     c52:	91 e0       	ldi	r25, 0x01	; 1
+     c54:	98 0f       	add	r25, r24
+     c56:	90 93 d6 00 	sts	0x00D6, r25
+     c5a:	89 3c       	cpi	r24, 0xC9	; 201
+     c5c:	e8 f0       	brcs	.+58     	; 0xc98 <__vector_10+0x166>
+			mright_speed = mright_counter;
+     c5e:	80 91 b4 00 	lds	r24, 0x00B4
+     c62:	90 91 b5 00 	lds	r25, 0x00B5
+     c66:	90 93 e7 00 	sts	0x00E7, r25
+     c6a:	80 93 e6 00 	sts	0x00E6, r24
+			mleft_speed = mleft_counter;
+     c6e:	80 91 de 00 	lds	r24, 0x00DE
+     c72:	90 91 df 00 	lds	r25, 0x00DF
+     c76:	90 93 a5 00 	sts	0x00A5, r25
+     c7a:	80 93 a4 00 	sts	0x00A4, r24
+			mright_counter = 0;
+     c7e:	10 92 b5 00 	sts	0x00B5, r1
+     c82:	10 92 b4 00 	sts	0x00B4, r1
+			mleft_counter = 0;
+     c86:	10 92 df 00 	sts	0x00DF, r1
+     c8a:	10 92 de 00 	sts	0x00DE, r1
+			motor_control = true;
+     c8e:	81 e0       	ldi	r24, 0x01	; 1
+     c90:	80 93 a0 00 	sts	0x00A0, r24
+			speed_timer = 0;
+     c94:	10 92 d6 00 	sts	0x00D6, r1
+		}
+		
+		// Power on LED flashing:
+		#ifdef POWER_ON_WARNING
+			if(leds_on < 3) {
+     c98:	40 91 a1 00 	lds	r20, 0x00A1
+     c9c:	43 30       	cpi	r20, 0x03	; 3
+     c9e:	08 f0       	brcs	.+2      	; 0xca2 <__vector_10+0x170>
+     ca0:	52 c0       	rjmp	.+164    	; 0xd46 <__vector_10+0x214>
+				if(leds_on == 2) {
+     ca2:	42 30       	cpi	r20, 0x02	; 2
+     ca4:	81 f5       	brne	.+96     	; 0xd06 <__vector_10+0x1d4>
+					if(!statusLEDs.byte) {
+     ca6:	80 91 8c 00 	lds	r24, 0x008C
+     caa:	81 11       	cpse	r24, r1
+     cac:	20 c0       	rjmp	.+64     	; 0xcee <__vector_10+0x1bc>
+						if(leds_on_timer++ % 200 == 0) {
+     cae:	80 91 7a 00 	lds	r24, 0x007A
+     cb2:	90 91 7b 00 	lds	r25, 0x007B
+     cb6:	9c 01       	movw	r18, r24
+     cb8:	2f 5f       	subi	r18, 0xFF	; 255
+     cba:	3f 4f       	sbci	r19, 0xFF	; 255
+     cbc:	30 93 7b 00 	sts	0x007B, r19
+     cc0:	20 93 7a 00 	sts	0x007A, r18
+     cc4:	68 ec       	ldi	r22, 0xC8	; 200
+     cc6:	70 e0       	ldi	r23, 0x00	; 0
+     cc8:	0e 94 b8 0c 	call	0x1970	; 0x1970 <__udivmodhi4>
+     ccc:	89 2b       	or	r24, r25
+     cce:	d9 f5       	brne	.+118    	; 0xd46 <__vector_10+0x214>
+							if(leds_on_timer > POWER_ON_SHOW_TIME) {
+     cd0:	21 3a       	cpi	r18, 0xA1	; 161
+     cd2:	3f 40       	sbci	r19, 0x0F	; 15
+     cd4:	28 f0       	brcs	.+10     	; 0xce0 <__vector_10+0x1ae>
+								DDRB &= ~SL5; 
+     cd6:	b9 98       	cbi	0x17, 1	; 23
+								PORTB &= ~SL5;
+     cd8:	c1 98       	cbi	0x18, 1	; 24
+								leds_on = 0;
+     cda:	10 92 a1 00 	sts	0x00A1, r1
+     cde:	29 c0       	rjmp	.+82     	; 0xd32 <__vector_10+0x200>
+								leds_on_timer = 0;
+							}
+							else {
+								DDRB ^= SL5; 
+     ce0:	87 b3       	in	r24, 0x17	; 23
+     ce2:	84 27       	eor	r24, r20
+     ce4:	87 bb       	out	0x17, r24	; 23
+								PORTB ^= SL5;
+     ce6:	88 b3       	in	r24, 0x18	; 24
+     ce8:	84 27       	eor	r24, r20
+     cea:	88 bb       	out	0x18, r24	; 24
+     cec:	2c c0       	rjmp	.+88     	; 0xd46 <__vector_10+0x214>
+							}
+						}
+					}
+					else {
+						if(!statusLEDs.LED5) {
+     cee:	84 fd       	sbrc	r24, 4
+     cf0:	02 c0       	rjmp	.+4      	; 0xcf6 <__vector_10+0x1c4>
+							DDRB &= ~SL5; 
+     cf2:	b9 98       	cbi	0x17, 1	; 23
+							PORTB &= ~SL5;
+     cf4:	c1 98       	cbi	0x18, 1	; 24
+						}
+						leds_on_timer = 0;
+     cf6:	10 92 7b 00 	sts	0x007B, r1
+     cfa:	10 92 7a 00 	sts	0x007A, r1
+						leds_on = 1;
+     cfe:	81 e0       	ldi	r24, 0x01	; 1
+     d00:	80 93 a1 00 	sts	0x00A1, r24
+     d04:	20 c0       	rjmp	.+64     	; 0xd46 <__vector_10+0x214>
+					}
+				}
+				else if(leds_on_timer > POWER_ON_WAIT_TIME) {
+     d06:	80 91 7a 00 	lds	r24, 0x007A
+     d0a:	90 91 7b 00 	lds	r25, 0x007B
+     d0e:	81 3e       	cpi	r24, 0xE1	; 225
+     d10:	2e e2       	ldi	r18, 0x2E	; 46
+     d12:	92 07       	cpc	r25, r18
+     d14:	98 f0       	brcs	.+38     	; 0xd3c <__vector_10+0x20a>
+					if(leds_on == 1) {
+     d16:	41 30       	cpi	r20, 0x01	; 1
+     d18:	49 f4       	brne	.+18     	; 0xd2c <__vector_10+0x1fa>
+						leds_on = 0;
+     d1a:	10 92 a1 00 	sts	0x00A1, r1
+						if(!statusLEDs.LED5) {
+     d1e:	80 91 8c 00 	lds	r24, 0x008C
+     d22:	84 fd       	sbrc	r24, 4
+     d24:	06 c0       	rjmp	.+12     	; 0xd32 <__vector_10+0x200>
+							DDRB &= ~SL5; 
+     d26:	b9 98       	cbi	0x17, 1	; 23
+							PORTB &= ~SL5;
+     d28:	c1 98       	cbi	0x18, 1	; 24
+     d2a:	03 c0       	rjmp	.+6      	; 0xd32 <__vector_10+0x200>
+						}
+					}
+					else 
+						leds_on = 2;
+     d2c:	82 e0       	ldi	r24, 0x02	; 2
+     d2e:	80 93 a1 00 	sts	0x00A1, r24
+					leds_on_timer = 0;
+     d32:	10 92 7b 00 	sts	0x007B, r1
+     d36:	10 92 7a 00 	sts	0x007A, r1
+     d3a:	05 c0       	rjmp	.+10     	; 0xd46 <__vector_10+0x214>
+				}
+				else
+					leds_on_timer++;
+     d3c:	01 96       	adiw	r24, 0x01	; 1
+     d3e:	90 93 7b 00 	sts	0x007B, r25
+     d42:	80 93 7a 00 	sts	0x007A, r24
+			}
+		#endif
+
+		// ACS timer:
+		if(acs_timer < (ACS_UPDATE_INTERVAL+1))
+     d46:	80 91 ae 00 	lds	r24, 0x00AE
+     d4a:	90 91 af 00 	lds	r25, 0x00AF
+     d4e:	03 97       	sbiw	r24, 0x03	; 3
+     d50:	48 f4       	brcc	.+18     	; 0xd64 <__vector_10+0x232>
+			acs_timer++;	
+     d52:	80 91 ae 00 	lds	r24, 0x00AE
+     d56:	90 91 af 00 	lds	r25, 0x00AF
+     d5a:	01 96       	adiw	r24, 0x01	; 1
+     d5c:	90 93 af 00 	sts	0x00AF, r25
+     d60:	80 93 ae 00 	sts	0x00AE, r24
+
+		// Overcurrent measurement timer
+		if(overcurrent_timer < 55)
+     d64:	80 91 ce 00 	lds	r24, 0x00CE
+     d68:	87 33       	cpi	r24, 0x37	; 55
+     d6a:	18 f4       	brcc	.+6      	; 0xd72 <__vector_10+0x240>
+			overcurrent_timer++;
+     d6c:	8f 5f       	subi	r24, 0xFF	; 255
+     d6e:	80 93 ce 00 	sts	0x00CE, r24
+		
+		// Bumper check timer
+		if(bumper_timer < 52)
+     d72:	80 91 d9 00 	lds	r24, 0x00D9
+     d76:	84 33       	cpi	r24, 0x34	; 52
+     d78:	28 f4       	brcc	.+10     	; 0xd84 <__vector_10+0x252>
+			bumper_timer++;		
+     d7a:	80 91 d9 00 	lds	r24, 0x00D9
+     d7e:	8f 5f       	subi	r24, 0xFF	; 255
+     d80:	80 93 d9 00 	sts	0x00D9, r24
+		
+		// Soft PWM adjustment and automatic PWM shutdown if motor power is 0:
+		if(speed_adjust_timer++ > 2) {
+     d84:	80 91 d4 00 	lds	r24, 0x00D4
+     d88:	91 e0       	ldi	r25, 0x01	; 1
+     d8a:	98 0f       	add	r25, r24
+     d8c:	90 93 d4 00 	sts	0x00D4, r25
+     d90:	83 30       	cpi	r24, 0x03	; 3
+     d92:	d0 f1       	brcs	.+116    	; 0xe08 <__vector_10+0x2d6>
+			if(mright_ptmp != mright_power) {
+     d94:	40 91 cf 00 	lds	r20, 0x00CF
+     d98:	24 2f       	mov	r18, r20
+     d9a:	30 e0       	ldi	r19, 0x00	; 0
+     d9c:	80 91 b2 00 	lds	r24, 0x00B2
+     da0:	90 91 b3 00 	lds	r25, 0x00B3
+     da4:	28 17       	cp	r18, r24
+     da6:	39 07       	cpc	r19, r25
+     da8:	59 f0       	breq	.+22     	; 0xdc0 <__vector_10+0x28e>
+				if(mright_ptmp < mright_power) 
+     daa:	28 17       	cp	r18, r24
+     dac:	39 07       	cpc	r19, r25
+     dae:	14 f4       	brge	.+4      	; 0xdb4 <__vector_10+0x282>
+					mright_ptmp++;
+     db0:	4f 5f       	subi	r20, 0xFF	; 255
+     db2:	01 c0       	rjmp	.+2      	; 0xdb6 <__vector_10+0x284>
+				else 
+					mright_ptmp--;
+     db4:	41 50       	subi	r20, 0x01	; 1
+     db6:	40 93 cf 00 	sts	0x00CF, r20
+				OCR1AL = mright_ptmp;
+     dba:	80 91 cf 00 	lds	r24, 0x00CF
+     dbe:	8a bd       	out	0x2a, r24	; 42
+			}
+			if(mleft_ptmp != mleft_power) {
+     dc0:	40 91 f1 00 	lds	r20, 0x00F1
+     dc4:	24 2f       	mov	r18, r20
+     dc6:	30 e0       	ldi	r19, 0x00	; 0
+     dc8:	80 91 a2 00 	lds	r24, 0x00A2
+     dcc:	90 91 a3 00 	lds	r25, 0x00A3
+     dd0:	28 17       	cp	r18, r24
+     dd2:	39 07       	cpc	r19, r25
+     dd4:	59 f0       	breq	.+22     	; 0xdec <__vector_10+0x2ba>
+				if(mleft_ptmp < mleft_power) 
+     dd6:	28 17       	cp	r18, r24
+     dd8:	39 07       	cpc	r19, r25
+     dda:	14 f4       	brge	.+4      	; 0xde0 <__vector_10+0x2ae>
+					mleft_ptmp++;
+     ddc:	4f 5f       	subi	r20, 0xFF	; 255
+     dde:	01 c0       	rjmp	.+2      	; 0xde2 <__vector_10+0x2b0>
+				else 
+					mleft_ptmp--;
+     de0:	41 50       	subi	r20, 0x01	; 1
+     de2:	40 93 f1 00 	sts	0x00F1, r20
+				OCR1BL = mleft_ptmp;
+     de6:	80 91 f1 00 	lds	r24, 0x00F1
+     dea:	88 bd       	out	0x28, r24	; 40
+			}
+			if(mleft_ptmp || mright_ptmp)
+     dec:	80 91 f1 00 	lds	r24, 0x00F1
+     df0:	81 11       	cpse	r24, r1
+     df2:	04 c0       	rjmp	.+8      	; 0xdfc <__vector_10+0x2ca>
+     df4:	80 91 cf 00 	lds	r24, 0x00CF
+     df8:	88 23       	and	r24, r24
+     dfa:	19 f0       	breq	.+6      	; 0xe02 <__vector_10+0x2d0>
+				TCCR1A = (1 << WGM11) | (1 << COM1A1) | (1 << COM1B1);
+     dfc:	82 ea       	ldi	r24, 0xA2	; 162
+     dfe:	8f bd       	out	0x2f, r24	; 47
+     e00:	01 c0       	rjmp	.+2      	; 0xe04 <__vector_10+0x2d2>
+			else
+				TCCR1A = 0;
+     e02:	1f bc       	out	0x2f, r1	; 47
+			speed_adjust_timer = 0;
+     e04:	10 92 d4 00 	sts	0x00D4, r1
+		}
+
+		ms_timer = 0;
+     e08:	10 92 e5 00 	sts	0x00E5, r1
+	
+	static uint8_t	IRCOMM_RC5_bit;		// bit value
+	static uint8_t	IRCOMM_RC5_time;	// count bit time
+	static uint16_t IRCOMM_RC5_tmp;		// shift bits in
+	
+	if((!sysStatACS.rc5_data_received)) {
+     e0c:	30 91 96 00 	lds	r19, 0x0096
+     e10:	33 fd       	sbrc	r19, 3
+     e12:	47 c0       	rjmp	.+142    	; 0xea2 <__vector_10+0x370>
+		uint16_t tmp = IRCOMM_RC5_tmp;
+     e14:	80 91 78 00 	lds	r24, 0x0078
+     e18:	90 91 79 00 	lds	r25, 0x0079
+		if(++IRCOMM_RC5_time > RC5_PULSE_MAX) {				// count pulse time
+     e1c:	20 91 77 00 	lds	r18, 0x0077
+     e20:	2f 5f       	subi	r18, 0xFF	; 255
+     e22:	20 93 77 00 	sts	0x0077, r18
+     e26:	26 31       	cpi	r18, 0x16	; 22
+     e28:	98 f0       	brcs	.+38     	; 0xe50 <__vector_10+0x31e>
+			if(!(tmp & 0x4000) && (tmp & 0x2000)) {			// only 14 bits received?
+     e2a:	96 fd       	sbrc	r25, 6
+     e2c:	0a c0       	rjmp	.+20     	; 0xe42 <__vector_10+0x310>
+     e2e:	95 ff       	sbrs	r25, 5
+     e30:	08 c0       	rjmp	.+16     	; 0xe42 <__vector_10+0x310>
+				IRCOMM_RC5_data_ok.data = tmp;				// store result
+     e32:	90 93 f0 00 	sts	0x00F0, r25
+     e36:	80 93 ef 00 	sts	0x00EF, r24
+				sysStatACS.rc5_data_received = true; // we have new data!
+     e3a:	83 2f       	mov	r24, r19
+     e3c:	88 60       	ori	r24, 0x08	; 8
+     e3e:	80 93 96 00 	sts	0x0096, r24
+			}
+			sysStatACS.detect_rc5 = false; // NO RC5! 
+     e42:	80 91 96 00 	lds	r24, 0x0096
+     e46:	8f 7e       	andi	r24, 0xEF	; 239
+     e48:	80 93 96 00 	sts	0x0096, r24
+			tmp = 0;
+     e4c:	80 e0       	ldi	r24, 0x00	; 0
+     e4e:	90 e0       	ldi	r25, 0x00	; 0
+		}
+		if ((IRCOMM_RC5_bit ^ PINB) & ACS) {				// change detect
+     e50:	40 91 76 00 	lds	r20, 0x0076
+     e54:	36 b3       	in	r19, 0x16	; 22
+     e56:	34 27       	eor	r19, r20
+     e58:	32 ff       	sbrs	r19, 2
+     e5a:	1f c0       	rjmp	.+62     	; 0xe9a <__vector_10+0x368>
+			IRCOMM_RC5_bit = ~IRCOMM_RC5_bit;				// 0x00 -> 0xFF -> 0x00
+     e5c:	34 2f       	mov	r19, r20
+     e5e:	30 95       	com	r19
+     e60:	30 93 76 00 	sts	0x0076, r19
+			if(IRCOMM_RC5_time < RC5_PULSE_MIN)	{			// to short
+     e64:	27 30       	cpi	r18, 0x07	; 7
+     e66:	40 f4       	brcc	.+16     	; 0xe78 <__vector_10+0x346>
+				sysStatACS.detect_rc5 = false; // RC5 transmission detected! 
+     e68:	80 91 96 00 	lds	r24, 0x0096
+     e6c:	8f 7e       	andi	r24, 0xEF	; 239
+     e6e:	80 93 96 00 	sts	0x0096, r24
+				tmp = 0;
+     e72:	80 e0       	ldi	r24, 0x00	; 0
+     e74:	90 e0       	ldi	r25, 0x00	; 0
+     e76:	04 c0       	rjmp	.+8      	; 0xe80 <__vector_10+0x34e>
+			}
+			if(!tmp || (IRCOMM_RC5_time > RC5_PULSE_1_2)) {	// start or long pulse time
+     e78:	00 97       	sbiw	r24, 0x00	; 0
+     e7a:	11 f0       	breq	.+4      	; 0xe80 <__vector_10+0x34e>
+     e7c:	2f 30       	cpi	r18, 0x0F	; 15
+     e7e:	68 f0       	brcs	.+26     	; 0xe9a <__vector_10+0x368>
+				sysStatACS.detect_rc5 = true;
+     e80:	20 91 96 00 	lds	r18, 0x0096
+     e84:	20 61       	ori	r18, 0x10	; 16
+     e86:	20 93 96 00 	sts	0x0096, r18
+				if(!(tmp & 0x4000))							// not to many bits
+     e8a:	96 fd       	sbrc	r25, 6
+     e8c:	02 c0       	rjmp	.+4      	; 0xe92 <__vector_10+0x360>
+					tmp <<= 1;								// shift
+     e8e:	88 0f       	add	r24, r24
+     e90:	99 1f       	adc	r25, r25
+				if(!(IRCOMM_RC5_bit & ACS))					// inverted bit
+     e92:	32 ff       	sbrs	r19, 2
+					tmp |= 1;								// insert new bit
+     e94:	81 60       	ori	r24, 0x01	; 1
+				IRCOMM_RC5_time = 0;						// count next pulse time
+     e96:	10 92 77 00 	sts	0x0077, r1
+			}
+		}
+		IRCOMM_RC5_tmp = tmp;	
+     e9a:	90 93 79 00 	sts	0x0079, r25
+     e9e:	80 93 78 00 	sts	0x0078, r24
+		if(!isEncoderRight())
+			cycle_l_r_tmp++;
+		else 
+			cycle_h_r_tmp++;
+	#endif
+}
+     ea2:	bf 91       	pop	r27
+     ea4:	af 91       	pop	r26
+     ea6:	9f 91       	pop	r25
+     ea8:	8f 91       	pop	r24
+     eaa:	7f 91       	pop	r23
+     eac:	6f 91       	pop	r22
+     eae:	5f 91       	pop	r21
+     eb0:	4f 91       	pop	r20
+     eb2:	3f 91       	pop	r19
+     eb4:	2f 91       	pop	r18
+     eb6:	0f 90       	pop	r0
+     eb8:	0f be       	out	0x3f, r0	; 63
+     eba:	0f 90       	pop	r0
+     ebc:	1f 90       	pop	r1
+     ebe:	18 95       	reti
+
+00000ec0 <sleep>:
+ *		// The maximum delay is:
+ *		sleep(255); // delay 255 * 100us = 25500us = 25.5ms
+ */
+void sleep(uint8_t time)
+{
+	for (delay_timer = 0; delay_timer < time;);
+     ec0:	10 92 e2 00 	sts	0x00E2, r1
+     ec4:	90 91 e2 00 	lds	r25, 0x00E2
+     ec8:	98 17       	cp	r25, r24
+     eca:	e0 f3       	brcs	.-8      	; 0xec4 <sleep+0x4>
+}
+     ecc:	08 95       	ret
+
+00000ece <mSleep>:
+ *      mSleep(100); // delay 100 * 1ms = 100ms = 0.1s
+ *		mSleep(1000); // delay 1000 * 1ms = 1000ms = 1s
+ *
+ */
+void mSleep(uint16_t time)
+{
+     ece:	cf 93       	push	r28
+     ed0:	df 93       	push	r29
+     ed2:	ec 01       	movw	r28, r24
+	while (time--) sleep(10);
+     ed4:	20 97       	sbiw	r28, 0x00	; 0
+     ed6:	29 f0       	breq	.+10     	; 0xee2 <mSleep+0x14>
+     ed8:	8a e0       	ldi	r24, 0x0A	; 10
+     eda:	0e 94 60 07 	call	0xec0	; 0xec0 <sleep>
+     ede:	21 97       	sbiw	r28, 0x01	; 1
+     ee0:	f9 cf       	rjmp	.-14     	; 0xed4 <mSleep+0x6>
+}
+     ee2:	df 91       	pop	r29
+     ee4:	cf 91       	pop	r28
+     ee6:	08 95       	ret
+
+00000ee8 <delayCycles>:
+ * 	delayCycles(1000); // Delays for minimal 1000 instruction cycles
+ *					   // (it will be a lot more...)
+ */
+void delayCycles(uint16_t dly)
+{
+	while(dly--) nop();
+     ee8:	01 97       	sbiw	r24, 0x01	; 1
+     eea:	10 f0       	brcs	.+4      	; 0xef0 <delayCycles+0x8>
+     eec:	00 00       	nop
+     eee:	fc cf       	rjmp	.-8      	; 0xee8 <delayCycles>
+}
+     ef0:	08 95       	ret
+
+00000ef2 <emergencyShutdown>:
+ * called from task_motionControl (s. below) and outputs an error message and then stops
+ * all operations to save the robot from damages that may occur if it continues
+ * to drive around. 
+ */
+void emergencyShutdown(uint8_t why)
+{
+     ef2:	c8 2f       	mov	r28, r24
+	cli();
+     ef4:	f8 94       	cli
+	IRCOMM_OFF();
+     ef6:	97 98       	cbi	0x12, 7	; 18
+	setACSPwrOff();
+     ef8:	0e 94 68 05 	call	0xad0	; 0xad0 <setACSPwrOff>
+	mleft_power = 0;
+     efc:	10 92 a3 00 	sts	0x00A3, r1
+     f00:	10 92 a2 00 	sts	0x00A2, r1
+	mright_power = 0;
+     f04:	10 92 b3 00 	sts	0x00B3, r1
+     f08:	10 92 b2 00 	sts	0x00B2, r1
+	left_i = 0;
+     f0c:	10 92 9d 00 	sts	0x009D, r1
+     f10:	10 92 9c 00 	sts	0x009C, r1
+	right_i = 0;
+     f14:	10 92 d8 00 	sts	0x00D8, r1
+     f18:	10 92 d7 00 	sts	0x00D7, r1
+	mleft_ptmp = 0;
+     f1c:	10 92 f1 00 	sts	0x00F1, r1
+	mright_ptmp = 0;
+     f20:	10 92 cf 00 	sts	0x00CF, r1
+	OCR1AL = 0;
+     f24:	1a bc       	out	0x2a, r1	; 42
+	OCR1BL = 0;
+     f26:	18 bc       	out	0x28, r1	; 40
+	TCCR1A = 0;
+     f28:	1f bc       	out	0x2f, r1	; 47
+	powerOFF();
+     f2a:	0e 94 87 05 	call	0xb0e	; 0xb0e <powerOFF>
+#ifdef ENABLE_OC_ERROR_MESSAGE
+	writeString_P("\n\n##### EMERGENCY SHUTDOWN #####\n");
+     f2e:	8e ef       	ldi	r24, 0xFE	; 254
+     f30:	91 e0       	ldi	r25, 0x01	; 1
+     f32:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+	writeString_P("##### ALL OPERATIONS STOPPED TO PREVENT ANY DAMAGE! #####\n");
+     f36:	83 ec       	ldi	r24, 0xC3	; 195
+     f38:	91 e0       	ldi	r25, 0x01	; 1
+     f3a:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+	if(why == ENCODER_MALFUNCTION_LEFT || why == ENCODER_MALFUNCTION_RIGHT) {
+     f3e:	8f ef       	ldi	r24, 0xFF	; 255
+     f40:	8c 0f       	add	r24, r28
+     f42:	82 30       	cpi	r24, 0x02	; 2
+     f44:	c0 f4       	brcc	.+48     	; 0xf76 <emergencyShutdown+0x84>
+		
+		writeString_P("\n### ENCODER (OR MOTOR) MALFUNCTION! ###\n");
+     f46:	89 e9       	ldi	r24, 0x99	; 153
+     f48:	91 e0       	ldi	r25, 0x01	; 1
+     f4a:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+		writeString_P("Affected channel:"); 	
+     f4e:	87 e8       	ldi	r24, 0x87	; 135
+     f50:	91 e0       	ldi	r25, 0x01	; 1
+     f52:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+		if(why == ENCODER_MALFUNCTION_LEFT)
+     f56:	c1 30       	cpi	r28, 0x01	; 1
+     f58:	19 f4       	brne	.+6      	; 0xf60 <emergencyShutdown+0x6e>
+			writeString_P("LEFT");
+     f5a:	82 e8       	ldi	r24, 0x82	; 130
+     f5c:	91 e0       	ldi	r25, 0x01	; 1
+     f5e:	02 c0       	rjmp	.+4      	; 0xf64 <emergencyShutdown+0x72>
+		else
+			writeString_P("RIGHT");
+     f60:	8c e7       	ldi	r24, 0x7C	; 124
+     f62:	91 e0       	ldi	r25, 0x01	; 1
+     f64:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+		writeString_P("!\n\n(s. task_motorControl() function in RP6Lib!)\n");
+     f68:	8b e4       	ldi	r24, 0x4B	; 75
+     f6a:	91 e0       	ldi	r25, 0x01	; 1
+     f6c:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+		writeString_P("You need to check Encoder/Motor assembly (or your software).\n\n");
+     f70:	8c e0       	ldi	r24, 0x0C	; 12
+     f72:	91 e0       	ldi	r25, 0x01	; 1
+     f74:	0c c0       	rjmp	.+24     	; 0xf8e <emergencyShutdown+0x9c>
+	}
+	else if(why == OVERCURRENT)
+     f76:	c3 30       	cpi	r28, 0x03	; 3
+     f78:	61 f4       	brne	.+24     	; 0xf92 <emergencyShutdown+0xa0>
+	{
+		writeString_P("\n\n### MOTOR OVERCURRENT ###\n");
+     f7a:	8f ee       	ldi	r24, 0xEF	; 239
+     f7c:	90 e0       	ldi	r25, 0x00	; 0
+     f7e:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+		writeString_P("\n\n(s. task_motorControl() function in RP6Lib!)\n");
+     f82:	8f eb       	ldi	r24, 0xBF	; 191
+     f84:	90 e0       	ldi	r25, 0x00	; 0
+     f86:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+		writeString_P("You need to check Motor assembly (or your software).\n\n");
+     f8a:	88 e8       	ldi	r24, 0x88	; 136
+     f8c:	90 e0       	ldi	r25, 0x00	; 0
+     f8e:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+	}
+	writeString_P("The Robot needs to be resetted now.\n\n");
+     f92:	82 e6       	ldi	r24, 0x62	; 98
+     f94:	90 e0       	ldi	r25, 0x00	; 0
+     f96:	0e 94 72 0b 	call	0x16e4	; 0x16e4 <writeNStringP>
+ *			// this clears all LEDs and sets the LEDs STATUS1,
+ *			// STATUS6 and STATUS4!
+ */
+void setLEDs(uint8_t leds)
+{
+	statusLEDs.byte = leds;
+     f9a:	d6 e3       	ldi	r29, 0x36	; 54
+     f9c:	d0 93 8c 00 	sts	0x008C, r29
+	updateStatusLEDs();
+     fa0:	0e 94 c1 01 	call	0x382	; 0x382 <updateStatusLEDs>
+     fa4:	ca e0       	ldi	r28, 0x0A	; 10
+	while(true) // Rest In Peace
+	{
+		setLEDs(0b110110);
+		uint8_t dly;
+		for(dly = 10; dly; dly--)
+			delayCycles(32768);
+     fa6:	80 e0       	ldi	r24, 0x00	; 0
+     fa8:	90 e8       	ldi	r25, 0x80	; 128
+     faa:	0e 94 74 07 	call	0xee8	; 0xee8 <delayCycles>
+     fae:	c1 50       	subi	r28, 0x01	; 1
+#endif
+	while(true) // Rest In Peace
+	{
+		setLEDs(0b110110);
+		uint8_t dly;
+		for(dly = 10; dly; dly--)
+     fb0:	d1 f7       	brne	.-12     	; 0xfa6 <emergencyShutdown+0xb4>
+ *			// this clears all LEDs and sets the LEDs STATUS1,
+ *			// STATUS6 and STATUS4!
+ */
+void setLEDs(uint8_t leds)
+{
+	statusLEDs.byte = leds;
+     fb2:	10 92 8c 00 	sts	0x008C, r1
+	updateStatusLEDs();
+     fb6:	0e 94 c1 01 	call	0x382	; 0x382 <updateStatusLEDs>
+     fba:	ca e0       	ldi	r28, 0x0A	; 10
+		uint8_t dly;
+		for(dly = 10; dly; dly--)
+			delayCycles(32768);
+		setLEDs(0b000000);
+		for(dly = 10; dly; dly--)
+			delayCycles(65535);
+     fbc:	8f ef       	ldi	r24, 0xFF	; 255
+     fbe:	9f ef       	ldi	r25, 0xFF	; 255
+     fc0:	0e 94 74 07 	call	0xee8	; 0xee8 <delayCycles>
+     fc4:	c1 50       	subi	r28, 0x01	; 1
+		setLEDs(0b110110);
+		uint8_t dly;
+		for(dly = 10; dly; dly--)
+			delayCycles(32768);
+		setLEDs(0b000000);
+		for(dly = 10; dly; dly--)
+     fc6:	d1 f7       	brne	.-12     	; 0xfbc <emergencyShutdown+0xca>
+     fc8:	e9 cf       	rjmp	.-46     	; 0xf9c <emergencyShutdown+0xaa>
+
+00000fca <task_motionControl>:
+ *
+ */
+void task_motionControl(void)
+{
+	// Automatic motor overcurrent shutdown:
+	if(overcurrent_timer >= 50) { // every 5ms
+     fca:	80 91 ce 00 	lds	r24, 0x00CE
+     fce:	82 33       	cpi	r24, 0x32	; 50
+     fd0:	08 f4       	brcc	.+2      	; 0xfd4 <task_motionControl+0xa>
+     fd2:	75 c0       	rjmp	.+234    	; 0x10be <task_motionControl+0xf4>
+		overcurrent_timer = 0;
+     fd4:	10 92 ce 00 	sts	0x00CE, r1
+		if(!overcurrent_timeout) {
+     fd8:	20 91 cb 00 	lds	r18, 0x00CB
+     fdc:	80 91 f2 00 	lds	r24, 0x00F2
+     fe0:	90 91 f3 00 	lds	r25, 0x00F3
+     fe4:	21 11       	cpse	r18, r1
+     fe6:	3c c0       	rjmp	.+120    	; 0x1060 <task_motionControl+0x96>
+     fe8:	40 91 8b 00 	lds	r20, 0x008B
+			if((adcMotorCurrentLeft > 770) || (adcMotorCurrentRight > 770)) {
+     fec:	83 30       	cpi	r24, 0x03	; 3
+     fee:	23 e0       	ldi	r18, 0x03	; 3
+     ff0:	92 07       	cpc	r25, r18
+     ff2:	38 f4       	brcc	.+14     	; 0x1002 <task_motionControl+0x38>
+     ff4:	20 91 e3 00 	lds	r18, 0x00E3
+     ff8:	30 91 e4 00 	lds	r19, 0x00E4
+     ffc:	23 30       	cpi	r18, 0x03	; 3
+     ffe:	33 40       	sbci	r19, 0x03	; 3
+    1000:	e0 f0       	brcs	.+56     	; 0x103a <task_motionControl+0x70>
+				overcurrent_errors++;
+    1002:	80 91 cd 00 	lds	r24, 0x00CD
+    1006:	8f 5f       	subi	r24, 0xFF	; 255
+    1008:	80 93 cd 00 	sts	0x00CD, r24
+				overcurrent_timeout = 10; 
+    100c:	8a e0       	ldi	r24, 0x0A	; 10
+    100e:	80 93 cb 00 	sts	0x00CB, r24
+				mleft_power = 0;
+    1012:	10 92 a3 00 	sts	0x00A3, r1
+    1016:	10 92 a2 00 	sts	0x00A2, r1
+				mright_power = 0;				
+    101a:	10 92 b3 00 	sts	0x00B3, r1
+    101e:	10 92 b2 00 	sts	0x00B2, r1
+				left_i = 0;
+    1022:	10 92 9d 00 	sts	0x009D, r1
+    1026:	10 92 9c 00 	sts	0x009C, r1
+				right_i = 0;
+    102a:	10 92 d8 00 	sts	0x00D8, r1
+    102e:	10 92 d7 00 	sts	0x00D7, r1
+				motion_status.overcurrent = true;
+    1032:	44 60       	ori	r20, 0x04	; 4
+    1034:	40 93 8b 00 	sts	0x008B, r20
+				return;
+    1038:	08 95       	ret
+			}
+			else
+				motion_status.overcurrent = false;
+    103a:	24 2f       	mov	r18, r20
+    103c:	2b 7f       	andi	r18, 0xFB	; 251
+    103e:	20 93 8b 00 	sts	0x008B, r18
+			
+			// Emergency shutdown if there are too many (default: 3) overcurrent
+			// events within ~20 seconds (100 * 200ms).
+			if(overcurrent_error_clear > 100) {
+    1042:	20 91 98 00 	lds	r18, 0x0098
+    1046:	25 36       	cpi	r18, 0x65	; 101
+    1048:	28 f0       	brcs	.+10     	; 0x1054 <task_motionControl+0x8a>
+				overcurrent_errors = 0;
+    104a:	10 92 cd 00 	sts	0x00CD, r1
+				overcurrent_error_clear = 0;
+    104e:	10 92 98 00 	sts	0x0098, r1
+    1052:	06 c0       	rjmp	.+12     	; 0x1060 <task_motionControl+0x96>
+			}
+			else if(overcurrent_errors > 2)
+    1054:	20 91 cd 00 	lds	r18, 0x00CD
+    1058:	23 30       	cpi	r18, 0x03	; 3
+    105a:	10 f0       	brcs	.+4      	; 0x1060 <task_motionControl+0x96>
+				emergencyShutdown(OVERCURRENT);
+    105c:	83 e0       	ldi	r24, 0x03	; 3
+    105e:	14 c0       	rjmp	.+40     	; 0x1088 <task_motionControl+0xbe>
+		}
+		
+		// Detect if one of the encoders or motors does not work properly and stop 
+		// all operations immediately if this is the case! 
+		if((adcMotorCurrentLeft < 150) && (mleft_speed == 0) 
+    1060:	86 39       	cpi	r24, 0x96	; 150
+    1062:	91 05       	cpc	r25, r1
+    1064:	98 f4       	brcc	.+38     	; 0x108c <task_motionControl+0xc2>
+    1066:	80 91 a4 00 	lds	r24, 0x00A4
+    106a:	90 91 a5 00 	lds	r25, 0x00A5
+    106e:	89 2b       	or	r24, r25
+    1070:	69 f4       	brne	.+26     	; 0x108c <task_motionControl+0xc2>
+		  && (mleft_des_speed != 0) &&  (mleft_ptmp > 150))
+    1072:	80 91 92 00 	lds	r24, 0x0092
+    1076:	90 91 93 00 	lds	r25, 0x0093
+    107a:	89 2b       	or	r24, r25
+    107c:	39 f0       	breq	.+14     	; 0x108c <task_motionControl+0xc2>
+    107e:	80 91 f1 00 	lds	r24, 0x00F1
+    1082:	87 39       	cpi	r24, 0x97	; 151
+    1084:	18 f0       	brcs	.+6      	; 0x108c <task_motionControl+0xc2>
+			emergencyShutdown(ENCODER_MALFUNCTION_LEFT);
+    1086:	81 e0       	ldi	r24, 0x01	; 1
+    1088:	0e 94 79 07 	call	0xef2	; 0xef2 <emergencyShutdown>
+		if((adcMotorCurrentRight < 150) && (mright_speed == 0) 
+    108c:	80 91 e3 00 	lds	r24, 0x00E3
+    1090:	90 91 e4 00 	lds	r25, 0x00E4
+    1094:	86 39       	cpi	r24, 0x96	; 150
+    1096:	91 05       	cpc	r25, r1
+    1098:	90 f4       	brcc	.+36     	; 0x10be <task_motionControl+0xf4>
+    109a:	80 91 e6 00 	lds	r24, 0x00E6
+    109e:	90 91 e7 00 	lds	r25, 0x00E7
+    10a2:	89 2b       	or	r24, r25
+    10a4:	61 f4       	brne	.+24     	; 0x10be <task_motionControl+0xf4>
+		  && (mright_des_speed != 0) && (mright_ptmp > 150))
+    10a6:	80 91 90 00 	lds	r24, 0x0090
+    10aa:	90 91 91 00 	lds	r25, 0x0091
+    10ae:	89 2b       	or	r24, r25
+    10b0:	31 f0       	breq	.+12     	; 0x10be <task_motionControl+0xf4>
+    10b2:	80 91 cf 00 	lds	r24, 0x00CF
+    10b6:	87 39       	cpi	r24, 0x97	; 151
+    10b8:	10 f0       	brcs	.+4      	; 0x10be <task_motionControl+0xf4>
+			emergencyShutdown(ENCODER_MALFUNCTION_RIGHT);
+    10ba:	82 e0       	ldi	r24, 0x02	; 2
+    10bc:	e5 cf       	rjmp	.-54     	; 0x1088 <task_motionControl+0xbe>
+	}
+	
+	// Motor Control
+	if(motor_control) { // Everytime after the speed has been measured. (default: 200ms)
+    10be:	80 91 a0 00 	lds	r24, 0x00A0
+    10c2:	88 23       	and	r24, r24
+    10c4:	09 f4       	brne	.+2      	; 0x10c8 <task_motionControl+0xfe>
+    10c6:	8e c1       	rjmp	.+796    	; 0x13e4 <task_motionControl+0x41a>
+		if(!overcurrent_timeout) { // No overcurrent timeout? (default is to wait 2 seconds before new try)
+    10c8:	80 91 cb 00 	lds	r24, 0x00CB
+    10cc:	81 11       	cpse	r24, r1
+    10ce:	85 c1       	rjmp	.+778    	; 0x13da <task_motionControl+0x410>
+			if(overcurrent_errors) // Overcurrent errors?
+    10d0:	80 91 cd 00 	lds	r24, 0x00CD
+    10d4:	88 23       	and	r24, r24
+    10d6:	31 f0       	breq	.+12     	; 0x10e4 <task_motionControl+0x11a>
+				overcurrent_error_clear++; // Yes, Timeout to clear all error events.
+    10d8:	80 91 98 00 	lds	r24, 0x0098
+    10dc:	8f 5f       	subi	r24, 0xFF	; 255
+    10de:	80 93 98 00 	sts	0x0098, r24
+    10e2:	02 c0       	rjmp	.+4      	; 0x10e8 <task_motionControl+0x11e>
+			else
+				overcurrent_error_clear=0; // No, we set the timeout to zero.
+    10e4:	10 92 98 00 	sts	0x0098, r1
+				
+			// Move Distance left:
+			if(motion_status.move_R) {
+    10e8:	40 91 8b 00 	lds	r20, 0x008B
+    10ec:	41 ff       	sbrs	r20, 1
+    10ee:	39 c0       	rjmp	.+114    	; 0x1162 <task_motionControl+0x198>
+				if(mleft_dist >= preStop_R) { // Stop a bit before the desired distance for ..
+    10f0:	20 91 e8 00 	lds	r18, 0x00E8
+    10f4:	30 91 e9 00 	lds	r19, 0x00E9
+    10f8:	80 91 8e 00 	lds	r24, 0x008E
+    10fc:	90 91 8f 00 	lds	r25, 0x008F
+    1100:	28 17       	cp	r18, r24
+    1102:	39 07       	cpc	r19, r25
+    1104:	88 f0       	brcs	.+34     	; 0x1128 <task_motionControl+0x15e>
+					mleft_des_speed = 0;      // ... better accurancy.
+    1106:	10 92 93 00 	sts	0x0093, r1
+    110a:	10 92 92 00 	sts	0x0092, r1
+					left_i = 0;
+    110e:	10 92 9d 00 	sts	0x009D, r1
+    1112:	10 92 9c 00 	sts	0x009C, r1
+					mleft_power = 0;		
+    1116:	10 92 a3 00 	sts	0x00A3, r1
+    111a:	10 92 a2 00 	sts	0x00A2, r1
+					motion_status.move_R = false;
+    111e:	84 2f       	mov	r24, r20
+    1120:	8d 7f       	andi	r24, 0xFD	; 253
+    1122:	80 93 8b 00 	sts	0x008B, r24
+    1126:	1d c0       	rjmp	.+58     	; 0x1162 <task_motionControl+0x198>
+				}
+				else if(mleft_dist >= preDecelerate_R) { // Start to decelerate?
+    1128:	20 91 e8 00 	lds	r18, 0x00E8
+    112c:	30 91 e9 00 	lds	r19, 0x00E9
+    1130:	80 91 a6 00 	lds	r24, 0x00A6
+    1134:	90 91 a7 00 	lds	r25, 0x00A7
+    1138:	28 17       	cp	r18, r24
+    113a:	39 07       	cpc	r19, r25
+    113c:	90 f0       	brcs	.+36     	; 0x1162 <task_motionControl+0x198>
+					mleft_des_speed /= 2;
+    113e:	80 91 92 00 	lds	r24, 0x0092
+    1142:	90 91 93 00 	lds	r25, 0x0093
+    1146:	96 95       	lsr	r25
+    1148:	87 95       	ror	r24
+    114a:	90 93 93 00 	sts	0x0093, r25
+    114e:	80 93 92 00 	sts	0x0092, r24
+					if(mleft_des_speed < 22) mleft_des_speed = 22;
+    1152:	46 97       	sbiw	r24, 0x16	; 22
+    1154:	30 f4       	brcc	.+12     	; 0x1162 <task_motionControl+0x198>
+    1156:	86 e1       	ldi	r24, 0x16	; 22
+    1158:	90 e0       	ldi	r25, 0x00	; 0
+    115a:	90 93 93 00 	sts	0x0093, r25
+    115e:	80 93 92 00 	sts	0x0092, r24
+				}	
+			}
+			
+			// Move Distance right:
+			if(motion_status.move_L) {
+    1162:	40 91 8b 00 	lds	r20, 0x008B
+    1166:	40 ff       	sbrs	r20, 0
+    1168:	39 c0       	rjmp	.+114    	; 0x11dc <task_motionControl+0x212>
+				if(mright_dist >= preStop_L) { // Stop a bit before the desired distance for ..
+    116a:	20 91 da 00 	lds	r18, 0x00DA
+    116e:	30 91 db 00 	lds	r19, 0x00DB
+    1172:	80 91 b0 00 	lds	r24, 0x00B0
+    1176:	90 91 b1 00 	lds	r25, 0x00B1
+    117a:	28 17       	cp	r18, r24
+    117c:	39 07       	cpc	r19, r25
+    117e:	88 f0       	brcs	.+34     	; 0x11a2 <task_motionControl+0x1d8>
+					mright_des_speed = 0;      // ... better accurancy.
+    1180:	10 92 91 00 	sts	0x0091, r1
+    1184:	10 92 90 00 	sts	0x0090, r1
+					right_i = 0;
+    1188:	10 92 d8 00 	sts	0x00D8, r1
+    118c:	10 92 d7 00 	sts	0x00D7, r1
+					mright_power = 0;
+    1190:	10 92 b3 00 	sts	0x00B3, r1
+    1194:	10 92 b2 00 	sts	0x00B2, r1
+					motion_status.move_L = false;
+    1198:	84 2f       	mov	r24, r20
+    119a:	8e 7f       	andi	r24, 0xFE	; 254
+    119c:	80 93 8b 00 	sts	0x008B, r24
+    11a0:	1d c0       	rjmp	.+58     	; 0x11dc <task_motionControl+0x212>
+				}
+				else if(mright_dist >= preDecelerate_L) { // Start to decelerate?
+    11a2:	20 91 da 00 	lds	r18, 0x00DA
+    11a6:	30 91 db 00 	lds	r19, 0x00DB
+    11aa:	80 91 dc 00 	lds	r24, 0x00DC
+    11ae:	90 91 dd 00 	lds	r25, 0x00DD
+    11b2:	28 17       	cp	r18, r24
+    11b4:	39 07       	cpc	r19, r25
+    11b6:	90 f0       	brcs	.+36     	; 0x11dc <task_motionControl+0x212>
+					mright_des_speed /= 2;
+    11b8:	80 91 90 00 	lds	r24, 0x0090
+    11bc:	90 91 91 00 	lds	r25, 0x0091
+    11c0:	96 95       	lsr	r25
+    11c2:	87 95       	ror	r24
+    11c4:	90 93 91 00 	sts	0x0091, r25
+    11c8:	80 93 90 00 	sts	0x0090, r24
+					if(mright_des_speed < 22) mright_des_speed = 22;
+    11cc:	46 97       	sbiw	r24, 0x16	; 22
+    11ce:	30 f4       	brcc	.+12     	; 0x11dc <task_motionControl+0x212>
+    11d0:	86 e1       	ldi	r24, 0x16	; 22
+    11d2:	90 e0       	ldi	r25, 0x00	; 0
+    11d4:	90 93 91 00 	sts	0x0091, r25
+    11d8:	80 93 90 00 	sts	0x0090, r24
+#else 
+#ifdef CHANGE_DIRECTION_MEDIUM
+			// Change direction -- Medium Version.
+      // This stops before changing the motor direction but is a bit faster
+      // than the original version. 
+			if(mleft_des_dir != mleft_dir || mright_des_dir != mright_dir) {
+    11dc:	80 91 75 00 	lds	r24, 0x0075
+    11e0:	90 91 73 00 	lds	r25, 0x0073
+    11e4:	89 13       	cpse	r24, r25
+    11e6:	07 c0       	rjmp	.+14     	; 0x11f6 <task_motionControl+0x22c>
+    11e8:	20 91 74 00 	lds	r18, 0x0074
+    11ec:	90 91 72 00 	lds	r25, 0x0072
+    11f0:	29 17       	cp	r18, r25
+    11f2:	09 f4       	brne	.+2      	; 0x11f6 <task_motionControl+0x22c>
+    11f4:	51 c0       	rjmp	.+162    	; 0x1298 <task_motionControl+0x2ce>
+				if(mleft_des_speed || mright_des_speed) {
+    11f6:	40 91 92 00 	lds	r20, 0x0092
+    11fa:	50 91 93 00 	lds	r21, 0x0093
+    11fe:	20 91 90 00 	lds	r18, 0x0090
+    1202:	30 91 91 00 	lds	r19, 0x0091
+    1206:	41 15       	cp	r20, r1
+    1208:	51 05       	cpc	r21, r1
+    120a:	19 f4       	brne	.+6      	; 0x1212 <task_motionControl+0x248>
+    120c:	21 15       	cp	r18, r1
+    120e:	31 05       	cpc	r19, r1
+    1210:	01 f1       	breq	.+64     	; 0x1252 <task_motionControl+0x288>
+					mleft_des_speed_tmp = mleft_des_speed; // store current speed
+    1212:	50 93 95 00 	sts	0x0095, r21
+    1216:	40 93 94 00 	sts	0x0094, r20
+					mright_des_speed_tmp = mright_des_speed; 
+    121a:	30 93 a9 00 	sts	0x00A9, r19
+    121e:	20 93 a8 00 	sts	0x00A8, r18
+					mleft_des_speed = 0;			
+    1222:	10 92 93 00 	sts	0x0093, r1
+    1226:	10 92 92 00 	sts	0x0092, r1
+					mright_des_speed = 0;
+    122a:	10 92 91 00 	sts	0x0091, r1
+    122e:	10 92 90 00 	sts	0x0090, r1
+					mright_power=0; // Soft PWM adjust to 0
+    1232:	10 92 b3 00 	sts	0x00B3, r1
+    1236:	10 92 b2 00 	sts	0x00B2, r1
+					mleft_power=0;
+    123a:	10 92 a3 00 	sts	0x00A3, r1
+    123e:	10 92 a2 00 	sts	0x00A2, r1
+					left_i = 0;
+    1242:	10 92 9d 00 	sts	0x009D, r1
+    1246:	10 92 9c 00 	sts	0x009C, r1
+					right_i = 0;
+    124a:	10 92 d8 00 	sts	0x00D8, r1
+    124e:	10 92 d7 00 	sts	0x00D7, r1
+				}
+				if(!TCCR1A) {
+    1252:	9f b5       	in	r25, 0x2f	; 47
+    1254:	91 11       	cpse	r25, r1
+    1256:	20 c0       	rjmp	.+64     	; 0x1298 <task_motionControl+0x2ce>
+					setMotorDir(mleft_des_dir,mright_des_dir);
+    1258:	60 91 74 00 	lds	r22, 0x0074
+    125c:	0e 94 49 03 	call	0x692	; 0x692 <setMotorDir>
+					mleft_des_speed = mleft_des_speed_tmp;
+    1260:	20 91 94 00 	lds	r18, 0x0094
+    1264:	30 91 95 00 	lds	r19, 0x0095
+    1268:	30 93 93 00 	sts	0x0093, r19
+    126c:	20 93 92 00 	sts	0x0092, r18
+					mright_des_speed = mright_des_speed_tmp;
+    1270:	80 91 a8 00 	lds	r24, 0x00A8
+    1274:	90 91 a9 00 	lds	r25, 0x00A9
+    1278:	90 93 91 00 	sts	0x0091, r25
+    127c:	80 93 90 00 	sts	0x0090, r24
+					left_i = mleft_des_speed / 2;
+    1280:	36 95       	lsr	r19
+    1282:	27 95       	ror	r18
+    1284:	30 93 9d 00 	sts	0x009D, r19
+    1288:	20 93 9c 00 	sts	0x009C, r18
+					right_i = mright_des_speed / 2;
+    128c:	96 95       	lsr	r25
+    128e:	87 95       	ror	r24
+    1290:	90 93 d8 00 	sts	0x00D8, r25
+    1294:	80 93 d7 00 	sts	0x00D7, r24
+#endif
+#endif
+
+
+			// Left motor speed control:
+			int16_t error_left = mleft_des_speed - mleft_speed;
+    1298:	20 91 92 00 	lds	r18, 0x0092
+    129c:	30 91 93 00 	lds	r19, 0x0093
+    12a0:	80 91 a4 00 	lds	r24, 0x00A4
+    12a4:	90 91 a5 00 	lds	r25, 0x00A5
+    12a8:	a9 01       	movw	r20, r18
+    12aa:	48 1b       	sub	r20, r24
+    12ac:	59 0b       	sbc	r21, r25
+    12ae:	ca 01       	movw	r24, r20
+			left_i = left_i + error_left;
+    12b0:	40 91 9c 00 	lds	r20, 0x009C
+    12b4:	50 91 9d 00 	lds	r21, 0x009D
+    12b8:	84 0f       	add	r24, r20
+    12ba:	95 1f       	adc	r25, r21
+			if(left_i > MC_LEFT_IMAX) left_i = MC_LEFT_IMAX;
+    12bc:	85 3a       	cpi	r24, 0xA5	; 165
+    12be:	51 e0       	ldi	r21, 0x01	; 1
+    12c0:	95 07       	cpc	r25, r21
+    12c2:	14 f0       	brlt	.+4      	; 0x12c8 <task_motionControl+0x2fe>
+    12c4:	84 ea       	ldi	r24, 0xA4	; 164
+    12c6:	91 e0       	ldi	r25, 0x01	; 1
+    12c8:	90 93 9d 00 	sts	0x009D, r25
+    12cc:	80 93 9c 00 	sts	0x009C, r24
+			if(left_i < MC_LEFT_IMIN) left_i = MC_LEFT_IMIN;
+    12d0:	80 91 9c 00 	lds	r24, 0x009C
+    12d4:	90 91 9d 00 	lds	r25, 0x009D
+    12d8:	8c 35       	cpi	r24, 0x5C	; 92
+    12da:	9e 4f       	sbci	r25, 0xFE	; 254
+    12dc:	34 f4       	brge	.+12     	; 0x12ea <task_motionControl+0x320>
+    12de:	8c e5       	ldi	r24, 0x5C	; 92
+    12e0:	9e ef       	ldi	r25, 0xFE	; 254
+    12e2:	90 93 9d 00 	sts	0x009D, r25
+    12e6:	80 93 9c 00 	sts	0x009C, r24
+			if(mleft_speed == 0 && mleft_des_speed == 0)
+    12ea:	80 91 a4 00 	lds	r24, 0x00A4
+    12ee:	90 91 a5 00 	lds	r25, 0x00A5
+    12f2:	89 2b       	or	r24, r25
+    12f4:	31 f4       	brne	.+12     	; 0x1302 <task_motionControl+0x338>
+    12f6:	23 2b       	or	r18, r19
+    12f8:	21 f4       	brne	.+8      	; 0x1302 <task_motionControl+0x338>
+				left_i = 0;
+    12fa:	10 92 9d 00 	sts	0x009D, r1
+    12fe:	10 92 9c 00 	sts	0x009C, r1
+			mleft_power = left_i / 2; 
+    1302:	80 91 9c 00 	lds	r24, 0x009C
+    1306:	90 91 9d 00 	lds	r25, 0x009D
+    130a:	97 fd       	sbrc	r25, 7
+    130c:	01 96       	adiw	r24, 0x01	; 1
+    130e:	95 95       	asr	r25
+    1310:	87 95       	ror	r24
+			if(mleft_power > 210) mleft_power = 210;
+    1312:	83 3d       	cpi	r24, 0xD3	; 211
+    1314:	91 05       	cpc	r25, r1
+    1316:	14 f0       	brlt	.+4      	; 0x131c <task_motionControl+0x352>
+    1318:	82 ed       	ldi	r24, 0xD2	; 210
+    131a:	90 e0       	ldi	r25, 0x00	; 0
+    131c:	90 93 a3 00 	sts	0x00A3, r25
+    1320:	80 93 a2 00 	sts	0x00A2, r24
+			if(mleft_power < 0) mleft_power = 0;
+    1324:	80 91 a2 00 	lds	r24, 0x00A2
+    1328:	90 91 a3 00 	lds	r25, 0x00A3
+    132c:	97 ff       	sbrs	r25, 7
+    132e:	04 c0       	rjmp	.+8      	; 0x1338 <task_motionControl+0x36e>
+    1330:	10 92 a3 00 	sts	0x00A3, r1
+    1334:	10 92 a2 00 	sts	0x00A2, r1
+			
+			// Right motor speed control:
+			int16_t error_right = mright_des_speed - mright_speed;
+    1338:	20 91 90 00 	lds	r18, 0x0090
+    133c:	30 91 91 00 	lds	r19, 0x0091
+    1340:	80 91 e6 00 	lds	r24, 0x00E6
+    1344:	90 91 e7 00 	lds	r25, 0x00E7
+    1348:	a9 01       	movw	r20, r18
+    134a:	48 1b       	sub	r20, r24
+    134c:	59 0b       	sbc	r21, r25
+    134e:	ca 01       	movw	r24, r20
+			right_i = right_i + error_right;
+    1350:	40 91 d7 00 	lds	r20, 0x00D7
+    1354:	50 91 d8 00 	lds	r21, 0x00D8
+    1358:	84 0f       	add	r24, r20
+    135a:	95 1f       	adc	r25, r21
+			if(right_i > MC_RIGHT_IMAX) right_i = MC_RIGHT_IMAX;
+    135c:	85 3a       	cpi	r24, 0xA5	; 165
+    135e:	51 e0       	ldi	r21, 0x01	; 1
+    1360:	95 07       	cpc	r25, r21
+    1362:	14 f0       	brlt	.+4      	; 0x1368 <task_motionControl+0x39e>
+    1364:	84 ea       	ldi	r24, 0xA4	; 164
+    1366:	91 e0       	ldi	r25, 0x01	; 1
+    1368:	90 93 d8 00 	sts	0x00D8, r25
+    136c:	80 93 d7 00 	sts	0x00D7, r24
+			if(right_i < MC_RIGHT_IMIN) right_i = MC_RIGHT_IMIN;
+    1370:	80 91 d7 00 	lds	r24, 0x00D7
+    1374:	90 91 d8 00 	lds	r25, 0x00D8
+    1378:	8c 35       	cpi	r24, 0x5C	; 92
+    137a:	9e 4f       	sbci	r25, 0xFE	; 254
+    137c:	34 f4       	brge	.+12     	; 0x138a <task_motionControl+0x3c0>
+    137e:	8c e5       	ldi	r24, 0x5C	; 92
+    1380:	9e ef       	ldi	r25, 0xFE	; 254
+    1382:	90 93 d8 00 	sts	0x00D8, r25
+    1386:	80 93 d7 00 	sts	0x00D7, r24
+			if(mright_speed == 0 && mright_des_speed == 0)
+    138a:	80 91 e6 00 	lds	r24, 0x00E6
+    138e:	90 91 e7 00 	lds	r25, 0x00E7
+    1392:	89 2b       	or	r24, r25
+    1394:	31 f4       	brne	.+12     	; 0x13a2 <task_motionControl+0x3d8>
+    1396:	23 2b       	or	r18, r19
+    1398:	21 f4       	brne	.+8      	; 0x13a2 <task_motionControl+0x3d8>
+				right_i = 0;
+    139a:	10 92 d8 00 	sts	0x00D8, r1
+    139e:	10 92 d7 00 	sts	0x00D7, r1
+			mright_power = right_i / 2;
+    13a2:	80 91 d7 00 	lds	r24, 0x00D7
+    13a6:	90 91 d8 00 	lds	r25, 0x00D8
+    13aa:	97 fd       	sbrc	r25, 7
+    13ac:	01 96       	adiw	r24, 0x01	; 1
+    13ae:	95 95       	asr	r25
+    13b0:	87 95       	ror	r24
+			if(mright_power > 210) mright_power = 210;
+    13b2:	83 3d       	cpi	r24, 0xD3	; 211
+    13b4:	91 05       	cpc	r25, r1
+    13b6:	14 f0       	brlt	.+4      	; 0x13bc <task_motionControl+0x3f2>
+    13b8:	82 ed       	ldi	r24, 0xD2	; 210
+    13ba:	90 e0       	ldi	r25, 0x00	; 0
+    13bc:	90 93 b3 00 	sts	0x00B3, r25
+    13c0:	80 93 b2 00 	sts	0x00B2, r24
+			if(mright_power < 0) mright_power = 0;
+    13c4:	80 91 b2 00 	lds	r24, 0x00B2
+    13c8:	90 91 b3 00 	lds	r25, 0x00B3
+    13cc:	97 ff       	sbrs	r25, 7
+    13ce:	08 c0       	rjmp	.+16     	; 0x13e0 <task_motionControl+0x416>
+    13d0:	10 92 b3 00 	sts	0x00B3, r1
+    13d4:	10 92 b2 00 	sts	0x00B2, r1
+    13d8:	03 c0       	rjmp	.+6      	; 0x13e0 <task_motionControl+0x416>
+		}
+		else
+			overcurrent_timeout--;
+    13da:	81 50       	subi	r24, 0x01	; 1
+    13dc:	80 93 cb 00 	sts	0x00CB, r24
+		motor_control = false;
+    13e0:	10 92 a0 00 	sts	0x00A0, r1
+	}
+	
+	// Call event handlers if necessary:
+	if(motion_status_tmp != motion_status.byte)
+    13e4:	80 91 8b 00 	lds	r24, 0x008B
+    13e8:	90 91 ec 00 	lds	r25, 0x00EC
+    13ec:	98 17       	cp	r25, r24
+    13ee:	39 f0       	breq	.+14     	; 0x13fe <task_motionControl+0x434>
+	{
+		motion_status_tmp = motion_status.byte;
+    13f0:	80 93 ec 00 	sts	0x00EC, r24
+		MOTIONCONTROL_stateChangedHandler();
+    13f4:	e0 91 65 00 	lds	r30, 0x0065
+    13f8:	f0 91 66 00 	lds	r31, 0x0066
+    13fc:	09 94       	ijmp
+    13fe:	08 95       	ret
+
+00001400 <extIntON>:
+/**
+ * Set external interrupt to high level
+ */
+void extIntON(void)
+{
+	DDRA |= E_INT1;
+    1400:	d4 9a       	sbi	0x1a, 4	; 26
+	PORTA |= E_INT1;
+    1402:	dc 9a       	sbi	0x1b, 4	; 27
+    1404:	08 95       	ret
+
+00001406 <extIntOFF>:
+/**
+ * Set external interrupt to low level
+ */
+void extIntOFF(void)
+{
+	PORTA &= ~E_INT1;
+    1406:	dc 98       	cbi	0x1b, 4	; 27
+	DDRA &= ~E_INT1;
+    1408:	d4 98       	cbi	0x1a, 4	; 26
+    140a:	08 95       	ret
+
+0000140c <task_RP6System>:
+/**
+ * Calls all important system tasks.
+ */
+void task_RP6System(void)
+{
+	task_ADC();
+    140c:	0e 94 54 02 	call	0x4a8	; 0x4a8 <task_ADC>
+	task_ACS();
+    1410:	0e 94 09 04 	call	0x812	; 0x812 <task_ACS>
+	task_Bumpers();
+    1414:	0e 94 21 02 	call	0x442	; 0x442 <task_Bumpers>
+	task_motionControl();
+    1418:	0c 94 e5 07 	jmp	0xfca	; 0xfca <task_motionControl>
+
+0000141c <move>:
+ * If you need faster reaction rather than precision then you should implement 
+ * your own routine and set the distance a bit lower... 
+ *
+ */
+void move(uint8_t desired_speed, uint8_t dir, uint16_t distance, uint8_t blocking)
+{
+    141c:	ef 92       	push	r14
+    141e:	ff 92       	push	r15
+    1420:	1f 93       	push	r17
+    1422:	cf 93       	push	r28
+    1424:	df 93       	push	r29
+    1426:	1f 92       	push	r1
+    1428:	cd b7       	in	r28, 0x3d	; 61
+    142a:	de b7       	in	r29, 0x3e	; 62
+    142c:	16 2f       	mov	r17, r22
+    142e:	7a 01       	movw	r14, r20
+	motion_status.move_L = true;
+    1430:	90 91 8b 00 	lds	r25, 0x008B
+	motion_status.move_R = true;
+    1434:	91 60       	ori	r25, 0x01	; 1
+    1436:	92 60       	ori	r25, 0x02	; 2
+    1438:	90 93 8b 00 	sts	0x008B, r25
+	preDecelerate_L = 0;
+    143c:	10 92 dd 00 	sts	0x00DD, r1
+    1440:	10 92 dc 00 	sts	0x00DC, r1
+	preDecelerate_R = 0;
+    1444:	10 92 a7 00 	sts	0x00A7, r1
+    1448:	10 92 a6 00 	sts	0x00A6, r1
+	if(desired_speed > 22) {
+    144c:	87 31       	cpi	r24, 0x17	; 23
+    144e:	80 f0       	brcs	.+32     	; 0x1470 <move+0x54>
+		preDecelerate_L = distance - (20+(desired_speed*2));
+    1450:	46 ef       	ldi	r20, 0xF6	; 246
+    1452:	5f ef       	ldi	r21, 0xFF	; 255
+    1454:	48 1b       	sub	r20, r24
+    1456:	51 09       	sbc	r21, r1
+    1458:	44 0f       	add	r20, r20
+    145a:	55 1f       	adc	r21, r21
+    145c:	4e 0d       	add	r20, r14
+    145e:	5f 1d       	adc	r21, r15
+    1460:	50 93 dd 00 	sts	0x00DD, r21
+    1464:	40 93 dc 00 	sts	0x00DC, r20
+		preDecelerate_R = preDecelerate_L;
+    1468:	50 93 a7 00 	sts	0x00A7, r21
+    146c:	40 93 a6 00 	sts	0x00A6, r20
+	}
+	preStop_L = distance - 2;
+    1470:	a7 01       	movw	r20, r14
+    1472:	42 50       	subi	r20, 0x02	; 2
+    1474:	51 09       	sbc	r21, r1
+    1476:	50 93 b1 00 	sts	0x00B1, r21
+    147a:	40 93 b0 00 	sts	0x00B0, r20
+	preStop_R = preStop_L;
+    147e:	50 93 8f 00 	sts	0x008F, r21
+    1482:	40 93 8e 00 	sts	0x008E, r20
+	if(distance < 40) {
+    1486:	98 e2       	ldi	r25, 0x28	; 40
+    1488:	e9 16       	cp	r14, r25
+    148a:	f1 04       	cpc	r15, r1
+    148c:	c0 f4       	brcc	.+48     	; 0x14be <move+0xa2>
+		distance = 40; 
+		preStop_L = 20;
+    148e:	44 e1       	ldi	r20, 0x14	; 20
+    1490:	50 e0       	ldi	r21, 0x00	; 0
+    1492:	50 93 b1 00 	sts	0x00B1, r21
+    1496:	40 93 b0 00 	sts	0x00B0, r20
+		preStop_R = preStop_L;
+    149a:	50 93 8f 00 	sts	0x008F, r21
+    149e:	40 93 8e 00 	sts	0x008E, r20
+		preDecelerate_L = 10;
+    14a2:	4a e0       	ldi	r20, 0x0A	; 10
+    14a4:	50 e0       	ldi	r21, 0x00	; 0
+    14a6:	50 93 dd 00 	sts	0x00DD, r21
+    14aa:	40 93 dc 00 	sts	0x00DC, r20
+		preDecelerate_R = preDecelerate_L;
+    14ae:	50 93 a7 00 	sts	0x00A7, r21
+    14b2:	40 93 a6 00 	sts	0x00A6, r20
+		preDecelerate_R = preDecelerate_L;
+	}
+	preStop_L = distance - 2;
+	preStop_R = preStop_L;
+	if(distance < 40) {
+		distance = 40; 
+    14b6:	a8 e2       	ldi	r26, 0x28	; 40
+    14b8:	ea 2e       	mov	r14, r26
+    14ba:	f1 2c       	mov	r15, r1
+    14bc:	05 c0       	rjmp	.+10     	; 0x14c8 <move+0xac>
+		preStop_L = 20;
+		preStop_R = preStop_L;
+		preDecelerate_L = 10;
+		preDecelerate_R = preDecelerate_L;
+	}
+	if(distance < 400 && desired_speed > 40) {
+    14be:	e0 e9       	ldi	r30, 0x90	; 144
+    14c0:	ee 16       	cp	r14, r30
+    14c2:	e1 e0       	ldi	r30, 0x01	; 1
+    14c4:	fe 06       	cpc	r15, r30
+    14c6:	98 f4       	brcc	.+38     	; 0x14ee <move+0xd2>
+    14c8:	89 32       	cpi	r24, 0x29	; 41
+    14ca:	88 f0       	brcs	.+34     	; 0x14ee <move+0xd2>
+		desired_speed = 40; 
+		preDecelerate_L = distance - (distance/4);
+    14cc:	a7 01       	movw	r20, r14
+    14ce:	56 95       	lsr	r21
+    14d0:	47 95       	ror	r20
+    14d2:	56 95       	lsr	r21
+    14d4:	47 95       	ror	r20
+    14d6:	c7 01       	movw	r24, r14
+    14d8:	84 1b       	sub	r24, r20
+    14da:	95 0b       	sbc	r25, r21
+    14dc:	90 93 dd 00 	sts	0x00DD, r25
+    14e0:	80 93 dc 00 	sts	0x00DC, r24
+		preDecelerate_R = preDecelerate_L;
+    14e4:	90 93 a7 00 	sts	0x00A7, r25
+    14e8:	80 93 a6 00 	sts	0x00A6, r24
+		preStop_R = preStop_L;
+		preDecelerate_L = 10;
+		preDecelerate_R = preDecelerate_L;
+	}
+	if(distance < 400 && desired_speed > 40) {
+		desired_speed = 40; 
+    14ec:	88 e2       	ldi	r24, 0x28	; 40
+		preDecelerate_L = distance - (distance/4);
+		preDecelerate_R = preDecelerate_L;
+	}
+    mleft_dist = 0; 
+    14ee:	10 92 e9 00 	sts	0x00E9, r1
+    14f2:	10 92 e8 00 	sts	0x00E8, r1
+	mright_dist = 0;
+    14f6:	10 92 db 00 	sts	0x00DB, r1
+    14fa:	10 92 da 00 	sts	0x00DA, r1
+	moveAtSpeed(desired_speed,desired_speed);
+    14fe:	68 2f       	mov	r22, r24
+    1500:	29 83       	std	Y+1, r18	; 0x01
+    1502:	0e 94 df 02 	call	0x5be	; 0x5be <moveAtSpeed>
+	changeDirection(dir);
+    1506:	81 2f       	mov	r24, r17
+    1508:	0e 94 f0 02 	call	0x5e0	; 0x5e0 <changeDirection>
+	
+	distanceToMove_L = distance;
+    150c:	f0 92 b9 00 	sts	0x00B9, r15
+    1510:	e0 92 b8 00 	sts	0x00B8, r14
+	distanceToMove_R = distance;
+    1514:	f0 92 9a 00 	sts	0x009A, r15
+    1518:	e0 92 99 00 	sts	0x0099, r14
+
+	motion_status_tmp = motion_status.byte;
+    151c:	80 91 8b 00 	lds	r24, 0x008B
+    1520:	80 93 ec 00 	sts	0x00EC, r24
+	
+	motion_status_tmp = motion_status.byte;
+	MOTIONCONTROL_stateChangedHandler();
+    1524:	e0 91 65 00 	lds	r30, 0x0065
+    1528:	f0 91 66 00 	lds	r31, 0x0066
+    152c:	09 95       	icall
+	
+	if(blocking)
+    152e:	29 81       	ldd	r18, Y+1	; 0x01
+    1530:	22 23       	and	r18, r18
+    1532:	39 f0       	breq	.+14     	; 0x1542 <move+0x126>
+		while(!isMovementComplete())
+    1534:	0e 94 14 03 	call	0x628	; 0x628 <isMovementComplete>
+    1538:	81 11       	cpse	r24, r1
+    153a:	03 c0       	rjmp	.+6      	; 0x1542 <move+0x126>
+			task_RP6System();
+    153c:	0e 94 06 0a 	call	0x140c	; 0x140c <task_RP6System>
+    1540:	f9 cf       	rjmp	.-14     	; 0x1534 <move+0x118>
+}
+    1542:	0f 90       	pop	r0
+    1544:	df 91       	pop	r29
+    1546:	cf 91       	pop	r28
+    1548:	1f 91       	pop	r17
+    154a:	ff 90       	pop	r15
+    154c:	ef 90       	pop	r14
+    154e:	08 95       	ret
+
+00001550 <rotate>:
+ * This means that you can use external sensors for rotation in order to make it
+ * more accurate. For example an electronic compass. 
+ * 
+ */
+void rotate(uint8_t desired_speed, uint8_t dir, uint16_t angle, uint8_t blocking)
+{
+    1550:	ff 92       	push	r15
+    1552:	0f 93       	push	r16
+    1554:	1f 93       	push	r17
+    1556:	cf 93       	push	r28
+    1558:	df 93       	push	r29
+    155a:	18 2f       	mov	r17, r24
+    155c:	f6 2e       	mov	r15, r22
+    155e:	02 2f       	mov	r16, r18
+	motion_status.move_L = true;
+    1560:	80 91 8b 00 	lds	r24, 0x008B
+	motion_status.move_R = true;
+    1564:	81 60       	ori	r24, 0x01	; 1
+    1566:	82 60       	ori	r24, 0x02	; 2
+    1568:	80 93 8b 00 	sts	0x008B, r24
+	uint16_t distance = (uint16_t) (((uint32_t)(ROTATION_FACTOR) * (uint16_t)angle)/100);
+    156c:	9a 01       	movw	r18, r20
+    156e:	a0 eb       	ldi	r26, 0xB0	; 176
+    1570:	b2 e0       	ldi	r27, 0x02	; 2
+    1572:	0e 94 a9 0c 	call	0x1952	; 0x1952 <__umulhisi3>
+    1576:	24 e6       	ldi	r18, 0x64	; 100
+    1578:	30 e0       	ldi	r19, 0x00	; 0
+    157a:	40 e0       	ldi	r20, 0x00	; 0
+    157c:	50 e0       	ldi	r21, 0x00	; 0
+    157e:	0e 94 cc 0c 	call	0x1998	; 0x1998 <__udivmodsi4>
+    1582:	e9 01       	movw	r28, r18
+	preDecelerate_L = distance - 100;
+    1584:	c9 01       	movw	r24, r18
+    1586:	84 56       	subi	r24, 0x64	; 100
+    1588:	91 09       	sbc	r25, r1
+    158a:	90 93 dd 00 	sts	0x00DD, r25
+    158e:	80 93 dc 00 	sts	0x00DC, r24
+	preDecelerate_R = distance - 100;
+    1592:	90 93 a7 00 	sts	0x00A7, r25
+    1596:	80 93 a6 00 	sts	0x00A6, r24
+	preStop_L = distance;
+    159a:	30 93 b1 00 	sts	0x00B1, r19
+    159e:	20 93 b0 00 	sts	0x00B0, r18
+	preStop_R = distance;
+    15a2:	30 93 8f 00 	sts	0x008F, r19
+    15a6:	20 93 8e 00 	sts	0x008E, r18
+	if(distance < 40) {
+    15aa:	28 32       	cpi	r18, 0x28	; 40
+    15ac:	31 05       	cpc	r19, r1
+    15ae:	b0 f4       	brcc	.+44     	; 0x15dc <rotate+0x8c>
+		distance = 40; 
+		preStop_L = 20;
+    15b0:	44 e1       	ldi	r20, 0x14	; 20
+    15b2:	50 e0       	ldi	r21, 0x00	; 0
+    15b4:	50 93 b1 00 	sts	0x00B1, r21
+    15b8:	40 93 b0 00 	sts	0x00B0, r20
+		preStop_R = 20;
+    15bc:	50 93 8f 00 	sts	0x008F, r21
+    15c0:	40 93 8e 00 	sts	0x008E, r20
+		preDecelerate_L = 10;
+    15c4:	4a e0       	ldi	r20, 0x0A	; 10
+    15c6:	50 e0       	ldi	r21, 0x00	; 0
+    15c8:	50 93 dd 00 	sts	0x00DD, r21
+    15cc:	40 93 dc 00 	sts	0x00DC, r20
+		preDecelerate_R = 10;
+    15d0:	50 93 a7 00 	sts	0x00A7, r21
+    15d4:	40 93 a6 00 	sts	0x00A6, r20
+	preDecelerate_L = distance - 100;
+	preDecelerate_R = distance - 100;
+	preStop_L = distance;
+	preStop_R = distance;
+	if(distance < 40) {
+		distance = 40; 
+    15d8:	c8 e2       	ldi	r28, 0x28	; 40
+    15da:	d0 e0       	ldi	r29, 0x00	; 0
+		preStop_L = 20;
+		preStop_R = 20;
+		preDecelerate_L = 10;
+		preDecelerate_R = 10;
+	}
+	moveAtSpeed(desired_speed,desired_speed);
+    15dc:	61 2f       	mov	r22, r17
+    15de:	81 2f       	mov	r24, r17
+    15e0:	0e 94 df 02 	call	0x5be	; 0x5be <moveAtSpeed>
+	changeDirection(dir);
+    15e4:	8f 2d       	mov	r24, r15
+    15e6:	0e 94 f0 02 	call	0x5e0	; 0x5e0 <changeDirection>
+	
+    mleft_dist = 0; 
+    15ea:	10 92 e9 00 	sts	0x00E9, r1
+    15ee:	10 92 e8 00 	sts	0x00E8, r1
+	mright_dist = 0;
+    15f2:	10 92 db 00 	sts	0x00DB, r1
+    15f6:	10 92 da 00 	sts	0x00DA, r1
+	distanceToMove_L = distance;
+    15fa:	d0 93 b9 00 	sts	0x00B9, r29
+    15fe:	c0 93 b8 00 	sts	0x00B8, r28
+	distanceToMove_R = distance;
+    1602:	d0 93 9a 00 	sts	0x009A, r29
+    1606:	c0 93 99 00 	sts	0x0099, r28
+	
+	motion_status_tmp = motion_status.byte;
+    160a:	80 91 8b 00 	lds	r24, 0x008B
+    160e:	80 93 ec 00 	sts	0x00EC, r24
+	MOTIONCONTROL_stateChangedHandler();
+    1612:	e0 91 65 00 	lds	r30, 0x0065
+    1616:	f0 91 66 00 	lds	r31, 0x0066
+    161a:	09 95       	icall
+	if(blocking)
+    161c:	00 23       	and	r16, r16
+    161e:	39 f0       	breq	.+14     	; 0x162e <rotate+0xde>
+		while(!isMovementComplete())
+    1620:	0e 94 14 03 	call	0x628	; 0x628 <isMovementComplete>
+    1624:	81 11       	cpse	r24, r1
+    1626:	03 c0       	rjmp	.+6      	; 0x162e <rotate+0xde>
+			task_RP6System();
+    1628:	0e 94 06 0a 	call	0x140c	; 0x140c <task_RP6System>
+    162c:	f9 cf       	rjmp	.-14     	; 0x1620 <rotate+0xd0>
+}
+    162e:	df 91       	pop	r29
+    1630:	cf 91       	pop	r28
+    1632:	1f 91       	pop	r17
+    1634:	0f 91       	pop	r16
+    1636:	ff 90       	pop	r15
+    1638:	08 95       	ret
+
+0000163a <initRobotBase>:
+ *			}
+ *
+ */
+void initRobotBase(void)
+{
+	portInit();		// Setup port directions and initial values.
+    163a:	1b ba       	out	0x1b, r1	; 27
+    163c:	18 ba       	out	0x18, r1	; 24
+    163e:	15 ba       	out	0x15, r1	; 21
+    1640:	81 e0       	ldi	r24, 0x01	; 1
+    1642:	82 bb       	out	0x12, r24	; 18
+    1644:	1a ba       	out	0x1a, r1	; 26
+    1646:	88 e5       	ldi	r24, 0x58	; 88
+    1648:	87 bb       	out	0x17, r24	; 23
+    164a:	8c e8       	ldi	r24, 0x8C	; 140
+    164c:	84 bb       	out	0x14, r24	; 20
+    164e:	82 ef       	ldi	r24, 0xF2	; 242
+    1650:	81 bb       	out	0x11, r24	; 17
+					// THIS IS THE MOST IMPORTANT STEP!
+
+	cli();			// Disable global interrupts
+    1652:	f8 94       	cli
+	
+	enableResetButton(); // Make sure the Reset Button is enabled!
+    1654:	c5 98       	cbi	0x18, 5	; 24
+    1656:	bd 9a       	sbi	0x17, 5	; 23
+						 // Do not disable it if you want to be able to
+						 // reset your robot! (Otherwise you can only
+						 // stop it by switching it off completely, 
+						 // if it gets out of control ;) )
+
+	IRCOMM_OFF(); 	     // Make sure that IRCOMM and ...
+    1658:	97 98       	cbi	0x12, 7	; 18
+	setACSPwrOff();		 // ACS are turned OFF!
+    165a:	0e 94 68 05 	call	0xad0	; 0xad0 <setACSPwrOff>
+
+	// UART:
+	UBRRH = UBRR_BAUD_LOW >> 8;	// Setup UART: Baudrate is Low Speed
+    165e:	10 bc       	out	0x20, r1	; 32
+	UBRRL = (uint8_t) UBRR_BAUD_LOW;
+    1660:	8c e0       	ldi	r24, 0x0C	; 12
+    1662:	89 b9       	out	0x09, r24	; 9
+	UCSRA = 0x00;
+    1664:	1b b8       	out	0x0b, r1	; 11
+    UCSRC = (1<<URSEL)|(1<<UCSZ1)|(1<<UCSZ0);
+    1666:	86 e8       	ldi	r24, 0x86	; 134
+    1668:	80 bd       	out	0x20, r24	; 32
+    UCSRB = (1 << TXEN) | (1 << RXEN) | (1 << RXCIE);
+    166a:	88 e9       	ldi	r24, 0x98	; 152
+    166c:	8a b9       	out	0x0a, r24	; 10
+	
+	// Initialize ADC:
+	ADMUX = 0; //external reference 
+    166e:	17 b8       	out	0x07, r1	; 7
+	ADCSRA = (0<<ADIE) | (0<<ADEN) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADIF);
+    1670:	86 e1       	ldi	r24, 0x16	; 22
+    1672:	86 b9       	out	0x06, r24	; 6
+	SFIOR = 0;
+    1674:	10 be       	out	0x30, r1	; 48
+
+	// Initialize External interrupts:
+	MCUCR = (0 << ISC11) | (1 << ISC10) | (0 << ISC01) | (1 << ISC00);
+    1676:	85 e0       	ldi	r24, 0x05	; 5
+    1678:	85 bf       	out	0x35, r24	; 53
+	GICR = (1 << INT2) | (1 << INT1) | (1 << INT0);
+    167a:	80 ee       	ldi	r24, 0xE0	; 224
+    167c:	8b bf       	out	0x3b, r24	; 59
+	MCUCSR = (0 << ISC2);
+    167e:	14 be       	out	0x34, r1	; 52
+
+	// Initialize Timer 0 -  100µs cycle for Delays/Stopwatches, RC5 reception etc.:
+	TCCR0 =   (0 << WGM00) | (1 << WGM01) 
+    1680:	8a e0       	ldi	r24, 0x0A	; 10
+    1682:	83 bf       	out	0x33, r24	; 51
+			| (0 << COM00) | (0 << COM01) 
+			| (0 << CS02)  | (1 << CS01) | (0 << CS00);
+	OCR0  = 99;
+    1684:	83 e6       	ldi	r24, 0x63	; 99
+    1686:	8c bf       	out	0x3c, r24	; 60
+
+	// Initialize Timer1 - PWM:
+	// PWM, phase correct with ICR1 as top value.
+	TCCR1A = (0 << WGM10) | (1 << WGM11) | (1 << COM1A1) | (1 << COM1B1);
+    1688:	82 ea       	ldi	r24, 0xA2	; 162
+    168a:	8f bd       	out	0x2f, r24	; 47
+	TCCR1B =  (1 << WGM13) | (0 << WGM12) | (1 << CS10);
+    168c:	81 e1       	ldi	r24, 0x11	; 17
+    168e:	8e bd       	out	0x2e, r24	; 46
+	ICR1 = 210; // Phase corret PWM top value - 210 results in 
+    1690:	82 ed       	ldi	r24, 0xD2	; 210
+    1692:	90 e0       	ldi	r25, 0x00	; 0
+    1694:	97 bd       	out	0x27, r25	; 39
+    1696:	86 bd       	out	0x26, r24	; 38
+				// annoying high pitch noises from the motors!
+				// 19 kHz is a bit over the maximum frequency most people can
+				// hear!
+				// 
+				// ATTENTION: Max PWM value is 210 and NOT 255 !!!
+	OCR1AL = 0;
+    1698:	1a bc       	out	0x2a, r1	; 42
+	OCR1BL = 0;
+    169a:	18 bc       	out	0x28, r1	; 40
+	setMotorDir(FWD,FWD); 	// Direction Forwards
+    169c:	60 e0       	ldi	r22, 0x00	; 0
+    169e:	80 e0       	ldi	r24, 0x00	; 0
+    16a0:	0e 94 49 03 	call	0x692	; 0x692 <setMotorDir>
+
+	// Initialize Timer2 - ACS:
+	TCCR2 = (1 << WGM21) | (0 << COM20) | (1 << CS20);
+    16a4:	89 e0       	ldi	r24, 0x09	; 9
+    16a6:	85 bd       	out	0x25, r24	; 37
+	OCR2  = 0x6E; // 0x6E = 72kHz @8MHz
+    16a8:	8e e6       	ldi	r24, 0x6E	; 110
+    16aa:	83 bd       	out	0x23, r24	; 35
+	
+	// Initialize Timer Interrupts:
+	TIMSK = (1 << OCIE0); //| (1 << OCIE2); // Fixed: Timer2 Interrupt is turned 
+    16ac:	82 e0       	ldi	r24, 0x02	; 2
+    16ae:	89 bf       	out	0x39, r24	; 57
+	                      // off by default now! It is only active 
+						  // when ACS/IRCOMM are transmitting.
+
+	// Initialize ACS:
+	sysStatACS.channel = ACS_CHANNEL_RIGHT;
+    16b0:	80 91 96 00 	lds	r24, 0x0096
+    16b4:	81 60       	ori	r24, 0x01	; 1
+    16b6:	80 93 96 00 	sts	0x0096, r24
+	acs_state = ACS_STATE_IRCOMM_DELAY;
+    16ba:	81 e0       	ldi	r24, 0x01	; 1
+    16bc:	80 93 64 00 	sts	0x0064, r24
+
+	sei(); // Enable Global Interrupts
+    16c0:	78 94       	sei
+    16c2:	08 95       	ret
+
+000016c4 <writeChar>:
+ *			00123
+ *
+ */
+void writeChar(char ch)
+{
+    while (!(UCSRA & (1<<UDRE)));
+    16c4:	5d 9b       	sbis	0x0b, 5	; 11
+    16c6:	fe cf       	rjmp	.-4      	; 0x16c4 <writeChar>
+    UDR = (uint8_t)ch;
+    16c8:	8c b9       	out	0x0c, r24	; 12
+    16ca:	08 95       	ret
+
+000016cc <writeString>:
+ *
+ *			writeString("RP6 Robot System\n");
+ *
+ */
+void writeString(char *string)
+{
+    16cc:	cf 93       	push	r28
+    16ce:	df 93       	push	r29
+    16d0:	ec 01       	movw	r28, r24
+	while(*string)
+    16d2:	89 91       	ld	r24, Y+
+    16d4:	88 23       	and	r24, r24
+    16d6:	19 f0       	breq	.+6      	; 0x16de <writeString+0x12>
+		writeChar(*string++);
+    16d8:	0e 94 62 0b 	call	0x16c4	; 0x16c4 <writeChar>
+    16dc:	fa cf       	rjmp	.-12     	; 0x16d2 <writeString+0x6>
+}
+    16de:	df 91       	pop	r29
+    16e0:	cf 91       	pop	r28
+    16e2:	08 95       	ret
+
+000016e4 <writeNStringP>:
+ *			// you can simply write:
+ *			writeString_P("RP6 Robot System\n");
+ *
+ */
+void writeNStringP(const char *pstring)
+{
+    16e4:	cf 93       	push	r28
+    16e6:	df 93       	push	r29
+    16e8:	fc 01       	movw	r30, r24
+    uint8_t c;
+    for (;(c = pgm_read_byte_near(pstring++));writeChar(c));
+    16ea:	84 91       	lpm	r24, Z
+    16ec:	ef 01       	movw	r28, r30
+    16ee:	21 96       	adiw	r28, 0x01	; 1
+    16f0:	88 23       	and	r24, r24
+    16f2:	21 f0       	breq	.+8      	; 0x16fc <writeNStringP+0x18>
+    16f4:	0e 94 62 0b 	call	0x16c4	; 0x16c4 <writeChar>
+    16f8:	fe 01       	movw	r30, r28
+    16fa:	f7 cf       	rjmp	.-18     	; 0x16ea <writeNStringP+0x6>
+}
+    16fc:	df 91       	pop	r29
+    16fe:	cf 91       	pop	r28
+    1700:	08 95       	ret
+
+00001702 <writeStringLength>:
+ *			// would output: "Robot System\n"
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+    1702:	0f 93       	push	r16
+    1704:	1f 93       	push	r17
+    1706:	cf 93       	push	r28
+    1708:	df 93       	push	r29
+    170a:	1f 92       	push	r1
+    170c:	cd b7       	in	r28, 0x3d	; 61
+    170e:	de b7       	in	r29, 0x3e	; 62
+	for(string = &string[offset]; *string && length; length--)
+    1710:	8c 01       	movw	r16, r24
+    1712:	04 0f       	add	r16, r20
+    1714:	11 1d       	adc	r17, r1
+    1716:	f8 01       	movw	r30, r16
+    1718:	81 91       	ld	r24, Z+
+    171a:	8f 01       	movw	r16, r30
+    171c:	88 23       	and	r24, r24
+    171e:	41 f0       	breq	.+16     	; 0x1730 <writeStringLength+0x2e>
+    1720:	66 23       	and	r22, r22
+    1722:	31 f0       	breq	.+12     	; 0x1730 <writeStringLength+0x2e>
+		writeChar(*string++);
+    1724:	69 83       	std	Y+1, r22	; 0x01
+    1726:	0e 94 62 0b 	call	0x16c4	; 0x16c4 <writeChar>
+ *			// No matter if the specified length is 40 characters!
+ *
+ */
+void writeStringLength(char *string, uint8_t length, uint8_t offset)
+{
+	for(string = &string[offset]; *string && length; length--)
+    172a:	69 81       	ldd	r22, Y+1	; 0x01
+    172c:	61 50       	subi	r22, 0x01	; 1
+    172e:	f3 cf       	rjmp	.-26     	; 0x1716 <writeStringLength+0x14>
+		writeChar(*string++);
+}
+    1730:	0f 90       	pop	r0
+    1732:	df 91       	pop	r29
+    1734:	cf 91       	pop	r28
+    1736:	1f 91       	pop	r17
+    1738:	0f 91       	pop	r16
+    173a:	08 95       	ret
+
+0000173c <writeInteger>:
+ *			writeInteger(1024,DEC);  	// Decimal
+ *			writeInteger(044,OCT);		// Ocal
+ *			writeInteger(0b11010111,BIN); // Binary
+ */
+void writeInteger(int16_t number, uint8_t base)
+{
+    173c:	cf 93       	push	r28
+    173e:	df 93       	push	r29
+    1740:	cd b7       	in	r28, 0x3d	; 61
+    1742:	de b7       	in	r29, 0x3e	; 62
+    1744:	61 97       	sbiw	r28, 0x11	; 17
+    1746:	0f b6       	in	r0, 0x3f	; 63
+    1748:	f8 94       	cli
+    174a:	de bf       	out	0x3e, r29	; 62
+    174c:	0f be       	out	0x3f, r0	; 63
+    174e:	cd bf       	out	0x3d, r28	; 61
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+    1750:	46 2f       	mov	r20, r22
+    1752:	50 e0       	ldi	r21, 0x00	; 0
+    1754:	be 01       	movw	r22, r28
+    1756:	6f 5f       	subi	r22, 0xFF	; 255
+    1758:	7f 4f       	sbci	r23, 0xFF	; 255
+    175a:	0e 94 52 0d 	call	0x1aa4	; 0x1aa4 <itoa>
+	writeString(&buffer[0]);
+    175e:	ce 01       	movw	r24, r28
+    1760:	01 96       	adiw	r24, 0x01	; 1
+    1762:	0e 94 66 0b 	call	0x16cc	; 0x16cc <writeString>
+}
+    1766:	61 96       	adiw	r28, 0x11	; 17
+    1768:	0f b6       	in	r0, 0x3f	; 63
+    176a:	f8 94       	cli
+    176c:	de bf       	out	0x3e, r29	; 62
+    176e:	0f be       	out	0x3f, r0	; 63
+    1770:	cd bf       	out	0x3d, r28	; 61
+    1772:	df 91       	pop	r29
+    1774:	cf 91       	pop	r28
+    1776:	08 95       	ret
+
+00001778 <writeIntegerLength>:
+ *			writeIntegerLength(1024,DEC,6);  	// Decimal
+ *			writeIntegerLength(044,OCT,4);		// Ocal
+ *			writeIntegerLength(0b11010111,BIN,8); // Binary
+ */
+void writeIntegerLength(int16_t number, uint8_t base, uint8_t length)
+{
+    1778:	ef 92       	push	r14
+    177a:	ff 92       	push	r15
+    177c:	0f 93       	push	r16
+    177e:	1f 93       	push	r17
+    1780:	cf 93       	push	r28
+    1782:	df 93       	push	r29
+    1784:	cd b7       	in	r28, 0x3d	; 61
+    1786:	de b7       	in	r29, 0x3e	; 62
+    1788:	61 97       	sbiw	r28, 0x11	; 17
+    178a:	0f b6       	in	r0, 0x3f	; 63
+    178c:	f8 94       	cli
+    178e:	de bf       	out	0x3e, r29	; 62
+    1790:	0f be       	out	0x3f, r0	; 63
+    1792:	cd bf       	out	0x3d, r28	; 61
+    1794:	e4 2e       	mov	r14, r20
+	char buffer[17];
+	itoa(number, &buffer[0], base);
+    1796:	46 2f       	mov	r20, r22
+    1798:	50 e0       	ldi	r21, 0x00	; 0
+    179a:	8e 01       	movw	r16, r28
+    179c:	0f 5f       	subi	r16, 0xFF	; 255
+    179e:	1f 4f       	sbci	r17, 0xFF	; 255
+    17a0:	b8 01       	movw	r22, r16
+    17a2:	0e 94 52 0d 	call	0x1aa4	; 0x1aa4 <itoa>
+	int8_t cnt = length - strlen(buffer);
+    17a6:	f8 01       	movw	r30, r16
+    17a8:	01 90       	ld	r0, Z+
+    17aa:	00 20       	and	r0, r0
+    17ac:	e9 f7       	brne	.-6      	; 0x17a8 <writeIntegerLength+0x30>
+    17ae:	31 97       	sbiw	r30, 0x01	; 1
+    17b0:	e0 1b       	sub	r30, r16
+    17b2:	f1 0b       	sbc	r31, r17
+    17b4:	fe 2c       	mov	r15, r14
+    17b6:	fe 1a       	sub	r15, r30
+	if(cnt > 0) {
+    17b8:	1f 14       	cp	r1, r15
+    17ba:	54 f4       	brge	.+20     	; 0x17d0 <writeIntegerLength+0x58>
+    17bc:	fa 94       	dec	r15
+		for(; cnt > 0; cnt--, writeChar('0'));
+    17be:	80 e3       	ldi	r24, 0x30	; 48
+    17c0:	0e 94 62 0b 	call	0x16c4	; 0x16c4 <writeChar>
+    17c4:	f1 10       	cpse	r15, r1
+    17c6:	fa cf       	rjmp	.-12     	; 0x17bc <writeIntegerLength+0x44>
+		writeString(&buffer[0]);
+    17c8:	c8 01       	movw	r24, r16
+    17ca:	0e 94 66 0b 	call	0x16cc	; 0x16cc <writeString>
+    17ce:	06 c0       	rjmp	.+12     	; 0x17dc <writeIntegerLength+0x64>
+	}
+	else 
+		writeStringLength(&buffer[0],length,-cnt);
+    17d0:	4f 2d       	mov	r20, r15
+    17d2:	41 95       	neg	r20
+    17d4:	6e 2d       	mov	r22, r14
+    17d6:	c8 01       	movw	r24, r16
+    17d8:	0e 94 81 0b 	call	0x1702	; 0x1702 <writeStringLength>
+}
+    17dc:	61 96       	adiw	r28, 0x11	; 17
+    17de:	0f b6       	in	r0, 0x3f	; 63
+    17e0:	f8 94       	cli
+    17e2:	de bf       	out	0x3e, r29	; 62
+    17e4:	0f be       	out	0x3f, r0	; 63
+    17e6:	cd bf       	out	0x3d, r28	; 61
+    17e8:	df 91       	pop	r29
+    17ea:	cf 91       	pop	r28
+    17ec:	1f 91       	pop	r17
+    17ee:	0f 91       	pop	r16
+    17f0:	ff 90       	pop	r15
+    17f2:	ef 90       	pop	r14
+    17f4:	08 95       	ret
+
+000017f6 <__vector_13>:
+/**
+ * UART receive ISR.
+ * Handles reception to circular buffer.
+ */
+ISR(USART_RXC_vect)
+{	
+    17f6:	1f 92       	push	r1
+    17f8:	0f 92       	push	r0
+    17fa:	0f b6       	in	r0, 0x3f	; 63
+    17fc:	0f 92       	push	r0
+    17fe:	11 24       	eor	r1, r1
+    1800:	2f 93       	push	r18
+    1802:	8f 93       	push	r24
+    1804:	9f 93       	push	r25
+    1806:	ef 93       	push	r30
+    1808:	ff 93       	push	r31
+	static volatile uint8_t dummy;
+	if(((uint8_t)(write_size - read_size)) < UART_RECEIVE_BUFFER_SIZE) {
+    180a:	90 91 83 00 	lds	r25, 0x0083
+    180e:	80 91 84 00 	lds	r24, 0x0084
+    1812:	29 2f       	mov	r18, r25
+    1814:	28 1b       	sub	r18, r24
+    1816:	20 32       	cpi	r18, 0x20	; 32
+    1818:	a8 f4       	brcc	.+42     	; 0x1844 <__vector_13+0x4e>
+		uart_receive_buffer[write_pos++] = UDR;
+    181a:	e0 91 85 00 	lds	r30, 0x0085
+    181e:	81 e0       	ldi	r24, 0x01	; 1
+    1820:	8e 0f       	add	r24, r30
+    1822:	80 93 85 00 	sts	0x0085, r24
+    1826:	f0 e0       	ldi	r31, 0x00	; 0
+    1828:	2c b1       	in	r18, 0x0c	; 12
+    182a:	eb 50       	subi	r30, 0x0B	; 11
+    182c:	ff 4f       	sbci	r31, 0xFF	; 255
+    182e:	20 83       	st	Z, r18
+		write_size++;
+    1830:	9f 5f       	subi	r25, 0xFF	; 255
+    1832:	90 93 83 00 	sts	0x0083, r25
+		if(write_pos > UART_RECEIVE_BUFFER_SIZE) 
+    1836:	81 32       	cpi	r24, 0x21	; 33
+    1838:	10 f0       	brcs	.+4      	; 0x183e <__vector_13+0x48>
+			write_pos = 0;
+    183a:	10 92 85 00 	sts	0x0085, r1
+		uart_status = UART_BUFFER_OK;
+    183e:	10 92 f4 00 	sts	0x00F4, r1
+    1842:	06 c0       	rjmp	.+12     	; 0x1850 <__vector_13+0x5a>
+	}
+	else {	
+		dummy = UDR;
+    1844:	8c b1       	in	r24, 0x0c	; 12
+    1846:	80 93 88 00 	sts	0x0088, r24
+		uart_status = UART_BUFFER_OVERFLOW;
+    184a:	81 e0       	ldi	r24, 0x01	; 1
+    184c:	80 93 f4 00 	sts	0x00F4, r24
+	}
+}
+    1850:	ff 91       	pop	r31
+    1852:	ef 91       	pop	r30
+    1854:	9f 91       	pop	r25
+    1856:	8f 91       	pop	r24
+    1858:	2f 91       	pop	r18
+    185a:	0f 90       	pop	r0
+    185c:	0f be       	out	0x3f, r0	; 63
+    185e:	0f 90       	pop	r0
+    1860:	1f 90       	pop	r1
+    1862:	18 95       	reti
+
+00001864 <readChar>:
+ * // [...]
+ *
+ */
+char readChar(void)
+{
+	uart_status = UART_BUFFER_OK;
+    1864:	10 92 f4 00 	sts	0x00F4, r1
+	if(((uint8_t)(write_size - read_size)) > 0) {
+    1868:	80 91 84 00 	lds	r24, 0x0084
+    186c:	90 91 83 00 	lds	r25, 0x0083
+    1870:	98 17       	cp	r25, r24
+    1872:	a1 f0       	breq	.+40     	; 0x189c <readChar+0x38>
+		read_size++;
+    1874:	8f 5f       	subi	r24, 0xFF	; 255
+    1876:	80 93 84 00 	sts	0x0084, r24
+		if(read_pos > UART_RECEIVE_BUFFER_SIZE) 
+    187a:	80 91 86 00 	lds	r24, 0x0086
+    187e:	81 32       	cpi	r24, 0x21	; 33
+    1880:	10 f0       	brcs	.+4      	; 0x1886 <readChar+0x22>
+			read_pos = 0;
+    1882:	10 92 86 00 	sts	0x0086, r1
+		return uart_receive_buffer[read_pos++];
+    1886:	e0 91 86 00 	lds	r30, 0x0086
+    188a:	81 e0       	ldi	r24, 0x01	; 1
+    188c:	8e 0f       	add	r24, r30
+    188e:	80 93 86 00 	sts	0x0086, r24
+    1892:	f0 e0       	ldi	r31, 0x00	; 0
+    1894:	eb 50       	subi	r30, 0x0B	; 11
+    1896:	ff 4f       	sbci	r31, 0xFF	; 255
+    1898:	80 81       	ld	r24, Z
+    189a:	08 95       	ret
+	}
+	return 0;
+    189c:	80 e0       	ldi	r24, 0x00	; 0
+}
+    189e:	08 95       	ret
+
+000018a0 <readChars>:
+ * Just in case that there were fewer chars in the buffer...
+ */
+uint8_t readChars(char *buf, uint8_t numberOfChars)
+{
+   uint8_t i = 0;
+   uart_status = UART_BUFFER_OK;
+    18a0:	10 92 f4 00 	sts	0x00F4, r1
+    18a4:	28 2f       	mov	r18, r24
+   while(((uint8_t)(write_size - read_size))  > 0 && i < numberOfChars) {
+    18a6:	fc 01       	movw	r30, r24
+    18a8:	8e 2f       	mov	r24, r30
+    18aa:	82 1b       	sub	r24, r18
+    18ac:	90 91 84 00 	lds	r25, 0x0084
+    18b0:	30 91 83 00 	lds	r19, 0x0083
+    18b4:	39 17       	cp	r19, r25
+    18b6:	b9 f0       	breq	.+46     	; 0x18e6 <readChars+0x46>
+    18b8:	86 17       	cp	r24, r22
+    18ba:	a8 f4       	brcc	.+42     	; 0x18e6 <readChars+0x46>
+      read_size++;
+    18bc:	9f 5f       	subi	r25, 0xFF	; 255
+    18be:	90 93 84 00 	sts	0x0084, r25
+      buf[i++] = uart_receive_buffer[read_pos++];
+    18c2:	a0 91 86 00 	lds	r26, 0x0086
+    18c6:	81 e0       	ldi	r24, 0x01	; 1
+    18c8:	8a 0f       	add	r24, r26
+    18ca:	80 93 86 00 	sts	0x0086, r24
+    18ce:	b0 e0       	ldi	r27, 0x00	; 0
+    18d0:	ab 50       	subi	r26, 0x0B	; 11
+    18d2:	bf 4f       	sbci	r27, 0xFF	; 255
+    18d4:	8c 91       	ld	r24, X
+    18d6:	81 93       	st	Z+, r24
+      if(read_pos > UART_RECEIVE_BUFFER_SIZE)
+    18d8:	80 91 86 00 	lds	r24, 0x0086
+    18dc:	81 32       	cpi	r24, 0x21	; 33
+    18de:	20 f3       	brcs	.-56     	; 0x18a8 <readChars+0x8>
+         read_pos = 0;
+    18e0:	10 92 86 00 	sts	0x0086, r1
+    18e4:	e1 cf       	rjmp	.-62     	; 0x18a8 <readChars+0x8>
+   }
+   return i;
+} 
+    18e6:	08 95       	ret
+
+000018e8 <getBufferLength>:
+ * Example:
+ * s. readChar function above!
+ */
+uint8_t getBufferLength(void)
+{
+	return (((uint8_t)(write_size - read_size)));
+    18e8:	80 91 83 00 	lds	r24, 0x0083
+    18ec:	90 91 84 00 	lds	r25, 0x0084
+}
+    18f0:	89 1b       	sub	r24, r25
+    18f2:	08 95       	ret
+
+000018f4 <clearReceptionBuffer>:
+ * interrupt for a short period of time. 
+ */
+void clearReceptionBuffer(void)
+{
+	static uint8_t dummy;
+	UCSRB &= ~(1 << RXCIE); // disable UART RX Interrupt
+    18f4:	57 98       	cbi	0x0a, 7	; 10
+	dummy = UDR;
+    18f6:	8c b1       	in	r24, 0x0c	; 12
+    18f8:	80 93 87 00 	sts	0x0087, r24
+	read_pos = 0;
+    18fc:	10 92 86 00 	sts	0x0086, r1
+	write_pos = 0; 
+    1900:	10 92 85 00 	sts	0x0085, r1
+	read_size = 0;
+    1904:	10 92 84 00 	sts	0x0084, r1
+	write_size = 0;
+    1908:	10 92 83 00 	sts	0x0083, r1
+	uart_status = UART_BUFFER_OK;
+    190c:	10 92 f4 00 	sts	0x00F4, r1
+	UCSRB |= (1 << RXCIE); // enable Interrupt again
+    1910:	57 9a       	sbi	0x0a, 7	; 10
+    1912:	08 95       	ret
+
+00001914 <main>:
+	}
+}
+
+int main(void)
+{
+	initRobotBase();
+    1914:	0e 94 1d 0b 	call	0x163a	; 0x163a <initRobotBase>
+	setLEDs(0b111111);
+    1918:	8f e3       	ldi	r24, 0x3F	; 63
+    191a:	0e 94 00 02 	call	0x400	; 0x400 <setLEDs>
+	mSleep(1500);
+    191e:	8c ed       	ldi	r24, 0xDC	; 220
+    1920:	95 e0       	ldi	r25, 0x05	; 5
+    1922:	0e 94 67 07 	call	0xece	; 0xece <mSleep>
+	setLEDs(0b100001);
+    1926:	81 e2       	ldi	r24, 0x21	; 33
+    1928:	0e 94 00 02 	call	0x400	; 0x400 <setLEDs>
+	powerON();
+    192c:	0e 94 7e 05 	call	0xafc	; 0xafc <powerON>
+	setACSPwrHigh();
+    1930:	0e 94 79 05 	call	0xaf2	; 0xaf2 <setACSPwrHigh>
+// 	setACSPwrMed();
+	setStopwatch1(0);
+    1934:	10 92 bc 00 	sts	0x00BC, r1
+    1938:	10 92 bb 00 	sts	0x00BB, r1
+	srand(0);
+    193c:	80 e0       	ldi	r24, 0x00	; 0
+    193e:	90 e0       	ldi	r25, 0x00	; 0
+    1940:	0e 94 47 0d 	call	0x1a8e	; 0x1a8e <srand>
+	
+	while(1)
+	{
+		change_state();
+    1944:	0e 94 3d 01 	call	0x27a	; 0x27a <change_state>
+		state_machine();
+    1948:	0e 94 63 01 	call	0x2c6	; 0x2c6 <state_machine>
+		task_RP6System();
+    194c:	0e 94 06 0a 	call	0x140c	; 0x140c <task_RP6System>
+    1950:	f9 cf       	rjmp	.-14     	; 0x1944 <main+0x30>
+
+00001952 <__umulhisi3>:
+    1952:	a2 9f       	mul	r26, r18
+    1954:	b0 01       	movw	r22, r0
+    1956:	b3 9f       	mul	r27, r19
+    1958:	c0 01       	movw	r24, r0
+    195a:	a3 9f       	mul	r26, r19
+    195c:	70 0d       	add	r23, r0
+    195e:	81 1d       	adc	r24, r1
+    1960:	11 24       	eor	r1, r1
+    1962:	91 1d       	adc	r25, r1
+    1964:	b2 9f       	mul	r27, r18
+    1966:	70 0d       	add	r23, r0
+    1968:	81 1d       	adc	r24, r1
+    196a:	11 24       	eor	r1, r1
+    196c:	91 1d       	adc	r25, r1
+    196e:	08 95       	ret
+
+00001970 <__udivmodhi4>:
+    1970:	aa 1b       	sub	r26, r26
+    1972:	bb 1b       	sub	r27, r27
+    1974:	51 e1       	ldi	r21, 0x11	; 17
+    1976:	07 c0       	rjmp	.+14     	; 0x1986 <__udivmodhi4_ep>
+
+00001978 <__udivmodhi4_loop>:
+    1978:	aa 1f       	adc	r26, r26
+    197a:	bb 1f       	adc	r27, r27
+    197c:	a6 17       	cp	r26, r22
+    197e:	b7 07       	cpc	r27, r23
+    1980:	10 f0       	brcs	.+4      	; 0x1986 <__udivmodhi4_ep>
+    1982:	a6 1b       	sub	r26, r22
+    1984:	b7 0b       	sbc	r27, r23
+
+00001986 <__udivmodhi4_ep>:
+    1986:	88 1f       	adc	r24, r24
+    1988:	99 1f       	adc	r25, r25
+    198a:	5a 95       	dec	r21
+    198c:	a9 f7       	brne	.-22     	; 0x1978 <__udivmodhi4_loop>
+    198e:	80 95       	com	r24
+    1990:	90 95       	com	r25
+    1992:	bc 01       	movw	r22, r24
+    1994:	cd 01       	movw	r24, r26
+    1996:	08 95       	ret
+
+00001998 <__udivmodsi4>:
+    1998:	a1 e2       	ldi	r26, 0x21	; 33
+    199a:	1a 2e       	mov	r1, r26
+    199c:	aa 1b       	sub	r26, r26
+    199e:	bb 1b       	sub	r27, r27
+    19a0:	fd 01       	movw	r30, r26
+    19a2:	0d c0       	rjmp	.+26     	; 0x19be <__udivmodsi4_ep>
+
+000019a4 <__udivmodsi4_loop>:
+    19a4:	aa 1f       	adc	r26, r26
+    19a6:	bb 1f       	adc	r27, r27
+    19a8:	ee 1f       	adc	r30, r30
+    19aa:	ff 1f       	adc	r31, r31
+    19ac:	a2 17       	cp	r26, r18
+    19ae:	b3 07       	cpc	r27, r19
+    19b0:	e4 07       	cpc	r30, r20
+    19b2:	f5 07       	cpc	r31, r21
+    19b4:	20 f0       	brcs	.+8      	; 0x19be <__udivmodsi4_ep>
+    19b6:	a2 1b       	sub	r26, r18
+    19b8:	b3 0b       	sbc	r27, r19
+    19ba:	e4 0b       	sbc	r30, r20
+    19bc:	f5 0b       	sbc	r31, r21
+
+000019be <__udivmodsi4_ep>:
+    19be:	66 1f       	adc	r22, r22
+    19c0:	77 1f       	adc	r23, r23
+    19c2:	88 1f       	adc	r24, r24
+    19c4:	99 1f       	adc	r25, r25
+    19c6:	1a 94       	dec	r1
+    19c8:	69 f7       	brne	.-38     	; 0x19a4 <__udivmodsi4_loop>
+    19ca:	60 95       	com	r22
+    19cc:	70 95       	com	r23
+    19ce:	80 95       	com	r24
+    19d0:	90 95       	com	r25
+    19d2:	9b 01       	movw	r18, r22
+    19d4:	ac 01       	movw	r20, r24
+    19d6:	bd 01       	movw	r22, r26
+    19d8:	cf 01       	movw	r24, r30
+    19da:	08 95       	ret
+
+000019dc <__tablejump2__>:
+    19dc:	ee 0f       	add	r30, r30
+    19de:	ff 1f       	adc	r31, r31
+
+000019e0 <__tablejump__>:
+    19e0:	05 90       	lpm	r0, Z+
+    19e2:	f4 91       	lpm	r31, Z
+    19e4:	e0 2d       	mov	r30, r0
+    19e6:	09 94       	ijmp
+
+000019e8 <do_rand>:
+    19e8:	8f 92       	push	r8
+    19ea:	9f 92       	push	r9
+    19ec:	af 92       	push	r10
+    19ee:	bf 92       	push	r11
+    19f0:	cf 92       	push	r12
+    19f2:	df 92       	push	r13
+    19f4:	ef 92       	push	r14
+    19f6:	ff 92       	push	r15
+    19f8:	cf 93       	push	r28
+    19fa:	df 93       	push	r29
+    19fc:	ec 01       	movw	r28, r24
+    19fe:	68 81       	ld	r22, Y
+    1a00:	79 81       	ldd	r23, Y+1	; 0x01
+    1a02:	8a 81       	ldd	r24, Y+2	; 0x02
+    1a04:	9b 81       	ldd	r25, Y+3	; 0x03
+    1a06:	61 15       	cp	r22, r1
+    1a08:	71 05       	cpc	r23, r1
+    1a0a:	81 05       	cpc	r24, r1
+    1a0c:	91 05       	cpc	r25, r1
+    1a0e:	21 f4       	brne	.+8      	; 0x1a18 <do_rand+0x30>
+    1a10:	64 e2       	ldi	r22, 0x24	; 36
+    1a12:	79 ed       	ldi	r23, 0xD9	; 217
+    1a14:	8b e5       	ldi	r24, 0x5B	; 91
+    1a16:	97 e0       	ldi	r25, 0x07	; 7
+    1a18:	2d e1       	ldi	r18, 0x1D	; 29
+    1a1a:	33 ef       	ldi	r19, 0xF3	; 243
+    1a1c:	41 e0       	ldi	r20, 0x01	; 1
+    1a1e:	50 e0       	ldi	r21, 0x00	; 0
+    1a20:	0e 94 96 0d 	call	0x1b2c	; 0x1b2c <__divmodsi4>
+    1a24:	49 01       	movw	r8, r18
+    1a26:	5a 01       	movw	r10, r20
+    1a28:	9b 01       	movw	r18, r22
+    1a2a:	ac 01       	movw	r20, r24
+    1a2c:	a7 ea       	ldi	r26, 0xA7	; 167
+    1a2e:	b1 e4       	ldi	r27, 0x41	; 65
+    1a30:	0e 94 83 0d 	call	0x1b06	; 0x1b06 <__muluhisi3>
+    1a34:	6b 01       	movw	r12, r22
+    1a36:	7c 01       	movw	r14, r24
+    1a38:	ac ee       	ldi	r26, 0xEC	; 236
+    1a3a:	b4 ef       	ldi	r27, 0xF4	; 244
+    1a3c:	a5 01       	movw	r20, r10
+    1a3e:	94 01       	movw	r18, r8
+    1a40:	0e 94 91 0d 	call	0x1b22	; 0x1b22 <__mulohisi3>
+    1a44:	c6 0e       	add	r12, r22
+    1a46:	d7 1e       	adc	r13, r23
+    1a48:	e8 1e       	adc	r14, r24
+    1a4a:	f9 1e       	adc	r15, r25
+    1a4c:	f7 fe       	sbrs	r15, 7
+    1a4e:	06 c0       	rjmp	.+12     	; 0x1a5c <do_rand+0x74>
+    1a50:	81 e0       	ldi	r24, 0x01	; 1
+    1a52:	c8 1a       	sub	r12, r24
+    1a54:	d1 08       	sbc	r13, r1
+    1a56:	e1 08       	sbc	r14, r1
+    1a58:	80 e8       	ldi	r24, 0x80	; 128
+    1a5a:	f8 0a       	sbc	r15, r24
+    1a5c:	c8 82       	st	Y, r12
+    1a5e:	d9 82       	std	Y+1, r13	; 0x01
+    1a60:	ea 82       	std	Y+2, r14	; 0x02
+    1a62:	fb 82       	std	Y+3, r15	; 0x03
+    1a64:	c6 01       	movw	r24, r12
+    1a66:	9f 77       	andi	r25, 0x7F	; 127
+    1a68:	df 91       	pop	r29
+    1a6a:	cf 91       	pop	r28
+    1a6c:	ff 90       	pop	r15
+    1a6e:	ef 90       	pop	r14
+    1a70:	df 90       	pop	r13
+    1a72:	cf 90       	pop	r12
+    1a74:	bf 90       	pop	r11
+    1a76:	af 90       	pop	r10
+    1a78:	9f 90       	pop	r9
+    1a7a:	8f 90       	pop	r8
+    1a7c:	08 95       	ret
+
+00001a7e <rand_r>:
+    1a7e:	0e 94 f4 0c 	call	0x19e8	; 0x19e8 <do_rand>
+    1a82:	08 95       	ret
+
+00001a84 <rand>:
+    1a84:	89 e6       	ldi	r24, 0x69	; 105
+    1a86:	90 e0       	ldi	r25, 0x00	; 0
+    1a88:	0e 94 f4 0c 	call	0x19e8	; 0x19e8 <do_rand>
+    1a8c:	08 95       	ret
+
+00001a8e <srand>:
+    1a8e:	a0 e0       	ldi	r26, 0x00	; 0
+    1a90:	b0 e0       	ldi	r27, 0x00	; 0
+    1a92:	80 93 69 00 	sts	0x0069, r24
+    1a96:	90 93 6a 00 	sts	0x006A, r25
+    1a9a:	a0 93 6b 00 	sts	0x006B, r26
+    1a9e:	b0 93 6c 00 	sts	0x006C, r27
+    1aa2:	08 95       	ret
+
+00001aa4 <itoa>:
+    1aa4:	fb 01       	movw	r30, r22
+    1aa6:	9f 01       	movw	r18, r30
+    1aa8:	e8 94       	clt
+    1aaa:	42 30       	cpi	r20, 0x02	; 2
+    1aac:	c4 f0       	brlt	.+48     	; 0x1ade <itoa+0x3a>
+    1aae:	45 32       	cpi	r20, 0x25	; 37
+    1ab0:	b4 f4       	brge	.+44     	; 0x1ade <itoa+0x3a>
+    1ab2:	4a 30       	cpi	r20, 0x0A	; 10
+    1ab4:	29 f4       	brne	.+10     	; 0x1ac0 <itoa+0x1c>
+    1ab6:	97 fb       	bst	r25, 7
+    1ab8:	1e f4       	brtc	.+6      	; 0x1ac0 <itoa+0x1c>
+    1aba:	90 95       	com	r25
+    1abc:	81 95       	neg	r24
+    1abe:	9f 4f       	sbci	r25, 0xFF	; 255
+    1ac0:	64 2f       	mov	r22, r20
+    1ac2:	77 27       	eor	r23, r23
+    1ac4:	0e 94 b8 0c 	call	0x1970	; 0x1970 <__udivmodhi4>
+    1ac8:	80 5d       	subi	r24, 0xD0	; 208
+    1aca:	8a 33       	cpi	r24, 0x3A	; 58
+    1acc:	0c f0       	brlt	.+2      	; 0x1ad0 <itoa+0x2c>
+    1ace:	89 5d       	subi	r24, 0xD9	; 217
+    1ad0:	81 93       	st	Z+, r24
+    1ad2:	cb 01       	movw	r24, r22
+    1ad4:	00 97       	sbiw	r24, 0x00	; 0
+    1ad6:	a1 f7       	brne	.-24     	; 0x1ac0 <itoa+0x1c>
+    1ad8:	16 f4       	brtc	.+4      	; 0x1ade <itoa+0x3a>
+    1ada:	5d e2       	ldi	r21, 0x2D	; 45
+    1adc:	51 93       	st	Z+, r21
+    1ade:	10 82       	st	Z, r1
+    1ae0:	c9 01       	movw	r24, r18
+    1ae2:	0c 94 73 0d 	jmp	0x1ae6	; 0x1ae6 <strrev>
+
+00001ae6 <strrev>:
+    1ae6:	dc 01       	movw	r26, r24
+    1ae8:	fc 01       	movw	r30, r24
+    1aea:	67 2f       	mov	r22, r23
+    1aec:	71 91       	ld	r23, Z+
+    1aee:	77 23       	and	r23, r23
+    1af0:	e1 f7       	brne	.-8      	; 0x1aea <strrev+0x4>
+    1af2:	32 97       	sbiw	r30, 0x02	; 2
+    1af4:	04 c0       	rjmp	.+8      	; 0x1afe <strrev+0x18>
+    1af6:	7c 91       	ld	r23, X
+    1af8:	6d 93       	st	X+, r22
+    1afa:	70 83       	st	Z, r23
+    1afc:	62 91       	ld	r22, -Z
+    1afe:	ae 17       	cp	r26, r30
+    1b00:	bf 07       	cpc	r27, r31
+    1b02:	c8 f3       	brcs	.-14     	; 0x1af6 <strrev+0x10>
+    1b04:	08 95       	ret
+
+00001b06 <__muluhisi3>:
+    1b06:	0e 94 a9 0c 	call	0x1952	; 0x1952 <__umulhisi3>
+    1b0a:	a5 9f       	mul	r26, r21
+    1b0c:	90 0d       	add	r25, r0
+    1b0e:	b4 9f       	mul	r27, r20
+    1b10:	90 0d       	add	r25, r0
+    1b12:	a4 9f       	mul	r26, r20
+    1b14:	80 0d       	add	r24, r0
+    1b16:	91 1d       	adc	r25, r1
+    1b18:	11 24       	eor	r1, r1
+    1b1a:	08 95       	ret
+
+00001b1c <__mulshisi3>:
+    1b1c:	b7 ff       	sbrs	r27, 7
+    1b1e:	0c 94 83 0d 	jmp	0x1b06	; 0x1b06 <__muluhisi3>
+
+00001b22 <__mulohisi3>:
+    1b22:	0e 94 83 0d 	call	0x1b06	; 0x1b06 <__muluhisi3>
+    1b26:	82 1b       	sub	r24, r18
+    1b28:	93 0b       	sbc	r25, r19
+    1b2a:	08 95       	ret
+
+00001b2c <__divmodsi4>:
+    1b2c:	05 2e       	mov	r0, r21
+    1b2e:	97 fb       	bst	r25, 7
+    1b30:	1e f4       	brtc	.+6      	; 0x1b38 <__divmodsi4+0xc>
+    1b32:	00 94       	com	r0
+    1b34:	0e 94 ad 0d 	call	0x1b5a	; 0x1b5a <__negsi2>
+    1b38:	57 fd       	sbrc	r21, 7
+    1b3a:	07 d0       	rcall	.+14     	; 0x1b4a <__divmodsi4_neg2>
+    1b3c:	0e 94 cc 0c 	call	0x1998	; 0x1998 <__udivmodsi4>
+    1b40:	07 fc       	sbrc	r0, 7
+    1b42:	03 d0       	rcall	.+6      	; 0x1b4a <__divmodsi4_neg2>
+    1b44:	4e f4       	brtc	.+18     	; 0x1b58 <__divmodsi4_exit>
+    1b46:	0c 94 ad 0d 	jmp	0x1b5a	; 0x1b5a <__negsi2>
+
+00001b4a <__divmodsi4_neg2>:
+    1b4a:	50 95       	com	r21
+    1b4c:	40 95       	com	r20
+    1b4e:	30 95       	com	r19
+    1b50:	21 95       	neg	r18
+    1b52:	3f 4f       	sbci	r19, 0xFF	; 255
+    1b54:	4f 4f       	sbci	r20, 0xFF	; 255
+    1b56:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00001b58 <__divmodsi4_exit>:
+    1b58:	08 95       	ret
+
+00001b5a <__negsi2>:
+    1b5a:	90 95       	com	r25
+    1b5c:	80 95       	com	r24
+    1b5e:	70 95       	com	r23
+    1b60:	61 95       	neg	r22
+    1b62:	7f 4f       	sbci	r23, 0xFF	; 255
+    1b64:	8f 4f       	sbci	r24, 0xFF	; 255
+    1b66:	9f 4f       	sbci	r25, 0xFF	; 255
+    1b68:	08 95       	ret
+
+00001b6a <_exit>:
+    1b6a:	f8 94       	cli
+
+00001b6c <__stop_program>:
+    1b6c:	ff cf       	rjmp	.-2      	; 0x1b6c <__stop_program>

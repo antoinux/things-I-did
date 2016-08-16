@@ -1,0 +1,103 @@
+   1               		.file	"test.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.startup,"ax",@progbits
+  11               	.global	main
+  13               	main:
+  14               	.LFB1:
+  15               		.file 1 "test.c"
+   1:test.c        **** #include "RP6RobotBaseLib.h"
+   2:test.c        **** 
+   3:test.c        **** int main(void)
+   4:test.c        **** {
+  16               		.loc 1 4 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+   5:test.c        **** 	initRobotBase();
+  22               		.loc 1 5 0
+  23 0000 0E94 0000 		call initRobotBase
+  24               	.LVL0:
+   6:test.c        **** 	setLEDs(0b111111);
+  25               		.loc 1 6 0
+  26 0004 8FE3      		ldi r24,lo8(63)
+  27 0006 0E94 0000 		call setLEDs
+  28               	.LVL1:
+   7:test.c        **** 	mSleep(1500);
+  29               		.loc 1 7 0
+  30 000a 8CED      		ldi r24,lo8(-36)
+  31 000c 95E0      		ldi r25,lo8(5)
+  32 000e 0E94 0000 		call mSleep
+  33               	.LVL2:
+   8:test.c        **** 	powerON();
+  34               		.loc 1 8 0
+  35 0012 0E94 0000 		call powerON
+  36               	.LVL3:
+  37               	.L2:
+   9:test.c        **** 	
+  10:test.c        **** 	while(true)
+  11:test.c        **** 	{
+  12:test.c        **** 		rotate(50,LEFT,45,1);
+  38               		.loc 1 12 0 discriminator 1
+  39 0016 21E0      		ldi r18,lo8(1)
+  40 0018 4DE2      		ldi r20,lo8(45)
+  41 001a 50E0      		ldi r21,0
+  42 001c 62E0      		ldi r22,lo8(2)
+  43 001e 82E3      		ldi r24,lo8(50)
+  44 0020 0E94 0000 		call rotate
+  45               	.LVL4:
+  13:test.c        **** 		writeString_P("Done.\n");
+  46               		.loc 1 13 0 discriminator 1
+  47 0024 80E0      		ldi r24,lo8(__c.2087)
+  48 0026 90E0      		ldi r25,hi8(__c.2087)
+  49 0028 0E94 0000 		call writeNStringP
+  50               	.LVL5:
+  14:test.c        **** 		task_RP6System();
+  51               		.loc 1 14 0 discriminator 1
+  52 002c 0E94 0000 		call task_RP6System
+  53               	.LVL6:
+  54 0030 00C0      		rjmp .L2
+  55               		.cfi_endproc
+  56               	.LFE1:
+  58               		.section	.progmem.data,"a",@progbits
+  61               	__c.2087:
+  62 0000 446F 6E65 		.string	"Done.\n"
+  62      2E0A 00
+  63               		.comm	timer,2,1
+  64               		.comm	motion_status,1,1
+  65               		.comm	statusLEDs,1,1
+  66               		.text
+  67               	.Letext0:
+  68               		.file 2 "/usr/lib/avr/include/stdint.h"
+  69               		.file 3 "../RP6Lib/RP6base/RP6RobotBaseLib.h"
+  70               		.file 4 "../RP6Lib/RP6common/RP6uart.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 test.c
+     /tmp/ccbr92kU.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccbr92kU.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccbr92kU.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccbr92kU.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccbr92kU.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccbr92kU.s:13     .text.startup:0000000000000000 main
+     /tmp/ccbr92kU.s:61     .progmem.data:0000000000000000 __c.2087
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 motion_status
+                            *COM*:0000000000000001 statusLEDs
+
+UNDEFINED SYMBOLS
+initRobotBase
+setLEDs
+mSleep
+powerON
+rotate
+writeNStringP
+task_RP6System
+__do_clear_bss

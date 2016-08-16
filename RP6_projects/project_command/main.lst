@@ -1,0 +1,283 @@
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	bumpers_state_change
+  12               	bumpers_state_change:
+  13               	.LFB1:
+  14               		.file 1 "main.c"
+   1:main.c        **** #include"RP6RobotBaseLib.h"
+   2:main.c        **** 
+   3:main.c        **** #define NORMAL 0
+   4:main.c        **** #define ESCAPE 1
+   5:main.c        **** 
+   6:main.c        **** uint8_t state = NORMAL;
+   7:main.c        **** uint8_t after_bumper_way = 0;
+   8:main.c        **** 
+   9:main.c        **** void bumpers_state_change(void)
+  10:main.c        **** {
+  15               		.loc 1 10 0
+  16               		.cfi_startproc
+  17               	/* prologue: function */
+  18               	/* frame size = 0 */
+  19               	/* stack size = 0 */
+  20               	.L__stack_usage = 0
+  11:main.c        **** 	if(bumper_left || bumper_right)
+  21               		.loc 1 11 0
+  22 0000 8091 0000 		lds r24,bumper_left
+  23 0004 8111      		cpse r24,__zero_reg__
+  24 0006 00C0      		rjmp .L2
+  25               		.loc 1 11 0 is_stmt 0 discriminator 1
+  26 0008 9091 0000 		lds r25,bumper_right
+  27 000c 9923      		tst r25
+  28 000e 01F0      		breq .L1
+  29               	.L2:
+  12:main.c        **** 	{
+  13:main.c        **** 		state = ESCAPE;
+  30               		.loc 1 13 0 is_stmt 1
+  31 0010 91E0      		ldi r25,lo8(1)
+  32 0012 9093 0000 		sts state,r25
+  14:main.c        **** 		after_bumper_way = bumper_left ? RIGHT : LEFT;
+  33               		.loc 1 14 0
+  34 0016 8823      		tst r24
+  35 0018 01F0      		breq .L5
+  36 001a 83E0      		ldi r24,lo8(3)
+  37 001c 00C0      		rjmp .L4
+  38               	.L5:
+  39 001e 82E0      		ldi r24,lo8(2)
+  40               	.L4:
+  41               		.loc 1 14 0 is_stmt 0 discriminator 3
+  42 0020 8093 0000 		sts after_bumper_way,r24
+  15:main.c        **** 		moveAtSpeedDirection(-100,-100);
+  43               		.loc 1 15 0 is_stmt 1 discriminator 3
+  44 0024 6CE9      		ldi r22,lo8(-100)
+  45 0026 7FEF      		ldi r23,lo8(-1)
+  46 0028 8CE9      		ldi r24,lo8(-100)
+  47 002a 9FEF      		ldi r25,lo8(-1)
+  48 002c 0E94 0000 		call moveAtSpeedDirection
+  49               	.LVL0:
+  16:main.c        **** 		startStopwatch1();
+  50               		.loc 1 16 0 discriminator 3
+  51 0030 8091 0000 		lds r24,stopwatches
+  52 0034 8160      		ori r24,lo8(1)
+  53 0036 8093 0000 		sts stopwatches,r24
+  54               	.L1:
+  55 003a 0895      		ret
+  56               		.cfi_endproc
+  57               	.LFE1:
+  59               	.global	turn_after_bumper
+  61               	turn_after_bumper:
+  62               	.LFB2:
+  17:main.c        **** 	}
+  18:main.c        **** }
+  19:main.c        **** 
+  20:main.c        **** void turn_after_bumper()
+  21:main.c        **** {
+  63               		.loc 1 21 0
+  64               		.cfi_startproc
+  65               	/* prologue: function */
+  66               	/* frame size = 0 */
+  67               	/* stack size = 0 */
+  68               	.L__stack_usage = 0
+  22:main.c        **** 	if(state == ESCAPE && getStopwatch1() > 3000)
+  69               		.loc 1 22 0
+  70 003c 8091 0000 		lds r24,state
+  71 0040 8130      		cpi r24,lo8(1)
+  72 0042 01F4      		brne .L10
+  73               		.loc 1 22 0 is_stmt 0 discriminator 1
+  74 0044 8091 0000 		lds r24,stopwatches+1
+  75 0048 9091 0000 		lds r25,stopwatches+1+1
+  76 004c 893B      		cpi r24,-71
+  77 004e 9B40      		sbci r25,11
+  78 0050 00F0      		brlo .L10
+  23:main.c        **** 	{
+  24:main.c        **** 		state = NORMAL;
+  79               		.loc 1 24 0 is_stmt 1
+  80 0052 1092 0000 		sts state,__zero_reg__
+  25:main.c        **** 		moveAtSpeedDirection(0,0);
+  81               		.loc 1 25 0
+  82 0056 60E0      		ldi r22,0
+  83 0058 70E0      		ldi r23,0
+  84 005a 80E0      		ldi r24,0
+  85 005c 90E0      		ldi r25,0
+  86 005e 0E94 0000 		call moveAtSpeedDirection
+  87               	.LVL1:
+  26:main.c        **** 		rotate(50,after_bumper_way,45,1);
+  88               		.loc 1 26 0
+  89 0062 21E0      		ldi r18,lo8(1)
+  90 0064 4DE2      		ldi r20,lo8(45)
+  91 0066 50E0      		ldi r21,0
+  92 0068 6091 0000 		lds r22,after_bumper_way
+  93 006c 82E3      		ldi r24,lo8(50)
+  94 006e 0E94 0000 		call rotate
+  95               	.LVL2:
+  27:main.c        **** 		setStopwatch1(0);
+  96               		.loc 1 27 0
+  97 0072 1092 0000 		sts stopwatches+1+1,__zero_reg__
+  98 0076 1092 0000 		sts stopwatches+1,__zero_reg__
+  28:main.c        **** 		stopStopwatch1();
+  99               		.loc 1 28 0
+ 100 007a 8091 0000 		lds r24,stopwatches
+ 101 007e 8E7F      		andi r24,lo8(-2)
+ 102 0080 8093 0000 		sts stopwatches,r24
+ 103               	.L10:
+ 104 0084 0895      		ret
+ 105               		.cfi_endproc
+ 106               	.LFE2:
+ 108               	.global	go_forward
+ 110               	go_forward:
+ 111               	.LFB3:
+  29:main.c        **** 	}
+  30:main.c        **** }
+  31:main.c        **** 
+  32:main.c        **** void go_forward()
+  33:main.c        **** {
+ 112               		.loc 1 33 0
+ 113               		.cfi_startproc
+ 114               	/* prologue: function */
+ 115               	/* frame size = 0 */
+ 116               	/* stack size = 0 */
+ 117               	.L__stack_usage = 0
+  34:main.c        **** 	if(state == NORMAL)
+ 118               		.loc 1 34 0
+ 119 0086 8091 0000 		lds r24,state
+ 120 008a 8111      		cpse r24,__zero_reg__
+ 121 008c 00C0      		rjmp .L12
+  35:main.c        **** 		moveAtSpeedDirection(100,100);
+ 122               		.loc 1 35 0
+ 123 008e 64E6      		ldi r22,lo8(100)
+ 124 0090 70E0      		ldi r23,0
+ 125 0092 84E6      		ldi r24,lo8(100)
+ 126 0094 90E0      		ldi r25,0
+ 127 0096 0C94 0000 		jmp moveAtSpeedDirection
+ 128               	.LVL3:
+ 129               	.L12:
+ 130 009a 0895      		ret
+ 131               		.cfi_endproc
+ 132               	.LFE3:
+ 134               		.section	.text.startup,"ax",@progbits
+ 135               	.global	main
+ 137               	main:
+ 138               	.LFB4:
+  36:main.c        **** }
+  37:main.c        **** 
+  38:main.c        **** int main(void)
+  39:main.c        **** {
+ 139               		.loc 1 39 0
+ 140               		.cfi_startproc
+ 141               	/* prologue: function */
+ 142               	/* frame size = 0 */
+ 143               	/* stack size = 0 */
+ 144               	.L__stack_usage = 0
+  40:main.c        **** 	initRobotBase();
+ 145               		.loc 1 40 0
+ 146 0000 0E94 0000 		call initRobotBase
+ 147               	.LVL4:
+  41:main.c        **** 	setLEDs(0b111111);
+ 148               		.loc 1 41 0
+ 149 0004 8FE3      		ldi r24,lo8(63)
+ 150 0006 0E94 0000 		call setLEDs
+ 151               	.LVL5:
+  42:main.c        **** 	mSleep(1500);
+ 152               		.loc 1 42 0
+ 153 000a 8CED      		ldi r24,lo8(-36)
+ 154 000c 95E0      		ldi r25,lo8(5)
+ 155 000e 0E94 0000 		call mSleep
+ 156               	.LVL6:
+  43:main.c        **** 	setLEDs(0b100001);
+ 157               		.loc 1 43 0
+ 158 0012 81E2      		ldi r24,lo8(33)
+ 159 0014 0E94 0000 		call setLEDs
+ 160               	.LVL7:
+  44:main.c        **** 	BUMPERS_setStateChangedHandler(bumpers_state_change);
+ 161               		.loc 1 44 0
+ 162 0018 80E0      		ldi r24,lo8(gs(bumpers_state_change))
+ 163 001a 90E0      		ldi r25,hi8(gs(bumpers_state_change))
+ 164 001c 0E94 0000 		call BUMPERS_setStateChangedHandler
+ 165               	.LVL8:
+  45:main.c        **** 	powerON();
+ 166               		.loc 1 45 0
+ 167 0020 0E94 0000 		call powerON
+ 168               	.LVL9:
+ 169               	.L17:
+  46:main.c        **** 	
+  47:main.c        **** 	while(1)
+  48:main.c        **** 	{
+  49:main.c        **** 		if(state == NORMAL)
+ 170               		.loc 1 49 0
+ 171 0024 8091 0000 		lds r24,state
+ 172 0028 8111      		cpse r24,__zero_reg__
+ 173 002a 00C0      		rjmp .L15
+  50:main.c        **** 			go_forward();
+ 174               		.loc 1 50 0
+ 175 002c 0E94 0000 		call go_forward
+ 176               	.LVL10:
+ 177 0030 00C0      		rjmp .L16
+ 178               	.L15:
+  51:main.c        **** 		else if(state == ESCAPE)
+ 179               		.loc 1 51 0
+ 180 0032 8130      		cpi r24,lo8(1)
+ 181 0034 01F4      		brne .L16
+  52:main.c        **** 			turn_after_bumper();
+ 182               		.loc 1 52 0
+ 183 0036 0E94 0000 		call turn_after_bumper
+ 184               	.LVL11:
+ 185               	.L16:
+  53:main.c        **** 		task_RP6System();
+ 186               		.loc 1 53 0
+ 187 003a 0E94 0000 		call task_RP6System
+ 188               	.LVL12:
+  54:main.c        **** 	}
+ 189               		.loc 1 54 0
+ 190 003e 00C0      		rjmp .L17
+ 191               		.cfi_endproc
+ 192               	.LFE4:
+ 194               	.global	after_bumper_way
+ 195               		.section .bss
+ 198               	after_bumper_way:
+ 199 0000 00        		.zero	1
+ 200               	.global	state
+ 203               	state:
+ 204 0001 00        		.zero	1
+ 205               		.comm	timer,2,1
+ 206               		.comm	motion_status,1,1
+ 207               		.comm	statusLEDs,1,1
+ 208               		.text
+ 209               	.Letext0:
+ 210               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 211               		.file 3 "../RP6Lib/RP6base/RP6RobotBaseLib.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccUTUIOq.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccUTUIOq.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccUTUIOq.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccUTUIOq.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccUTUIOq.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccUTUIOq.s:12     .text:0000000000000000 bumpers_state_change
+     /tmp/ccUTUIOq.s:203    .bss:0000000000000001 state
+     /tmp/ccUTUIOq.s:198    .bss:0000000000000000 after_bumper_way
+     /tmp/ccUTUIOq.s:61     .text:000000000000003c turn_after_bumper
+     /tmp/ccUTUIOq.s:110    .text:0000000000000086 go_forward
+     /tmp/ccUTUIOq.s:137    .text.startup:0000000000000000 main
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 motion_status
+                            *COM*:0000000000000001 statusLEDs
+
+UNDEFINED SYMBOLS
+bumper_left
+bumper_right
+moveAtSpeedDirection
+stopwatches
+rotate
+initRobotBase
+setLEDs
+mSleep
+BUMPERS_setStateChangedHandler
+powerON
+task_RP6System
+__do_clear_bss

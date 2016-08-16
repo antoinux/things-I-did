@@ -1,0 +1,202 @@
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	loop
+  12               	loop:
+  13               	.LFB1:
+  14               		.file 1 "main.c"
+   1:main.c        **** #include "RP6RobotBaseLib.h"
+   2:main.c        **** 
+   3:main.c        **** void loop(void)
+   4:main.c        **** {
+  15               		.loc 1 4 0
+  16               		.cfi_startproc
+  17               	/* prologue: function */
+  18               	/* frame size = 0 */
+  19               	/* stack size = 0 */
+  20               	.L__stack_usage = 0
+   5:main.c        **** 	if(getStopwatch1() > 2000)
+  21               		.loc 1 5 0
+  22 0000 8091 0000 		lds r24,stopwatches+1
+  23 0004 9091 0000 		lds r25,stopwatches+1+1
+  24 0008 813D      		cpi r24,-47
+  25 000a 9740      		sbci r25,7
+  26 000c 00F0      		brlo .L1
+   6:main.c        **** 	{
+   7:main.c        **** 		if(getStopwatch1() < 3000)
+  27               		.loc 1 7 0
+  28 000e 8091 0000 		lds r24,stopwatches+1
+  29 0012 9091 0000 		lds r25,stopwatches+1+1
+  30 0016 883B      		cpi r24,-72
+  31 0018 9B40      		sbci r25,11
+  32 001a 00F4      		brsh .L3
+   8:main.c        **** 			setLEDs(0b000001);
+  33               		.loc 1 8 0
+  34 001c 81E0      		ldi r24,lo8(1)
+  35 001e 00C0      		rjmp .L9
+  36               	.L3:
+   9:main.c        **** 		else if(getStopwatch1() < 3500)
+  37               		.loc 1 9 0
+  38 0020 8091 0000 		lds r24,stopwatches+1
+  39 0024 9091 0000 		lds r25,stopwatches+1+1
+  40 0028 8C3A      		cpi r24,-84
+  41 002a 9D40      		sbci r25,13
+  42 002c 00F4      		brsh .L4
+  10:main.c        **** 			setLEDs(0b000011);
+  43               		.loc 1 10 0
+  44 002e 83E0      		ldi r24,lo8(3)
+  45 0030 00C0      		rjmp .L9
+  46               	.L4:
+  11:main.c        **** 		else if(getStopwatch1() < 3750)
+  47               		.loc 1 11 0
+  48 0032 8091 0000 		lds r24,stopwatches+1
+  49 0036 9091 0000 		lds r25,stopwatches+1+1
+  50 003a 863A      		cpi r24,-90
+  51 003c 9E40      		sbci r25,14
+  52 003e 00F4      		brsh .L5
+  12:main.c        **** 			setLEDs(0b000111);
+  53               		.loc 1 12 0
+  54 0040 87E0      		ldi r24,lo8(7)
+  55 0042 00C0      		rjmp .L9
+  56               	.L5:
+  13:main.c        **** 		else if(getStopwatch1() < 3825)
+  57               		.loc 1 13 0
+  58 0044 8091 0000 		lds r24,stopwatches+1
+  59 0048 9091 0000 		lds r25,stopwatches+1+1
+  60 004c 813F      		cpi r24,-15
+  61 004e 9E40      		sbci r25,14
+  62 0050 00F4      		brsh .L6
+  14:main.c        **** 			setLEDs(0b001111);
+  63               		.loc 1 14 0
+  64 0052 8FE0      		ldi r24,lo8(15)
+  65 0054 00C0      		rjmp .L9
+  66               	.L6:
+  15:main.c        **** 		else if(getStopwatch1() < 3912)
+  67               		.loc 1 15 0
+  68 0056 8091 0000 		lds r24,stopwatches+1
+  69 005a 9091 0000 		lds r25,stopwatches+1+1
+  70 005e 8834      		cpi r24,72
+  71 0060 9F40      		sbci r25,15
+  72 0062 00F4      		brsh .L7
+  16:main.c        **** 			setLEDs(0b011111);
+  73               		.loc 1 16 0
+  74 0064 8FE1      		ldi r24,lo8(31)
+  75 0066 00C0      		rjmp .L9
+  76               	.L7:
+  17:main.c        **** 		else if(getStopwatch1() < 4000)
+  77               		.loc 1 17 0
+  78 0068 8091 0000 		lds r24,stopwatches+1
+  79 006c 9091 0000 		lds r25,stopwatches+1+1
+  80 0070 803A      		cpi r24,-96
+  81 0072 9F40      		sbci r25,15
+  82 0074 00F4      		brsh .L8
+  18:main.c        **** 			setLEDs(0b111111);
+  83               		.loc 1 18 0
+  84 0076 8FE3      		ldi r24,lo8(63)
+  85               	.L9:
+  86 0078 0C94 0000 		jmp setLEDs
+  87               	.LVL0:
+  88               	.L8:
+  19:main.c        **** 		else
+  20:main.c        **** 		{
+  21:main.c        **** 			setLEDs(0b000000);
+  89               		.loc 1 21 0
+  90 007c 80E0      		ldi r24,0
+  91 007e 0E94 0000 		call setLEDs
+  92               	.LVL1:
+  22:main.c        **** 			setStopwatch1(0);
+  93               		.loc 1 22 0
+  94 0082 1092 0000 		sts stopwatches+1+1,__zero_reg__
+  95 0086 1092 0000 		sts stopwatches+1,__zero_reg__
+  96               	.L1:
+  97 008a 0895      		ret
+  98               		.cfi_endproc
+  99               	.LFE1:
+ 101               		.section	.text.startup,"ax",@progbits
+ 102               	.global	main
+ 104               	main:
+ 105               	.LFB2:
+  23:main.c        **** 		}
+  24:main.c        **** 	}
+  25:main.c        **** }
+  26:main.c        **** 
+  27:main.c        **** int main(void)
+  28:main.c        **** {
+ 106               		.loc 1 28 0
+ 107               		.cfi_startproc
+ 108               	/* prologue: function */
+ 109               	/* frame size = 0 */
+ 110               	/* stack size = 0 */
+ 111               	.L__stack_usage = 0
+  29:main.c        **** 	initRobotBase();
+ 112               		.loc 1 29 0
+ 113 0000 0E94 0000 		call initRobotBase
+ 114               	.LVL2:
+  30:main.c        **** 	writeString_P("Hello, world!");
+ 115               		.loc 1 30 0
+ 116 0004 80E0      		ldi r24,lo8(__c.2090)
+ 117 0006 90E0      		ldi r25,hi8(__c.2090)
+ 118 0008 0E94 0000 		call writeNStringP
+ 119               	.LVL3:
+  31:main.c        **** 	
+  32:main.c        **** 	setLEDs(0b000000);
+ 120               		.loc 1 32 0
+ 121 000c 80E0      		ldi r24,0
+ 122 000e 0E94 0000 		call setLEDs
+ 123               	.LVL4:
+  33:main.c        **** 	startStopwatch1();
+ 124               		.loc 1 33 0
+ 125 0012 8091 0000 		lds r24,stopwatches
+ 126 0016 8160      		ori r24,lo8(1)
+ 127 0018 8093 0000 		sts stopwatches,r24
+ 128               	.L12:
+  34:main.c        **** 	
+  35:main.c        **** 	while(1)
+  36:main.c        **** 	{
+  37:main.c        **** 		loop();
+ 129               		.loc 1 37 0 discriminator 1
+ 130 001c 0E94 0000 		call loop
+ 131               	.LVL5:
+ 132 0020 00C0      		rjmp .L12
+ 133               		.cfi_endproc
+ 134               	.LFE2:
+ 136               		.section	.progmem.data,"a",@progbits
+ 139               	__c.2090:
+ 140 0000 4865 6C6C 		.string	"Hello, world!"
+ 140      6F2C 2077 
+ 140      6F72 6C64 
+ 140      2100 
+ 141               		.comm	timer,2,1
+ 142               		.comm	motion_status,1,1
+ 143               		.comm	statusLEDs,1,1
+ 144               		.text
+ 145               	.Letext0:
+ 146               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 147               		.file 3 "../RP6Lib/RP6base/RP6RobotBaseLib.h"
+ 148               		.file 4 "../RP6Lib/RP6common/RP6uart.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/cczLGaGE.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cczLGaGE.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cczLGaGE.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cczLGaGE.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cczLGaGE.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cczLGaGE.s:12     .text:0000000000000000 loop
+     /tmp/cczLGaGE.s:104    .text.startup:0000000000000000 main
+     /tmp/cczLGaGE.s:139    .progmem.data:0000000000000000 __c.2090
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 motion_status
+                            *COM*:0000000000000001 statusLEDs
+
+UNDEFINED SYMBOLS
+stopwatches
+setLEDs
+initRobotBase
+writeNStringP
+__do_clear_bss

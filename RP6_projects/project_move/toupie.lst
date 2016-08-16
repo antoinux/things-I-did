@@ -1,0 +1,96 @@
+   1               		.file	"toupie.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.startup,"ax",@progbits
+  11               	.global	main
+  13               	main:
+  14               	.LFB1:
+  15               		.file 1 "toupie.c"
+   1:toupie.c      **** #include"RP6RobotBaseLib.h"
+   2:toupie.c      **** 
+   3:toupie.c      **** int main(void)
+   4:toupie.c      **** {
+  16               		.loc 1 4 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+   5:toupie.c      **** 	initRobotBase();
+  22               		.loc 1 5 0
+  23 0000 0E94 0000 		call initRobotBase
+  24               	.LVL0:
+   6:toupie.c      **** 	setLEDs(0b111111);
+  25               		.loc 1 6 0
+  26 0004 8FE3      		ldi r24,lo8(63)
+  27 0006 0E94 0000 		call setLEDs
+  28               	.LVL1:
+   7:toupie.c      **** 	mSleep(1500);
+  29               		.loc 1 7 0
+  30 000a 8CED      		ldi r24,lo8(-36)
+  31 000c 95E0      		ldi r25,lo8(5)
+  32 000e 0E94 0000 		call mSleep
+  33               	.LVL2:
+   8:toupie.c      **** 	setLEDs(0b100001);
+  34               		.loc 1 8 0
+  35 0012 81E2      		ldi r24,lo8(33)
+  36 0014 0E94 0000 		call setLEDs
+  37               	.LVL3:
+   9:toupie.c      **** 	powerON();
+  38               		.loc 1 9 0
+  39 0018 0E94 0000 		call powerON
+  40               	.LVL4:
+  41               	.L2:
+  10:toupie.c      **** 	
+  11:toupie.c      **** 	while(1)
+  12:toupie.c      **** 	{
+  13:toupie.c      **** // 		moveAtSpeedDirection(50,-50);
+  14:toupie.c      **** 		rotate(40,LEFT,90,1);
+  42               		.loc 1 14 0 discriminator 1
+  43 001c 21E0      		ldi r18,lo8(1)
+  44 001e 4AE5      		ldi r20,lo8(90)
+  45 0020 50E0      		ldi r21,0
+  46 0022 62E0      		ldi r22,lo8(2)
+  47 0024 88E2      		ldi r24,lo8(40)
+  48 0026 0E94 0000 		call rotate
+  49               	.LVL5:
+  15:toupie.c      **** 		task_RP6System();
+  50               		.loc 1 15 0 discriminator 1
+  51 002a 0E94 0000 		call task_RP6System
+  52               	.LVL6:
+  53 002e 00C0      		rjmp .L2
+  54               		.cfi_endproc
+  55               	.LFE1:
+  57               		.comm	timer,2,1
+  58               		.comm	motion_status,1,1
+  59               		.comm	statusLEDs,1,1
+  60               		.text
+  61               	.Letext0:
+  62               		.file 2 "/usr/lib/avr/include/stdint.h"
+  63               		.file 3 "../RP6Lib/RP6base/RP6RobotBaseLib.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 toupie.c
+     /tmp/cc0ixWEh.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/cc0ixWEh.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/cc0ixWEh.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/cc0ixWEh.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/cc0ixWEh.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/cc0ixWEh.s:13     .text.startup:0000000000000000 main
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 motion_status
+                            *COM*:0000000000000001 statusLEDs
+
+UNDEFINED SYMBOLS
+initRobotBase
+setLEDs
+mSleep
+powerON
+rotate
+task_RP6System
+__do_clear_bss

@@ -1,0 +1,42 @@
+Sripts en bash pour automatiser la parallélisation de calculs dans l'école en vue de Hahscode.
+
+Idée :
+
+Utiliser un algorithme utilisant de l'aléatoire. Le but est donc de l'éxécuter le plus de fois possibles.
+Chaque machine exécutera le programme en boucle et on gardera la meilleure réponse donnée.
+
+Comment utiliser les scripts :
+
+1) Si on n'est pas dans l'école : Dans les fichiers paral.sh,get_best.sh et stop.sh, changer la ligne 'domain=""' par 'domain=".enst.fr"'
+
+2) Il faut fournir un certain nombre de données au système :
+
+	- Le fichier source contenant l'algorithme reposant sur de l'aléatoire. Prendre garde à utiliser un meilleur sead que time(NULL).
+	test_time.cpp contient un exemple de création de bon sead utilisant le temps machine en nanosecondes.
+	
+	- Le fichier d'input du problème sous le nom "in".
+	
+	- La liste des machines disponibles. Mettre cette liste dans le fichier "machines", une machine par ligne.
+	Il faudra passer dans une salle avant la contest pour les allumer.
+	
+	- Un code "traductor.cpp" faisant la traduction entre l'output demandé par google et le score correspondant à cet output.
+	
+3) Tout est maintenant prêt ! NE PAS LANCER LA PARALLELISATION TANT QUE VOUS NE SAVEZ PAS L'ARRETER.
+
+	- On lance la machine avec la commande "./paral.sh [fichier contenant les machines] [nom du code source] 2>err_log"
+	Vos login éole seront vous seront demandé pour la connexion ssh.
+	
+	- On peut à tout moment demander quelle la meilleure réponse actuelle avec la commande "./get_best.sh machines"
+	
+	- On arrête la machine avec la commande "./stop.sh". Vérifier que le fichier err_log ne change plus.
+	
+	SI ERR_LOG CHANGE ENCORE, il y a un problème avec l'arrêt ! Il faut se connecter en ssh sur une quelconque machine de l'école,
+	aller dans le dossier hashcode/started qui est dans votre "home" et lancer la commande bash suivante :
+	
+	for s in `ls`;do
+		touch ../locks/$s
+		rm $s
+	done
+	
+	Si ça ne s'est toujours pas arrêté, go ask Antoine. Eteindre les machines ou créer les fichiers
+	de locks correspondant aux machines suspectées de toujours tourner dans le dosser hashcode/locks, manuellement.

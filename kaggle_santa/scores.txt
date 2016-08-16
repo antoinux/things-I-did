@@ -1,0 +1,23 @@
+
+Amélioration locale basée sur la distance en 10s : 2408.75
+
+En deux minutes : 2408.39
+
+Amélioration locale basée sur le score en 10s : 2400.25
+
+En deux minutes : 2397.56 :o
+
+Best : 2387.11
+
+Se baser sur le score semble mieux marcher.
+
+2422.51 en une minute avec des swaps sur les noeuds plutôt que les arrêtes...
+
+La bonne combinaison semble donc être SCORE + FLIP.
+
+Simulated annealing (SA) est pour l'instant décevant. Affaire à suivre...
+
+Nouveauté :
+
+La méthode par "répétition" donne de bons résultats, ce qui laisse entendre que SA n'est pas bien implémenté...
+Car c'est un peu le SA du pauvre.

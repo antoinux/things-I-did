@@ -1,0 +1,392 @@
+   1               		.file	"main.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               	.global	escapeState
+  12               	escapeState:
+  13               	.LFB1:
+  14               		.file 1 "main.c"
+   1:main.c        **** #include"RP6RobotBaseLib.h"
+   2:main.c        **** 
+   3:main.c        **** #define CRUISE_SPEED_FWD 160
+   4:main.c        **** #define CRUISE_SPEED_BWD -100
+   5:main.c        **** #define NORMAL 0
+   6:main.c        **** #define ESCAPE 1
+   7:main.c        **** #define DODGE 2
+   8:main.c        **** #define TURNING_BACK 3
+   9:main.c        **** 
+  10:main.c        **** uint8_t state = NORMAL;
+  11:main.c        **** uint8_t escape_way = 0;
+  12:main.c        **** uint8_t last_rotation = 0;
+  13:main.c        **** 
+  14:main.c        **** void escapeState(void)
+  15:main.c        **** {
+  15               		.loc 1 15 0
+  16               		.cfi_startproc
+  17               	/* prologue: function */
+  18               	/* frame size = 0 */
+  19               	/* stack size = 0 */
+  20               	.L__stack_usage = 0
+  16:main.c        **** 	move(CRUISE_SPEED_BWD,BWD,DIST_MM(100),1);
+  21               		.loc 1 16 0
+  22 0000 21E0      		ldi r18,lo8(1)
+  23 0002 40EA      		ldi r20,lo8(-96)
+  24 0004 51E0      		ldi r21,lo8(1)
+  25 0006 61E0      		ldi r22,lo8(1)
+  26 0008 8CE9      		ldi r24,lo8(-100)
+  27 000a 0E94 0000 		call move
+  28               	.LVL0:
+  17:main.c        **** 	rotate(90,LEFT,180,1);
+  29               		.loc 1 17 0
+  30 000e 21E0      		ldi r18,lo8(1)
+  31 0010 44EB      		ldi r20,lo8(-76)
+  32 0012 50E0      		ldi r21,0
+  33 0014 62E0      		ldi r22,lo8(2)
+  34 0016 8AE5      		ldi r24,lo8(90)
+  35 0018 0C94 0000 		jmp rotate
+  36               	.LVL1:
+  37               		.cfi_endproc
+  38               	.LFE1:
+  40               	.global	change_state
+  42               	change_state:
+  43               	.LFB2:
+  18:main.c        **** }
+  19:main.c        **** 
+  20:main.c        **** void change_state(void)
+  21:main.c        **** {
+  44               		.loc 1 21 0
+  45               		.cfi_startproc
+  46               	/* prologue: function */
+  47               	/* frame size = 0 */
+  48               	/* stack size = 0 */
+  49               	.L__stack_usage = 0
+  22:main.c        **** 	if(bumper_left || bumper_right)
+  50               		.loc 1 22 0
+  51 001c 8091 0000 		lds r24,bumper_left
+  52 0020 8111      		cpse r24,__zero_reg__
+  53 0022 00C0      		rjmp .L3
+  54               		.loc 1 22 0 is_stmt 0 discriminator 1
+  55 0024 9091 0000 		lds r25,bumper_right
+  56 0028 9923      		tst r25
+  57 002a 01F0      		breq .L4
+  58               	.L3:
+  23:main.c        **** 	{
+  24:main.c        **** 		state = ESCAPE;
+  59               		.loc 1 24 0 is_stmt 1
+  60 002c 91E0      		ldi r25,lo8(1)
+  61 002e 9093 0000 		sts state,r25
+  25:main.c        **** 		escape_way = bumper_left ? RIGHT : LEFT;
+  62               		.loc 1 25 0
+  63 0032 8823      		tst r24
+  64 0034 01F0      		breq .L10
+  65 0036 83E0      		ldi r24,lo8(3)
+  66 0038 00C0      		rjmp .L5
+  67               	.L10:
+  68 003a 82E0      		ldi r24,lo8(2)
+  69               	.L5:
+  70               		.loc 1 25 0 is_stmt 0 discriminator 3
+  71 003c 8093 0000 		sts escape_way,r24
+  72 0040 0895      		ret
+  73               	.L4:
+  26:main.c        **** 	}
+  27:main.c        **** 	else if(obstacle_left && obstacle_right)
+  74               		.loc 1 27 0 is_stmt 1
+  75 0042 9091 0000 		lds r25,obstacle_left
+  76 0046 8091 0000 		lds r24,obstacle_right
+  77 004a 9923      		tst r25
+  78 004c 01F0      		breq .L7
+  79               		.loc 1 27 0 is_stmt 0 discriminator 1
+  80 004e 8823      		tst r24
+  81 0050 01F0      		breq .L8
+  28:main.c        **** 		state = TURNING_BACK;
+  82               		.loc 1 28 0 is_stmt 1
+  83 0052 83E0      		ldi r24,lo8(3)
+  84 0054 00C0      		rjmp .L14
+  85               	.L7:
+  29:main.c        **** 	else if(obstacle_left || obstacle_right)
+  86               		.loc 1 29 0 discriminator 1
+  87 0056 8823      		tst r24
+  88 0058 01F0      		breq .L9
+  89               	.L8:
+  30:main.c        **** 		state = DODGE;
+  90               		.loc 1 30 0
+  91 005a 82E0      		ldi r24,lo8(2)
+  92               	.L14:
+  93 005c 8093 0000 		sts state,r24
+  94 0060 0895      		ret
+  95               	.L9:
+  31:main.c        **** 	else
+  32:main.c        **** 		state = NORMAL;
+  96               		.loc 1 32 0
+  97 0062 1092 0000 		sts state,__zero_reg__
+  98 0066 0895      		ret
+  99               		.cfi_endproc
+ 100               	.LFE2:
+ 102               	.global	state_machine
+ 104               	state_machine:
+ 105               	.LFB3:
+  33:main.c        **** }
+  34:main.c        **** 
+  35:main.c        **** void state_machine(void)
+  36:main.c        **** {
+ 106               		.loc 1 36 0
+ 107               		.cfi_startproc
+ 108               	/* prologue: function */
+ 109               	/* frame size = 0 */
+ 110               	/* stack size = 0 */
+ 111               	.L__stack_usage = 0
+  37:main.c        **** 	switch(state)
+ 112               		.loc 1 37 0
+ 113 0068 8091 0000 		lds r24,state
+ 114 006c 8130      		cpi r24,lo8(1)
+ 115 006e 01F0      		breq .L18
+ 116 0070 00F0      		brlo .L19
+ 117 0072 8230      		cpi r24,lo8(2)
+ 118 0074 01F0      		breq .L20
+ 119 0076 8330      		cpi r24,lo8(3)
+ 120 0078 01F0      		breq .L21
+ 121 007a 0895      		ret
+ 122               	.L19:
+ 123               	.LBB2:
+  38:main.c        **** 	{
+  39:main.c        **** 		case NORMAL:
+  40:main.c        **** 			moveAtSpeedDirection(CRUISE_SPEED_FWD,CRUISE_SPEED_FWD);
+ 124               		.loc 1 40 0
+ 125 007c 60EA      		ldi r22,lo8(-96)
+ 126 007e 70E0      		ldi r23,0
+ 127 0080 80EA      		ldi r24,lo8(-96)
+ 128 0082 90E0      		ldi r25,0
+ 129 0084 00C0      		rjmp .L26
+ 130               	.L18:
+  41:main.c        **** 		break;
+  42:main.c        **** 		
+  43:main.c        **** 		case ESCAPE:
+  44:main.c        **** 			escapeState();
+ 131               		.loc 1 44 0
+ 132 0086 0C94 0000 		jmp escapeState
+ 133               	.LVL2:
+ 134               	.L20:
+  45:main.c        **** 		break;
+  46:main.c        **** 		
+  47:main.c        **** 		case DODGE:
+  48:main.c        **** 			moveAtSpeedDirection(CRUISE_SPEED_FWD - 40*obstacle_right,CRUISE_SPEED_FWD - 40*obstacle_left);
+ 135               		.loc 1 48 0
+ 136 008a 6091 0000 		lds r22,obstacle_left
+ 137 008e 28ED      		ldi r18,lo8(-40)
+ 138 0090 2603      		mulsu r18,r22
+ 139 0092 B001      		movw r22,r0
+ 140 0094 1124      		clr __zero_reg__
+ 141 0096 6056      		subi r22,96
+ 142 0098 7F4F      		sbci r23,-1
+ 143 009a 3091 0000 		lds r19,obstacle_right
+ 144 009e 2303      		mulsu r18,r19
+ 145 00a0 C001      		movw r24,r0
+ 146 00a2 1124      		clr __zero_reg__
+ 147 00a4 8056      		subi r24,96
+ 148 00a6 9F4F      		sbci r25,-1
+ 149               	.L26:
+ 150 00a8 0C94 0000 		jmp moveAtSpeedDirection
+ 151               	.LVL3:
+ 152               	.L21:
+  49:main.c        **** 		break;
+  50:main.c        **** 		
+  51:main.c        **** 		case TURNING_BACK:
+  52:main.c        **** 			moveAtSpeedDirection(0,0);
+ 153               		.loc 1 52 0
+ 154 00ac 60E0      		ldi r22,0
+ 155 00ae 70E0      		ldi r23,0
+ 156 00b0 80E0      		ldi r24,0
+ 157 00b2 90E0      		ldi r25,0
+ 158 00b4 0E94 0000 		call moveAtSpeedDirection
+ 159               	.LVL4:
+  53:main.c        **** 			uint8_t rotate_dir;
+  54:main.c        **** 			if(getStopwatch1() > 4000)
+ 160               		.loc 1 54 0
+ 161 00b8 8091 0000 		lds r24,stopwatches+1
+ 162 00bc 9091 0000 		lds r25,stopwatches+1+1
+ 163 00c0 813A      		cpi r24,-95
+ 164 00c2 9F40      		sbci r25,15
+ 165 00c4 00F0      		brlo .L22
+  55:main.c        **** 				rotate_dir = rand()%2 ? LEFT : RIGHT;
+ 166               		.loc 1 55 0
+ 167 00c6 0E94 0000 		call rand
+ 168               	.LVL5:
+ 169 00ca 80FF      		sbrs r24,0
+ 170 00cc 00C0      		rjmp .L24
+ 171 00ce 62E0      		ldi r22,lo8(2)
+ 172 00d0 00C0      		rjmp .L23
+ 173               	.L22:
+  56:main.c        **** 			else
+  57:main.c        **** 				rotate_dir = last_rotation;
+ 174               		.loc 1 57 0
+ 175 00d2 6091 0000 		lds r22,last_rotation
+ 176               	.LVL6:
+ 177 00d6 00C0      		rjmp .L23
+ 178               	.LVL7:
+ 179               	.L24:
+  55:main.c        **** 				rotate_dir = rand()%2 ? LEFT : RIGHT;
+ 180               		.loc 1 55 0
+ 181 00d8 63E0      		ldi r22,lo8(3)
+ 182               	.L23:
+ 183               	.LVL8:
+  58:main.c        **** 			last_rotation = rotate_dir;
+ 184               		.loc 1 58 0
+ 185 00da 6093 0000 		sts last_rotation,r22
+  59:main.c        **** 			stopStopwatch1();
+ 186               		.loc 1 59 0
+ 187 00de 8091 0000 		lds r24,stopwatches
+ 188 00e2 8E7F      		andi r24,lo8(-2)
+ 189 00e4 8093 0000 		sts stopwatches,r24
+  60:main.c        **** 			setStopwatch1(0);
+ 190               		.loc 1 60 0
+ 191 00e8 1092 0000 		sts stopwatches+1+1,__zero_reg__
+ 192 00ec 1092 0000 		sts stopwatches+1,__zero_reg__
+  61:main.c        **** 			startStopwatch1();
+ 193               		.loc 1 61 0
+ 194 00f0 8091 0000 		lds r24,stopwatches
+ 195 00f4 8160      		ori r24,lo8(1)
+ 196 00f6 8093 0000 		sts stopwatches,r24
+  62:main.c        **** 			rotate(90,rotate_dir,90,1);
+ 197               		.loc 1 62 0
+ 198 00fa 21E0      		ldi r18,lo8(1)
+ 199 00fc 4AE5      		ldi r20,lo8(90)
+ 200 00fe 50E0      		ldi r21,0
+ 201 0100 8AE5      		ldi r24,lo8(90)
+ 202 0102 0C94 0000 		jmp rotate
+ 203               	.LVL9:
+ 204               	.LBE2:
+ 205               		.cfi_endproc
+ 206               	.LFE3:
+ 208               		.section	.text.startup,"ax",@progbits
+ 209               	.global	main
+ 211               	main:
+ 212               	.LFB4:
+  63:main.c        **** 		break;
+  64:main.c        **** 	}
+  65:main.c        **** }
+  66:main.c        **** 
+  67:main.c        **** int main(void)
+  68:main.c        **** {
+ 213               		.loc 1 68 0
+ 214               		.cfi_startproc
+ 215               	/* prologue: function */
+ 216               	/* frame size = 0 */
+ 217               	/* stack size = 0 */
+ 218               	.L__stack_usage = 0
+  69:main.c        **** 	initRobotBase();
+ 219               		.loc 1 69 0
+ 220 0000 0E94 0000 		call initRobotBase
+ 221               	.LVL10:
+  70:main.c        **** 	setLEDs(0b111111);
+ 222               		.loc 1 70 0
+ 223 0004 8FE3      		ldi r24,lo8(63)
+ 224 0006 0E94 0000 		call setLEDs
+ 225               	.LVL11:
+  71:main.c        **** 	mSleep(1500);
+ 226               		.loc 1 71 0
+ 227 000a 8CED      		ldi r24,lo8(-36)
+ 228 000c 95E0      		ldi r25,lo8(5)
+ 229 000e 0E94 0000 		call mSleep
+ 230               	.LVL12:
+  72:main.c        **** 	setLEDs(0b100001);
+ 231               		.loc 1 72 0
+ 232 0012 81E2      		ldi r24,lo8(33)
+ 233 0014 0E94 0000 		call setLEDs
+ 234               	.LVL13:
+  73:main.c        **** 	powerON();
+ 235               		.loc 1 73 0
+ 236 0018 0E94 0000 		call powerON
+ 237               	.LVL14:
+  74:main.c        **** 	setACSPwrHigh();
+ 238               		.loc 1 74 0
+ 239 001c 0E94 0000 		call setACSPwrHigh
+ 240               	.LVL15:
+  75:main.c        **** // 	setACSPwrMed();
+  76:main.c        **** 	setStopwatch1(0);
+ 241               		.loc 1 76 0
+ 242 0020 1092 0000 		sts stopwatches+1+1,__zero_reg__
+ 243 0024 1092 0000 		sts stopwatches+1,__zero_reg__
+  77:main.c        **** 	srand(0);
+ 244               		.loc 1 77 0
+ 245 0028 80E0      		ldi r24,0
+ 246 002a 90E0      		ldi r25,0
+ 247 002c 0E94 0000 		call srand
+ 248               	.LVL16:
+ 249               	.L28:
+  78:main.c        **** 	
+  79:main.c        **** 	while(1)
+  80:main.c        **** 	{
+  81:main.c        **** 		change_state();
+ 250               		.loc 1 81 0 discriminator 1
+ 251 0030 0E94 0000 		call change_state
+ 252               	.LVL17:
+  82:main.c        **** 		state_machine();
+ 253               		.loc 1 82 0 discriminator 1
+ 254 0034 0E94 0000 		call state_machine
+ 255               	.LVL18:
+  83:main.c        **** 		task_RP6System();
+ 256               		.loc 1 83 0 discriminator 1
+ 257 0038 0E94 0000 		call task_RP6System
+ 258               	.LVL19:
+ 259 003c 00C0      		rjmp .L28
+ 260               		.cfi_endproc
+ 261               	.LFE4:
+ 263               	.global	last_rotation
+ 264               		.section .bss
+ 267               	last_rotation:
+ 268 0000 00        		.zero	1
+ 269               	.global	escape_way
+ 272               	escape_way:
+ 273 0001 00        		.zero	1
+ 274               	.global	state
+ 277               	state:
+ 278 0002 00        		.zero	1
+ 279               		.comm	timer,2,1
+ 280               		.comm	motion_status,1,1
+ 281               		.comm	statusLEDs,1,1
+ 282               		.text
+ 283               	.Letext0:
+ 284               		.file 2 "/usr/lib/avr/include/stdint.h"
+ 285               		.file 3 "../RP6Lib/RP6base/RP6RobotBaseLib.h"
+ 286               		.file 4 "/usr/lib/avr/include/stdlib.h"
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 main.c
+     /tmp/ccaEfmCz.s:2      *ABS*:000000000000003e __SP_H__
+     /tmp/ccaEfmCz.s:3      *ABS*:000000000000003d __SP_L__
+     /tmp/ccaEfmCz.s:4      *ABS*:000000000000003f __SREG__
+     /tmp/ccaEfmCz.s:5      *ABS*:0000000000000000 __tmp_reg__
+     /tmp/ccaEfmCz.s:6      *ABS*:0000000000000001 __zero_reg__
+     /tmp/ccaEfmCz.s:12     .text:0000000000000000 escapeState
+     /tmp/ccaEfmCz.s:42     .text:000000000000001c change_state
+     /tmp/ccaEfmCz.s:277    .bss:0000000000000002 state
+     /tmp/ccaEfmCz.s:272    .bss:0000000000000001 escape_way
+     /tmp/ccaEfmCz.s:104    .text:0000000000000068 state_machine
+     /tmp/ccaEfmCz.s:267    .bss:0000000000000000 last_rotation
+     /tmp/ccaEfmCz.s:211    .text.startup:0000000000000000 main
+                            *COM*:0000000000000002 timer
+                            *COM*:0000000000000001 motion_status
+                            *COM*:0000000000000001 statusLEDs
+
+UNDEFINED SYMBOLS
+move
+rotate
+bumper_left
+bumper_right
+obstacle_left
+obstacle_right
+moveAtSpeedDirection
+stopwatches
+rand
+initRobotBase
+setLEDs
+mSleep
+powerON
+setACSPwrHigh
+srand
+task_RP6System
+__do_clear_bss
