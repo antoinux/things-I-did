@@ -21,14 +21,14 @@ Comment utiliser les scripts :
 	
 	- Un code "traductor.cpp" faisant la traduction entre l'output demandé par google et le score correspondant à cet output.
 	
-3) Tout est maintenant prêt ! NE PAS LANCER LA PARALLELISATION TANT QUE VOUS NE SAVEZ PAS L'ARRETER.
+3) Tout est maintenant prêt !
 
 	- On lance la machine avec la commande "./paral.sh [fichier contenant les machines] [nom du code source] 2>err_log"
 	Vos login éole seront vous seront demandé pour la connexion ssh.
 	
-	- On peut à tout moment demander quelle la meilleure réponse actuelle avec la commande "./get_best.sh machines"
+	- On peut à tout moment demander quelle est la meilleure réponse actuelle avec la commande "./get_best.sh machines"
 	
-	- On arrête la machine avec la commande "./stop.sh". Vérifier que le fichier err_log ne change plus.
+	- On arrête les machines avec la commande "./stop.sh". Vérifier que le fichier err_log ne change plus.
 	
 	SI ERR_LOG CHANGE ENCORE, il y a un problème avec l'arrêt ! Il faut se connecter en ssh sur une quelconque machine de l'école,
 	aller dans le dossier hashcode/started qui est dans votre "home" et lancer la commande bash suivante :
@@ -38,5 +38,5 @@ Comment utiliser les scripts :
 		rm $s
 	done
 	
-	Si ça ne s'est toujours pas arrêté, go ask Antoine. Eteindre les machines ou créer les fichiers
+	Si ça ne s'est toujours pas arrêté, éteindre les machines ou créer les fichiers
 	de locks correspondant aux machines suspectées de toujours tourner dans le dosser hashcode/locks, manuellement.
