@@ -1,5 +1,7 @@
 I'm not giving my solution for this problem. These are just Bash scripts I used to bruteforce the problem on the ~200 machines of my school.
 
+At first designed it for the Google HashCode contest, which occured to be useless.
+
 Feel free to check it, but it's dirty and sometimes poorly designed, I did it for fun and to learn bash :)
 
 Also, comments are in French. You were warned !
