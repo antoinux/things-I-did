@@ -1,6 +1,5 @@
-I don't really want to give my algo for this problem since I'm still second (lost my first place :'()
-But, I used many machines to get my score, and for this I used a ssh/bash architecture I wrote for Hashcode (which happened to be useless for the contest).
+I'm not giving my solution for this problem. These are just Bash scripts I used to bruteforce the problem on the ~200 machines of my school.
 
 Feel free to check it, but it's dirty and sometimes poorly designed, I did it for fun and to learn bash :)
 
-You were warned ! (and, comments are in french. Oh well)
+Also, comments are in French. You were warned !
